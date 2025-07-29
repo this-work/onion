@@ -7,7 +7,7 @@
 
 
 ### Requirements
-- Nuxt 4+ Installation
+- Nuxt 4+
 
 
 ### Install
@@ -17,12 +17,26 @@ Install framework in your framework with
 $ npm install git+https://github.com/this-work/onion.git#master
 ```
 
-### Use in 
+### Add framework to Nuxt
 
 Add the onion framework in the nuxt.config file as module
 ``` js
 export default defineNuxtConfig({
   modules: ['@this/onion'],
+})
+```
+
+### Change framework settings
+
+Change optional the settings of the framework like colors in the nuxt.config file
+``` js
+export default defineNuxtConfig({
+  onion: {
+    theme: {
+      css: '@/assets/themes/default/base/main.scss',
+      config: '@/assets/themes/default/config/variables',
+    },
+  },
 })
 ```
 
