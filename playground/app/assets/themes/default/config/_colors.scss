@@ -1,0 +1,17 @@
+@use 'scss-framework/framework' as *;
+
+$color-base: (
+		'primary': #a51b9d,
+		'secondary': #0d7e01,
+		'light': 				#FFFFFF,
+		'medium': 				#F0F0F0,
+		'dark': 				#0A0A0A,
+		'system-light': 		#FFFFFF,
+		'system-dark': 			#151515,
+		'success': 				#22C55A,
+		'warning': 				#FFA929,
+		'danger': 				#FF4229,
+		'white': 				#ffffff,
+		'black': 				#000000,
+		'transparent': 			rgba(0,0,0,0)
+);

@@ -1,0 +1,84 @@
+.c-slider {
+  $module: &;
+  display: block;
+
+  swiper-container {
+    width: 100%;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: spacing("xxs");
+  }
+
+  &__navigation-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__pagination {
+    margin: 0 spacing("xxxs");
+    span {
+      @include font-style("copytext--small");
+    }
+    &.swiper-pagination-bullets {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      gap: spacing("xxxxs");
+      margin: 0;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: spacing("xxxs");
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+
+    &-point {
+      display: block;
+      width: spacing("xxs");
+      height: spacing("xxs");
+      border-radius: spacing("xxs");
+      background: color("system-dark-50-alpha");
+      transition: transition(width), transition(background);
+    }
+
+    &-active {
+      .swiper-pagination-bullet-point {
+        width: spacing("xl");
+        background: color("system-dark");
+      }
+    }
+
+    &:hover {
+      .swiper-pagination-bullet-point {
+        background: color("system-dark");
+      }
+    }
+  }
+
+  &__control-button {
+    margin: 0 spacing("xxxs");
+  }
+
+  swiper-slide:not([aria-label]) {
+    position: absolute;
+    opacity: 0;
+  }
+
+  swiper-slide:first-of-type {
+    position: static;
+    opacity: 1;
+  }
+
+
+}

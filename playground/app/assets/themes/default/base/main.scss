@@ -1,0 +1,7 @@
+
+@use 'scss-framework/framework' as *;
+
+.test {
+  background: purple;
+  color: color('white');
+}

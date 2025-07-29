@@ -1,0 +1,64 @@
+{
+  "name": "@this/onion",
+  "version": "0.0.1",
+  "author": "THIS GmbH",
+  "repository": "https://github.com/this-work/onion/src/master/README.md",
+  "description": "Component framework for Nuxt 4+",
+  "type": "module",
+  "keywords": [
+    "scss",
+    "vue",
+    "nuxt",
+    "onion",
+    "js",
+    "html",
+    "framework"
+  ],
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "dev": "npm run dev:prepare && nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "lint": "eslint src/.",
+    "lintFix": "eslint --fix src/."
+  },
+  "dependencies": {
+    "@nuxt/icon": "^1.5.2",
+    "@nuxt/kit": "^3.17.7",
+    "@types/lodash": "^4.17.14",
+    "@vueuse/nuxt": "^12.0.0",
+    "focus-trap": "^7.6.2",
+    "lodash": "^4.17.21",
+    "sass": "^1.77.8",
+    "scss-framework": "git+https://github.com/this-work/scss-framework#master",
+    "swiper": "^11.1.15"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.5.2",
+    "@nuxt/eslint-config": "^1.5.2",
+    "@nuxt/module-builder": "^1.0.1",
+    "@nuxt/schema": "^4.0.0",
+    "eslint": "^9.31.0",
+    "nuxt": "^4.0.0",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1"
+  }
+}

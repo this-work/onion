@@ -1,0 +1,22 @@
+////
+///
+/// CSS Custom Props Declarations
+///
+/// @group Base
+///
+////
+
+@use "scss-framework/framework" as *;
+
+@use "sass:meta";
+
+:export {
+  @include declare-color-map;
+
+  @include declare-breakpoint-map;
+
+  --breakpoints: #{meta.inspect($breakpoint-config)};
+
+  --grid-gaps: #{meta.inspect($grid-gaps)};
+}
+

@@ -1,0 +1,12 @@
+.c-divider {
+  $module: &;
+  display: block;
+  hr {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    border: none;
+    @include color-palette('divider');
+  }
+}

@@ -1,0 +1,37 @@
+////
+///
+/// Base Styles
+///
+/// @group Base
+///
+////
+
+@use 'scss-framework/framework' as *;
+
+///
+/// Generate all @font-face declarations to load the fonts.
+/// Loaded from the $font-config array in the config files.
+///
+@include generate-font-face-declaration();
+
+///
+/// Generate a complete normalize declaration with project own defaults.
+/// The default settings can be done in the typography config file.
+///
+@include generate-normalize();
+
+$body-font: 'copytext' !default;
+$body-color-palette: 'copytext' !default;
+$body-background-palette: 'background' !default;
+
+///
+/// Define the default text styles in the project.
+///
+body {
+    position: relative;
+    overflow-x: hidden;
+    hyphens: auto;
+    @include font-style($body-font);
+    @include color-palette($body-color-palette);
+    @include color-palette($body-background-palette);
+}

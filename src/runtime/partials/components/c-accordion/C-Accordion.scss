@@ -1,0 +1,65 @@
+.c-accordion {
+  $module: &;
+  overflow: hidden;
+  border-bottom: 1px solid color('dark-30-alpha');
+  padding-bottom: spacing('m');
+  transition: transition(height);
+
+  &__label {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: transition(background);
+    @include deactivate-user-selection();
+    @include font-style('copytext--big');
+    @include color-palette('accordion');
+    &-text {
+      margin-left: spacing('xxs');
+    }
+    &:hover {
+      #{$module}__icon {
+        background: color('primary-10-alpha');
+        color: color('primary');
+      }
+    }
+    &:focus-visible {
+      outline-style: solid;
+      outline-width: unitize(1px);
+      outline-color: color('primary');
+      outline-offset: unitize(3px);
+      position: relative;
+      z-index: 1;
+      background: transparent;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: unitize(32px);
+    height: unitize(32px);
+    background: color('system-dark-10-alpha');
+    border-radius: 50%;
+    transform: rotate(90deg);
+    transition: transition(all);
+  }
+
+  &__content {
+    padding-top: spacing('s');
+    @include color-palette('copytext');
+  }
+
+  &--open {
+    #{$module}__icon {
+      transform: rotate(270deg);
+    }
+  }
+}

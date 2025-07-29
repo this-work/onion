@@ -1,0 +1,18 @@
+.t-replace {
+  will-change: height;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+
+  &-enter-active {
+    overflow: hidden;
+    transition: transition(height, 400ms), transition(opacity, 250ms);
+  }
+  &-leave-active {
+    overflow: hidden;
+    transition: transition(height, 400ms), transition(opacity, 250ms);
+  }
+  &-enter-from, &-leave-to {
+    opacity: 0;
+  }
+}

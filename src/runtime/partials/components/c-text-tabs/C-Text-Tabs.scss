@@ -1,0 +1,83 @@
+.c-text-tabs {
+  $module: &;
+  position: relative;
+
+  &__tabs {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    @include color-palette('background');
+    background: var(--closest-background-color);
+  }
+
+  &__tab-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 spacing('xs');
+    margin: 0;
+    padding: spacing('xxs') 0 spacing('xxxs');
+  }
+
+  &__tab-item {
+    list-style: none;
+  }
+
+  &__tab-button {
+    position: relative;
+    display: flex;
+    align-content: center;
+    border: solid 0 transparent;
+    background-color: transparent;
+    outline-color: transparent;
+    vertical-align: bottom;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: transition(all);
+    padding: spacing('xxxs') 0;
+    @include font-style("systemtext");
+    @include color-palette('tab-item');
+
+    span {
+      display: block;
+      font-family: inherit;
+      font-size: inherit;
+      letter-spacing: inherit;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      transform: scaleX(0);
+      transition: transition(transform);
+    }
+
+    &:hover, &:active, &:focus, &--active {
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+
+    &--active {
+      @include color-palette('tab-item-active');
+    }
+
+  }
+
+  &__content {
+    display: block;
+    position: relative;
+    z-index: 50;
+    margin: spacing('xs') 0 0;
+  }
+
+
+}

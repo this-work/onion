@@ -1,0 +1,95 @@
+@use 'scss-framework/framework' as *;
+
+$default-font-family: 'Manrope';
+
+$default-font-dimension: '19';
+
+$font-dimensions: (
+		'110' : (
+				'size': 110px,
+				'line-height': 1.5
+		),
+		'80' : (
+				'size': 80px,
+				'line-height': 1.5
+		),
+		'60' : (
+				'size': 60px,
+				'line-height': 1.5
+		),
+		'44' : (
+				'size': 44px,
+				'line-height': 1.5
+		),
+		'32' : (
+				'size': 32px,
+				'line-height': 1.5
+		),
+		'26' : (
+				'size': 26px,
+				'line-height': 1.5
+		),
+		'19' : (
+				'size': 19px,
+				'line-height': 1.5
+		),
+		'16' : (
+				'size': 16px,
+				'line-height': 1.5
+		),
+		'14' : (
+				'size': 14px,
+				'line-height': 1.5
+		),
+		'12' : (
+				'size': 12px,
+				'line-height': 1.5
+		)
+);
+
+$font-styles: (
+		'h0': 				( $default-font-family, 'bold', '110', 1.1 ),
+		'h1': 				( $default-font-family, 'bold', '80', 1.1 ),
+		'h2': 				( $default-font-family, 'bold', '60', 1.1 ),
+		'h3': 				( $default-font-family, 'bold', '44', 1.1 ),
+		'h4': 				( $default-font-family, 'bold', '32', 1.1 ),
+		'h5': 				( $default-font-family, 'bold', '26', 1.1 ),
+		'h6': 				( $default-font-family, 'bold', '19', 1.1 ),
+		'label': 			( $default-font-family, 'bold', '16' ),
+		'copytext--xbig': 	( $default-font-family, 'regular', '26' ),
+		'copytext--big': 	( $default-font-family, 'regular', '19' ),
+		'copytext': 		( $default-font-family, 'regular', '16' ),
+		'copytext--small': 	( $default-font-family, 'regular', '14' ),
+		'tinytext': 		( $default-font-family, 'regular', '12' ),
+		'systemtext': 		( $default-font-family, 'medium', '14', 1.15 ),
+		'button': 			( $default-font-family, 'medium', '16' ),
+		'form-text': 		( $default-font-family, 'regular', '14' ),
+		'form-label': 		( $default-font-family, 'regular', '14' )
+);
+
+$font-factor: (
+		'default' : 0.5,
+		'xs'      : 0.8,
+		'm'       : 1,
+		'xl'      : 1.2,
+		'xxl'     : 1.5
+);
+
+
+$font-config: (
+		'Manrope' : (
+				'faces' : (
+						(
+								'paths': (
+										'/fonts/manrope-variable.ttf'
+								),
+								'style': normal,
+								'display': swap
+						),
+				),
+				'alternate-stack': 'Arial, sans-serif'
+		),
+		'Arial' : (
+				'alternate-stack': 'sans-serif'
+		)
+);

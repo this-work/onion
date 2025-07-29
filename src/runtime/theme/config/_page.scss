@@ -1,0 +1,13 @@
+@use 'scss-framework/framework' as *;
+
+$default-unit-type: 'absolute';
+
+$breakpoint-config: (
+		'xxs'   : 480px,
+		'xs'    : 768px,
+		's'     : 1024px,
+		'm'     : 1280px,
+		'l'     : 1440px,
+		'xl'    : 1920px,
+		'xxl'   : 2560px
+);

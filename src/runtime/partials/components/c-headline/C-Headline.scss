@@ -1,0 +1,10 @@
+.c-headline {
+  $module: &;
+  display: block;
+  @include color-palette('headline');
+
+  span, p {
+    font: inherit;
+    letter-spacing: inherit;
+  }
+}

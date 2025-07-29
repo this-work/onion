@@ -1,0 +1,50 @@
+.c-image-tabs {
+  $module: &;
+  position: relative;
+
+  &__tabs {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    @include color-palette('background');
+    background: var(--closest-background-color);
+  }
+
+  &__tab-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 spacing('xs');
+    margin: 0;
+    padding: spacing('xxs') 0 spacing('xxxs');
+  }
+
+  &__tab-item {
+    list-style: none;
+  }
+
+  &__tab-image {
+    cursor: pointer;
+    user-select: none;
+    @include color-palette('tab-item-active');
+
+    img {
+      border: solid 2px transparent;
+      transition: transition(border-color);
+    }
+
+    &:hover, &:active, &:focus, &--active {
+      img {
+        border-color: currentColor;
+      }
+    }
+
+  }
+  &__content {
+    display: block;
+    position: relative;
+    z-index: 50;
+    margin: spacing('xs') 0 0;
+  }
+
+}

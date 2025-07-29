@@ -1,0 +1,128 @@
+@use "sass:map";
+@use "sass:string";
+
+.c-hotspot {
+  $module: &;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  @each $breakpoint,
+    $size
+      in map.merge(
+        (
+          "default": 0px,
+        ),
+        $breakpoint-config
+      )
+  {
+    &--has-position-#{string.unquote($breakpoint)} {
+      .c-hotspot__spot {
+        @include above($breakpoint) {
+          left: var(--x-position-#{$breakpoint}, var(--x-position));
+          top: var(--y-position-#{$breakpoint}, var(--y-position));
+        }
+      }
+    }
+  }
+
+  &__image {
+    user-select: none;
+  }
+
+  &__spot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: var(--x-position);
+    top: var(--y-position);
+    cursor: pointer;
+    background-color: unset;
+    border: unset;
+    height: spacing("l");
+    width: spacing("l");
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  // TODO: figure out how to combine pulse animation and hover scale transition
+  // &__spot::before {
+  //   content: "";
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   animation: hotspot-pulse 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+  //   pointer-events: none;
+  // }
+
+  &__dot {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    width: unitize(14px);
+    height: unitize(14px);
+    transition: transition(all);
+    background-color: color("primary");
+    border-radius: border-radius('round');
+    padding: 0;
+    z-index: 2;
+  }
+
+  &__ring {
+    grid-column: 1;
+    grid-row: 1;
+    transition: transition(transform);
+    border-radius: 50%;
+    width: unitize(24px);
+    height: unitize(24px);
+    backdrop-filter: blur(10px);
+    border: solid 2px color("primary");
+    z-index: 1;
+  }
+
+  &__spot:hover &__dot {
+    transform: scale(0.45);
+  }
+
+  &__spot:hover &__ring {
+    transform: scale(1.85);
+  }
+
+  &__spot:focus-visible &__ring {
+    // transition: transition(outline-color);
+    outline-style: solid;
+    outline-width: unitize(1px);
+    outline-color: color("primary");
+    outline-offset: unitize(3px);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__spot:disabled {
+    transform: 1;
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  &__spot:disabled &__dot {
+    transform: scale(1);
+  }
+
+  &__spot:disabled &__ring {
+    transform: scale(1);
+  }
+
+}
+
+@keyframes hotspot-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
