@@ -1,0 +1,20 @@
+@use 'scss-framework/framework' as *;
+
+$border-radius-config: (
+		'round': 5000px,
+		'xl': 44px,
+		'l': 27px,
+		'm': 16px,
+		's': 10px,
+		'xs': 6px,
+		'xxs': 3px,
+		'none': 0
+);
+
+$border-radius-factor: (
+		'default' : 0.6,
+		'xs'      : 0.8,
+		'm'       : 1,
+		'xl'      : 1.2,
+		'xxl'     : 1.4
+);

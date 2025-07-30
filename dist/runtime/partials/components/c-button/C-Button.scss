@@ -1,0 +1,108 @@
+.c-button {
+  $module: &;
+  display: inline-flex;
+  align-content: center;
+  border-radius: border-radius('s');
+  min-height: spacing("l");
+  min-width: spacing("l");
+  border: solid 1px transparent;
+  background-color: transparent;
+  color: inherit;
+  outline-color: transparent;
+  vertical-align: bottom;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transition(all);
+  padding: 0;
+
+  &:focus-visible {
+    outline-style: solid;
+    outline-width: unitize(1px);
+    outline-color: color("primary");
+    outline-offset: unitize(3px);
+    position: relative;
+    z-index: 1;
+    transition: transition(outline-color);
+  }
+
+  $variants: ("primary", "secondary", "system");
+  $styles: ("solid", "soft", "outline", "plain");
+  @each $variant in $variants {
+    @each $style in $styles {
+      &--#{$variant}-#{$style} {
+        @include color-palette("button-#{$variant}-#{$style}");
+      }
+    }
+  }
+
+  &--disabled,
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &--rounded {
+    border-radius: border-radius('round');
+  }
+
+  &--link {
+    display: inline-block;
+  }
+
+  &--loading {
+    cursor: wait;
+
+    #{$module}__text,
+    #{$module}__icon {
+      visibility: hidden;
+    }
+
+    #{$module}__loader {
+      animation: spin 1s linear infinite;
+      position: absolute;
+    }
+  }
+
+  &--icon {
+    #{$module}__icon {
+      transform: scale(1.5);
+    }
+  }
+
+  &--icon-position-right {
+    #{$module}__content {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: spacing("xxs");
+    @include font-style("button");
+
+    &:has(#{$module}__text) {
+      padding: spacing("xxxs") spacing("xs");
+    }
+  }
+
+  &__text, &__icon {
+    font: inherit;
+  }
+}
+
+.c-wrapper:has(> .c-button) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: spacing("xs");
+  align-content: center;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}

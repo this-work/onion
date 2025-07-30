@@ -1,0 +1,25 @@
+.module {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include grid-column-start(2);
+  @include grid-column-width($grid-columns - 2);
+  @include grid(true);
+
+  @include above('xs') {
+    @include grid-column-start(var(--module-column-start));
+    @include grid-column-width(var(--module-column-width));
+  }
+
+  & {
+    @each $direction in (left, right) {
+      @each $spacing-name, $spacing in $spacing-config {
+        &.offset-#{$direction}-#{$spacing-name} {
+          margin-#{$direction}: calc(spacing($spacing-name) * -1);
+          padding-#{$direction}: spacing($spacing-name);
+        }
+      }
+    }
+  }
+
+}

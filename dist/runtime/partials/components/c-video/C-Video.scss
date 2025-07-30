@@ -1,0 +1,51 @@
+@use 'sass:map';
+@use 'sass:string';
+
+.c-video {
+  $module: &;
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+
+  &__wrapper {
+    display: block;
+    position: relative;
+    width: inherit;
+    height: inherit;
+    min-width: inherit;
+    max-width: inherit;
+    min-height: inherit;
+    max-height: inherit;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &__video {
+    width: inherit;
+    height: inherit;
+    min-width: inherit;
+    max-width: inherit;
+    min-height: inherit;
+    max-height: inherit;
+  }
+
+  &__caption {
+    margin-top: spacing('xxs');
+    @include font-style('copytext--small');
+    > * {
+      font: inherit;
+    }
+  }
+
+  @each $breakpoint, $size in map.merge(('default': 0px), $breakpoint-config) {
+    &--has-aspect-ratio-#{string.unquote($breakpoint)} {
+      #{$module}__video {
+        @include above($breakpoint) {
+          aspect-ratio: var(--aspect-ratio-#{string.unquote($breakpoint)});
+        }
+      }
+    }
+  }
+}

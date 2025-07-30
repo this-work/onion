@@ -1,0 +1,21 @@
+.slot {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include grid-column-width($grid-columns);
+
+  @include above('xs') {
+    @include grid-column-width(var(--slot-column-width));
+  }
+
+  > * + * {
+    margin-top: var(--slot-component-spacing);
+  }
+
+  @include below('xs') {
+    & + & {
+      margin-top: var(--slot-component-spacing);
+    }
+  }
+
+}

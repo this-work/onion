@@ -1,0 +1,10 @@
+import type { StoryObj } from '@storybook/vue3';
+declare const meta: Meta<any>;
+export default meta;
+type Story = StoryObj<object>;
+export declare const Default: Story;
+export declare const MitBegrenzung: Story;
+export declare const BenutzerdefinierteStartposition: Story;
+export declare const GrößereTastaturschritte: Story;
+export declare const Deaktiviert: Story;
+export declare const BenutzerdefinierterGriff: Story;

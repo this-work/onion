@@ -1,0 +1,24 @@
+@use 'scss-framework/framework' as *;
+
+$spacing-config: (
+		'xxxxl': 301px,
+		'xxxl': 186px,
+		'xxl': 115px,
+		'xl': 71px,
+		'l': 44px,
+		'm': 27px,
+		's': 20px,
+		'xs': 16px,
+		'xxs': 10px,
+		'xxxs': 6px,
+		'xxxxs': 3px,
+		'xxxxxs': 2px
+);
+
+$spacing-factor: (
+		'default' : 0.6,
+		'xs'      : 0.8,
+		'm'       : 1,
+		'xl'      : 1.2,
+		'xxl'     : 1.4
+);

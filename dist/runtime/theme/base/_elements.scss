@@ -1,0 +1,110 @@
+////
+///
+/// Base Element Styles
+///
+/// @group Base
+///
+////
+
+@use 'scss-framework/framework' as *;
+
+@use 'classes' as *;
+
+$elements-selection-color-theme: 'selectiontext' !default;
+$elements-mark-color-theme: 'mark' !default;
+$elements-abbr-border-bottom: 2px dashed color('primary') !default;
+$elements-list-padding-left: spacing('s') !default;
+
+///
+/// Generate a text selection styling snippet with foreground
+/// and background color
+///
+::selection {
+    opacity: 1;
+    @include color-palette($elements-selection-color-theme);
+}
+
+
+///
+/// Set font-smoothing to all relevant elements and
+/// remove the margin
+///
+@function headings() {
+    @return h1, h2, h3, h4, h5, h6;
+}
+
+
+#{headings()},
+p, ul, ol, div, span, td, small, strong, sub, sup {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing : grayscale;
+    margin: 0;
+}
+
+
+///
+/// Global declaration and convenience classes
+/// for sizes of the headline
+///
+h1 { @extend .is-typo-h1; }
+h2 { @extend .is-typo-h2; }
+h3 { @extend .is-typo-h3; }
+h4 { @extend .is-typo-h4; }
+h5 { @extend .is-typo-h5; }
+h6 { @extend .is-typo-h6; }
+
+
+///
+/// Global declaration and convenience classes for small copytext
+///
+small { @extend .is-typo-copytext--small; }
+
+
+///
+/// Global declaration and convenience classes for copytext
+///
+p, ul, ol, span, td {
+    @extend .is-typo-copytext;
+}
+
+
+///
+/// Inherit font in headlines and tables to separate tags from styling
+///
+#{headings()}, td {
+    span, p {
+        font: inherit;
+    }
+}
+
+
+mark {
+    outline-width: 0;
+    @include color-palette($elements-mark-color-theme);
+}
+
+
+address {
+    font-style: initial;
+}
+
+
+abbr[title] {
+    border-bottom: $elements-abbr-border-bottom;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+ol, ul {
+    padding-left: $elements-list-padding-left;
+}
+
+
+q {
+    &::before { content: open-quote; }
+    &::after { content: close-quote; }
+}

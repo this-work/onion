@@ -1,0 +1,7 @@
+import type { StoryObj } from '@storybook/vue3';
+declare const meta: Meta<any>;
+export default meta;
+type Story = StoryObj<object>;
+export declare const Default: Story;
+export declare const WithoutPagination: Story;
+export declare const WithLoopAndAutoplay: Story;

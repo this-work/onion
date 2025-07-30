@@ -1,0 +1,133 @@
+.c-modal {
+  $module: &;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+
+  &--fullwidth {
+    #{$module}__box {
+      @include above("s") {
+        max-width: none;
+      }
+    }
+  }
+
+  &--fullscreen {
+    #{$module}__box {
+      height: 100vh;
+      height: 100dvh;
+      max-height: none;
+      @include above("s") {
+        width: 100vw;
+        max-width: none;
+        border-radius: 0;
+      }
+    }
+  }
+
+  &--simple {
+    #{$module}__content {
+      padding: spacing("s");
+    }
+  }
+
+  &__container {
+    height: 90vh;
+    margin: 0 5%;
+  }
+
+  &__box {
+    // border-radius: unitize(10px); // TODO: change to variable
+    // background: white;
+    // width: 90%;
+    // min-height: unitize(50px);
+    // max-width: unitize(750px); // TODO: tweak value
+    // max-height: 90%; // TODO: tweak value
+    // overflow-y: auto;
+    position: relative;
+    border-radius: border-radius('s');
+    // width: 90%;
+    // margin: 5% 10%;
+    overflow: hidden;
+    @include color-palette("modal");
+  }
+
+  &__controls {
+    z-index: 1;
+    position: absolute;
+    // right: spacing("s");
+    right: unitize(20px);
+    top: unitize(20px);
+  }
+
+  &__title {
+    padding: var(--spacing-m) var(--spacing-s) var(--spacing-s) var(--spacing-s);
+  }
+
+  &__content {
+    // padding: spacing("s");
+    // padding-bottom: spacing("l");
+  }
+
+  &__image {
+    padding-bottom: spacing("s");
+  }
+
+  &__headline {
+    padding-bottom: spacing("l");
+  }
+
+  &__text {
+    // padding-bottom: spacing("l");
+  }
+
+  &--simple {
+    padding: spacing("s");
+  }
+
+  &--simple#{&}--no-title {
+    #{$module}__content {
+      // Reserve space for the title, if no title is visible
+      padding-top: calc(var(--spacing-s) + var(--spacing-s) + var(--spacing-m) + unitize(22px));
+    }
+  }
+}
+
+.transition-c-modal {
+  &-enter-active,
+  &-leave-active {
+    transition: transition(opacity, 230ms);
+    .c-modal__box {
+      transition: transition(transform, 230ms);
+    }
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    .c-modal__box {
+      transform: translateY(20px);
+      @include above("s") {
+        transform: scale(0.8);
+      }
+    }
+  }
+
+  &-enter-to,
+  &-leave-from {
+    opacity: 1;
+    .c-modal__box {
+      transform: translateY(0);
+      @include above("s") {
+        transform: scale(1);
+      }
+    }
+  }
+}

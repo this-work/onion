@@ -4,19 +4,20 @@
       :default-tab="properties.defaultTab"
       :horizontal-alignment="properties.horizontalAlignment"
     >
-      <C-Text-Tabs-Item
-        v-for="(tab, index) in tabs"
-        v-if="tabs.length > 0"
-        :key="index"
-        :title="tab.title"
-      >
-        <Slot
-          v-for="(slot, slotIndex) in tab.slots"
-          :key="slotIndex"
-          v-bind="slot.data"
-          :components="slot.components"
-        />
-      </C-Text-Tabs-Item>
+      <template v-if="tabs.length > 0">
+        <C-Text-Tabs-Item
+          v-for="(tab, index) in tabs"
+          :key="index"
+          :title="tab.title"
+        >
+          <Slot
+            v-for="(slot, slotIndex) in tab.slots"
+            :key="slotIndex"
+            v-bind="slot.data"
+            :components="slot.components"
+          />
+        </C-Text-Tabs-Item>
+      </template>
       <slot v-else />
     </C-Text-Tabs>
   </div>

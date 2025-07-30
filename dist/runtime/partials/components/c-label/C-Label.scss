@@ -1,0 +1,47 @@
+.c-label {
+  $module: &;
+  display: block;
+
+  &__pill {
+	display: inline-flex;
+	align-items: center;
+	padding: spacing('xxxs') spacing('xs');
+	border-radius: border-radius('xl');
+	@include font-style('label');
+	@include color-palette('label');
+  }
+
+  &__text {
+	display: block;
+	font: inherit;
+	font-size: inherit;
+	letter-spacing: inherit;
+  }
+
+  &__icon {
+	& + #{$module}__text {
+	  margin-left: spacing('xxs');
+	}
+  }
+
+  &--transparent {
+	#{$module}__pill{
+	  padding: 0;
+	  border-radius: 0;
+	  background: none;
+	}
+  }
+
+  &--size-s {
+	#{$module}__pill{
+	  font-size: font-size('14');
+	}
+  }
+
+  &--size-l {
+	#{$module}__pill{
+	  font-size: font-size('19');
+	}
+  }
+
+}

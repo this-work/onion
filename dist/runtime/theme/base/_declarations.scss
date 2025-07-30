@@ -1,0 +1,23 @@
+////
+///
+/// CSS Custom Props Declarations
+///
+/// @group Base
+///
+////
+
+@use 'scss-framework/framework' as *;
+
+@include declare-color-map;
+
+@include declare-color-modes;
+
+@include declare-spacing-map;
+
+@include declare-border-radius-map;
+
+@include declare-font-size-map;
+
+@include declare-font-style-map;
+
+@include declare-breakpoint-map;

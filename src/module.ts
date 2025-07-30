@@ -19,6 +19,7 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url)
 
     await installModule('@nuxt/icon', {})
+    await installModule('@nuxt/scripts', {})
     await installModule('@vueuse/nuxt', {})
 
     nuxt.options.vue.compilerOptions ||= {}

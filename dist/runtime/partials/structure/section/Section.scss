@@ -1,0 +1,10 @@
+.section {
+  position: relative;
+  place-items: stretch;
+  place-content: stretch;
+  width: 100%;
+  overflow: clip;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include grid();
+}

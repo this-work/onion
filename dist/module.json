@@ -1,0 +1,9 @@
+{
+  "name": "onion",
+  "configKey": "onion",
+  "version": "0.0.1",
+  "builder": {
+    "@nuxt/module-builder": "1.0.1",
+    "unbuild": "3.5.0"
+  }
+}

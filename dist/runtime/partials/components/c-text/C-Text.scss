@@ -1,0 +1,29 @@
+.c-text {
+  $module: &;
+  display: block;
+  @include color-palette('copytext');
+
+  > * {
+    display: block;
+  }
+
+  > * + * {
+    display: block;
+    margin-top: var(--slot-component-spacing);
+  }
+
+  p + p, p + ul, p + ol, p + dl  {
+    margin-top: spacing('s')
+  }
+
+  ul, ol, dl {
+    li + li { margin-top: spacing('xs') }
+  }
+
+  a {
+    transition: transition(all);
+    text-decoration: none;
+    @include color-palette('link');
+  }
+
+}

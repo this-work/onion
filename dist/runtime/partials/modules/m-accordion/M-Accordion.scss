@@ -1,0 +1,43 @@
+@use "sass:meta";
+
+.m-accordion {
+  display: block;
+
+  &.vertical-alignment-top .slot {
+	align-self: start;
+  }
+  &.vertical-alignment-center .slot {
+	align-self: center;
+  }
+  &.vertical-alignment-bottom .slot {
+	align-self: end;
+  }
+
+  .c-accordion + .c-accordion {
+	margin-top: spacing('m');
+  }
+
+  .c-accordion__content{
+	$slider-columns: calc($grid-columns - ((var(--module-column-start) - 1) * 2));
+	display: grid;
+	grid-auto-flow: row;
+	grid-template-columns: repeat($slider-columns, minmax(1px, 1fr));
+	align-self: stretch;
+	height: auto;
+	overflow: clip;
+
+	& {
+	  @each $breakpoint, $grid-gap in $grid-gaps {
+		@include above($breakpoint) {
+		  @if (meta.type-of($grid-gap) == string) {
+			grid-column-gap: spacing($grid-gap);
+		  } @else {
+			grid-column-gap: unitize($grid-gap);
+		  }
+		}
+	  }
+	}
+
+  }
+
+}

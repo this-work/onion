@@ -1,0 +1,165 @@
+@use "sass:meta";
+
+.m-slider {
+  $module: &;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  justify-content: center;
+  overflow-x: clip;
+  overflow-y: visible;
+
+  &.vertical-alignment-top .slot {
+    align-self: flex-start;
+  }
+  &.vertical-alignment-center .slot {
+    align-self: center;
+  }
+  &.vertical-alignment-bottom .slot {
+    align-self: flex-end;
+  }
+
+  &__slide {
+    $slider-columns: calc($grid-columns - ((var(--module-column-start) - 1) * 2));
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat($slider-columns, minmax(1px, 1fr));
+    align-self: stretch;
+    height: auto;
+    overflow: clip;
+    @include column-width-as-percentage($slider-columns, $slider-columns);
+
+    & {
+      @each $breakpoint, $grid-gap in $grid-gaps {
+        @include above($breakpoint) {
+          @if (meta.type-of($grid-gap) == string) {
+            grid-column-gap: spacing($grid-gap);
+          } @else {
+            grid-column-gap: unitize($grid-gap);
+          }
+        }
+      }
+    }
+
+    @include above('xs') {
+      grid-template-columns: repeat(var(--slide-width) , minmax(1px, 1fr));
+      @include column-width-as-percentage(var(--slide-width), $slider-columns);
+    }
+
+  }
+
+  .c-slider {
+
+    &__navigation {
+      position: sticky;
+      z-index: 800;
+      bottom: spacing("s");
+      margin-top: spacing("m");
+    }
+    &__navigation-wrapper {
+      min-height: spacing("l");
+      min-width: spacing("l");
+      padding: spacing("xxxs") spacing("xs");
+      border-radius: spacing("l");
+      background: color('system-independent-light');
+      backdrop-filter: blur(10px);
+      opacity: 0;
+    }
+    &__pagination {
+      opacity: 0;
+    }
+  }
+
+  &--show-navigation {
+    .c-slider {
+      &__navigation-wrapper {
+        animation-name: showSliderControlAnimation;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(.17,.67,.69,1.18);
+
+      }
+      &__pagination {
+        animation-name: showSliderPaginationAnimation;
+        animation-duration: 0.3s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  &--hide-navigation {
+    .c-slider {
+      &__navigation-wrapper {
+        animation-name: hideSliderControlAnimation;
+        animation-duration: 1.2s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      }
+      &__pagination {
+        opacity: 1;
+        animation-name: hideSliderPaginationAnimation;
+        animation-duration: 0.3s;
+        animation-delay: 0.4s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+@keyframes showSliderControlAnimation {
+  0%   {
+    transform: scale(1,1);
+    opacity: 0;
+    max-width: spacing("l");
+  }
+  10%  {
+    transform: scale(1.5,1.5);
+    opacity: 1;
+  }
+  20%  {
+    transform: scale(1,1);
+    max-width: spacing("l");
+  }
+  99% {
+    max-width: 800px;
+  }
+  100% {
+    max-width: none;
+    opacity: 1;
+  }
+}
+
+@keyframes showSliderPaginationAnimation {
+  0%   {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideSliderControlAnimation {
+  0%   {
+    max-width: 800px;
+    opacity: 1;
+  }
+  65%  {
+    max-width: spacing("l");
+  }
+  80%  {
+    opacity: 1;
+  }
+  100% {
+    max-width: spacing("l");
+    opacity: 0;
+  }
+}
+
+@keyframes hideSliderPaginationAnimation {
+  0%   {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
