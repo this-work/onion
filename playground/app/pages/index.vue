@@ -75,6 +75,22 @@
         />
       </Slot>
     </Module>
+    <Module
+      :start="3"
+      padding-top="l"
+      padding-bottom="l"
+      vertical-alignment="center"
+    >
+      <Slot
+        :width="9"
+      >
+        <C-Video
+          src="https://www.youtube.com/watch?v=DV3zhRJVJYE"
+          :autoplay="true"
+          border-radius="m"
+        />
+      </Slot>
+    </Module>
   </Section>
 </template>
 

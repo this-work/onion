@@ -3,7 +3,26 @@
     :is="tag"
     :class="partialClass"
   >
+    <ScriptYouTubePlayer
+      v-if="isStreamingVideo"
+      :class="videoClasses"
+      :style="videoStyles as any"
+      :video-id="streamingVideoId"
+      :player-vars="{ controls: controls? 1 : 0, loop: loop? 1 : 0, playsinline: isInlinePlay? 1 : 0 }"
+    >
+      <template v-if="poster" #placeholder="{}">
+        <img
+          :src="poster"
+          :alt="title"
+        >
+      </template>
+      <template #awaitingLoad>
+        <c-button :class="useBem('play-button')" text="Video starten" appearance="primary" />
+      </template>
+    </ScriptYouTubePlayer>
+
     <video
+      v-else
       :class="videoClasses"
       :style="videoStyles as any"
       :tabindex="(showPoster ? -1 : undefined)"
@@ -39,6 +58,7 @@
 
       </slot>
     </video>
+
     <c-text
       v-if="description"
       :tag="captionTag"
@@ -55,6 +75,7 @@ import type {
   BorderRadius,
   Breakpoint,
   CSSObject,
+  CSSClassObject,
   ColormodeComposableProperties,
 } from '../../../types'
 
@@ -218,7 +239,7 @@ const { componentName } = useComponentInstance()
  * classes on the root element of the component
  */
 const partialClass = computed(() => {
-  const aspectRatioClasses: ClassObject = {}
+  const aspectRatioClasses: CSSClassObject = {}
   if (properties.aspectRatios) {
     for (const aspectRatio in properties.aspectRatios) {
       aspectRatioClasses[useBem(undefined, `has-aspect-ratio-${aspectRatio}`)] = true
@@ -237,7 +258,7 @@ const partialClass = computed(() => {
  * classes on the image element of the component
  */
 const videoClasses = computed(() => {
-  const classes: ClassObject = {
+  const classes: CSSClassObject = {
     [useBem('video')]: true,
   }
   if (properties.borderRadius) {
@@ -264,6 +285,47 @@ const videoStyles = computed(() => {
     }
   }
   return cssStyles
+})
+
+/**
+ * Check if the video is a streaming video of youtube or
+ * vimeo. When this is the case, following video tag attributes
+ *  are ignored:
+ * :srcAlternates=""
+ * :fit=""
+ * :position=""
+ * :muted=""
+ * :controlsDownload=""
+ * :controlsFullscreen=""
+ * :tracks=""
+ */
+const isStreamingVideo = computed(() => {
+  if (!properties.src) {
+    return false
+  }
+  return properties.src.includes('youtube.')
+})
+
+/**
+ * Check if the video is a streaming video of YouTube or
+ * vimeo. When this is the case, all video tag attribute
+ * like loop or fit are ignored.
+ */
+const streamingVideoId = computed(() => {
+  if (isStreamingVideo.value) {
+    if (properties.src.includes('youtube.')) {
+      return properties.src.split('v=')[1]
+    }
+    else if (properties.src.includes('vimeo.')) {
+      return properties.src.split('vimeo.com/')[1]
+    }
+    else {
+      return isStreamingVideo.value
+    }
+  }
+  else {
+    return undefined
+  }
 })
 
 /**
@@ -299,7 +361,7 @@ const formattedSources = computed(() => {
   return sources.reverse()
 })
 
-const showPoster = computed(() => properties.poster?.length > 0)
+const showPoster = computed(() => properties.poster?.length || 0 > 0)
 
 const isMuted = computed(() => !!(properties.muted || properties.autoplay))
 

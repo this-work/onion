@@ -3,7 +3,26 @@
     :is="tag"
     :class="partialClass"
   >
+    <ScriptYouTubePlayer
+      v-if="isStreamingVideo"
+      :class="videoClasses"
+      :style="videoStyles"
+      :video-id="streamingVideoId"
+      :player-vars="{ controls: controls ? 1 : 0, loop: loop ? 1 : 0, playsinline: isInlinePlay ? 1 : 0 }"
+    >
+      <template v-if="poster" #placeholder="{}">
+        <img
+          :src="poster"
+          :alt="title"
+        >
+      </template>
+      <template #awaitingLoad>
+        <c-button :class="useBem('play-button')" text="Video starten" appearance="primary" />
+      </template>
+    </ScriptYouTubePlayer>
+
     <video
+      v-else
       :class="videoClasses"
       :style="videoStyles"
       :tabindex="showPoster ? -1 : void 0"
@@ -39,6 +58,7 @@
 
       </slot>
     </video>
+
     <c-text
       v-if="description"
       :tag="captionTag"
@@ -120,6 +140,25 @@ const videoStyles = computed(() => {
   }
   return cssStyles;
 });
+const isStreamingVideo = computed(() => {
+  if (!properties.src) {
+    return false;
+  }
+  return properties.src.includes("youtube.") || properties.src.includes("vimeo.");
+});
+const streamingVideoId = computed(() => {
+  if (isStreamingVideo.value) {
+    if (properties.src.includes("youtube.")) {
+      return properties.src.split("v=")[1];
+    } else if (properties.src.includes("vimeo.")) {
+      return properties.src.split("vimeo.com/")[1];
+    } else {
+      return isStreamingVideo.value;
+    }
+  } else {
+    return void 0;
+  }
+});
 const formattedSources = computed(() => {
   const sources = [];
   if (!properties.srcAlternates || !Object.prototype.hasOwnProperty.call(properties.srcAlternates, "default")) {
@@ -145,7 +184,7 @@ const formattedSources = computed(() => {
   }
   return sources.reverse();
 });
-const showPoster = computed(() => properties.poster?.length > 0);
+const showPoster = computed(() => properties.poster?.length || 0 > 0);
 const isMuted = computed(() => !!(properties.muted || properties.autoplay));
 const isInlinePlay = computed(() => properties.autoplay || properties.playsinline);
 const captionTag = computed(() => properties.tag === "figure" ? "figcaption" : "span");

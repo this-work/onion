@@ -29,6 +29,7 @@
     max-width: inherit;
     min-height: inherit;
     max-height: inherit;
+    overflow: clip;
   }
 
   &__caption {
@@ -37,6 +38,14 @@
     > * {
       font: inherit;
     }
+  }
+
+  &__play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: zindex(100);
   }
 
   @each $breakpoint, $size in map.merge(('default': 0px), $breakpoint-config) {
