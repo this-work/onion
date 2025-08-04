@@ -1,34 +1,41 @@
 <template>
   <article :class="partialClass">
-    <C-Wrapper
-      :condition="properties.link"
-      tag="NuxtLink"
-      v-bind="properties.link"
-    >
-      <C-Image
-        v-if="properties.image"
-        v-bind="properties.image"
-      />
+    <slot>
+      <C-Wrapper
+        :condition="properties.link"
+        tag="NuxtLink"
+        v-bind="properties.link"
+      >
+        <slot name="image">
+          <C-Image
+            v-if="properties.image"
+            v-bind="properties.image"
+          />
+        </slot>
 
-      <C-Label
-        v-if="properties.label"
-        v-bind="properties.label"
-      />
+        <slot name="label">
+          <C-Label
+            v-if="properties.label"
+            v-bind="properties.label"
+          />
+        </slot>
 
-      <span>dghthsrhsrzszjsjrzsjzrjzsrt</span>
+        <slot name="headline">
+          <span v-if="overline" v-html="overline" />
+          <C-Headline
+            v-if="properties.headline"
+            v-bind="properties.headline"
+          />
+        </slot>
 
-      <C-Headline
-        v-if="properties.headline"
-        v-bind="properties.headline"
-      />
-
-      <C-Text
-        v-if="properties.text"
-        v-bind="properties.text"
-      />
-
-      <slot />
-    </C-Wrapper>
+        <slot name="text">
+          <C-Text
+            v-if="properties.text"
+            v-bind="properties.text"
+          />
+        </slot>
+      </C-Wrapper>
+    </slot>
   </article>
 </template>
 
@@ -44,12 +51,12 @@ import { useComponentInstance } from "../../../composables/useComponentInstance"
 const properties = defineProps({
   type: { type: String, required: false, default: "default" },
   hero: { type: Boolean, required: false, default: false },
-  overline: { type: String, required: true },
-  headline: { type: Object, required: true },
-  text: { type: Object, required: true },
-  image: { type: Object, required: true },
-  label: { type: Object, required: true },
-  link: { type: Object, required: true },
+  overline: { type: String, required: false },
+  headline: { type: Object, required: false },
+  text: { type: Object, required: false },
+  image: { type: Object, required: false },
+  label: { type: Object, required: false },
+  link: { type: Object, required: false },
   colorMode: { type: String, required: false }
 });
 const { componentName } = useComponentInstance();

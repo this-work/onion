@@ -78,6 +78,7 @@
 
   &__content {
     display: flex;
+    flex-shrink: 0;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -88,7 +89,9 @@
       padding: spacing("xxxs") spacing("xs");
     }
   }
-
+  &__text {
+    white-space: nowrap;
+  }
   &__text, &__icon {
     font: inherit;
   }

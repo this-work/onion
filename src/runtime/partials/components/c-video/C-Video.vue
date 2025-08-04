@@ -6,7 +6,6 @@
     <ScriptYouTubePlayer
       v-if="isStreamingVideo"
       :class="videoClasses"
-      :style="videoStyles as any"
       :video-id="streamingVideoId"
       :player-vars="{ controls: controls? 1 : 0, loop: loop? 1 : 0, playsinline: isInlinePlay? 1 : 0 }"
     >
@@ -17,7 +16,7 @@
         >
       </template>
       <template #awaitingLoad>
-        <c-button :class="useBem('play-button')" text="Video starten" appearance="primary" />
+        <c-button icon="play-circle-outline" :class="useBem('play-button')" text="Video starten" appearance="primary" />
       </template>
     </ScriptYouTubePlayer>
 
@@ -298,6 +297,7 @@ const videoStyles = computed(() => {
  * :controlsDownload=""
  * :controlsFullscreen=""
  * :tracks=""
+ * :aspect-ratios=""
  */
 const isStreamingVideo = computed(() => {
   if (!properties.src) {
@@ -315,9 +315,6 @@ const streamingVideoId = computed(() => {
   if (isStreamingVideo.value) {
     if (properties.src.includes('youtube.')) {
       return properties.src.split('v=')[1]
-    }
-    else if (properties.src.includes('vimeo.')) {
-      return properties.src.split('vimeo.com/')[1]
     }
     else {
       return isStreamingVideo.value
