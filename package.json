@@ -14,7 +14,6 @@
     "html",
     "framework"
   ],
-  "license": "MIT",
   "exports": {
     ".": {
       "types": "./dist/types.d.mts",
