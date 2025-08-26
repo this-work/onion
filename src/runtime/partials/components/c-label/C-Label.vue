@@ -1,6 +1,6 @@
 <template>
-  <div :class="partialClass">
-    <div :class="useBem('pill')">
+  <component :class="partialClass" :is="tag">
+    <span :class="useBem('pill')">
       <C-Icon
         tag="span"
         :name="icon"
@@ -11,8 +11,8 @@
         :class="useBem('text')"
         v-html="text"
       />
-    </div>
-  </div>
+    </span>
+  </component>
 </template>
 
 <script lang="ts">
@@ -21,6 +21,12 @@ import type {
 } from '../../../types'
 
 export interface CLabel extends ColormodeComposableProperties {
+  /**
+   * Optional custom tag of the text
+   * @default 'div'
+   */
+  tag?: string
+
   /**
    * Optional text of the label
    */
@@ -55,6 +61,7 @@ import { useBem } from '../../../composables/useBem'
  * Declare all props and defaults for vue.
  */
 const properties = withDefaults(defineProps<CLabel>(), {
+  tag: 'div',
   background: true,
   size: 'm',
 })

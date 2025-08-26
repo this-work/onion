@@ -2,7 +2,7 @@
   <article :class="partialClass">
     <slot>
       <C-Wrapper
-        :condition="properties.link"
+        :condition="typeof properties.link != 'undefined' && properties.link != null"
         tag="NuxtLink"
         v-bind="properties.link"
       >
@@ -10,28 +10,40 @@
           <C-Image
             v-if="properties.image"
             v-bind="properties.image"
+            :class="useBem('image')"
           />
         </slot>
 
         <slot name="label">
           <C-Label
             v-if="properties.label"
+            tag="span"
+            size="s"
             v-bind="properties.label"
+            :class="useBem('label')"
           />
         </slot>
 
         <slot name="headline">
-          <span v-if="overline" v-html="overline" />
+          <span
+            v-if="overline"
+            v-html="overline"
+            :class="useBem('overline')"
+          />
           <C-Headline
             v-if="properties.headline"
+            tag="span"
             v-bind="properties.headline"
+            :class="useBem('headline')"
           />
         </slot>
 
         <slot name="text">
           <C-Text
             v-if="properties.text"
+            tag="span"
             v-bind="properties.text"
+            :class="useBem('text')"
           />
         </slot>
       </C-Wrapper>
@@ -55,6 +67,7 @@ const properties = defineProps({
   headline: { type: Object, required: false },
   text: { type: Object, required: false },
   image: { type: Object, required: false },
+  backgroundColor: { type: String, required: false, default: "white" },
   label: { type: Object, required: false },
   link: { type: Object, required: false },
   colorMode: { type: String, required: false }
@@ -65,8 +78,7 @@ const partialClass = computed(
     componentName,
     useColorMode().getClasses(properties),
     {
-      [useBem(void 0, "transparent")]: !properties.background,
-      [useBem(void 0, `size-${properties.size}`)]: properties.size != "m"
+      [`background-color-${properties.background}`]: properties.background
     }
   ])
 );

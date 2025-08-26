@@ -1,6 +1,6 @@
 <template>
-  <div :class="partialClass">
-    <div :class="useBem('pill')">
+  <component :class="partialClass" :is="tag">
+    <span :class="useBem('pill')">
       <C-Icon
         tag="span"
         :name="icon"
@@ -11,8 +11,8 @@
         :class="useBem('text')"
         v-html="text"
       />
-    </div>
-  </div>
+    </span>
+  </component>
 </template>
 
 <script>
@@ -25,6 +25,7 @@ import { useColorMode } from "../../../composables/useColorMode";
 import { useComponentInstance } from "../../../composables/useComponentInstance";
 import { useBem } from "../../../composables/useBem";
 const properties = defineProps({
+  tag: { type: String, required: false, default: "div" },
   text: { type: String, required: false },
   icon: { type: String, required: false },
   background: { type: Boolean, required: false, default: true },

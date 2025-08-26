@@ -5,6 +5,13 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   compatibilityDate: '2025-07-15',
+  vite: {
+    server: {
+      fs: {
+        allow: ['..'],
+      },
+    },
+  },
   onion: {
     theme: {
       css: '@/assets/themes/default/base/main.scss',

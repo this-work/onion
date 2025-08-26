@@ -1248,5 +1248,146 @@ const sections = [
       },
     ],
   },
+  {
+    data: {
+      background: 'medium',
+      paddingTop: 'none',
+      paddingBottom: 'xl',
+    },
+    modules: [
+      {
+        data: {
+          marginTop: 'xl',
+          paddingTop: 'l',
+          paddingRight: 'l',
+          verticalAlignment: 'top',
+        },
+        slots: [
+          {
+            data: {
+              colorMode: 'light',
+              width: 3,
+            },
+            components: [
+              {
+                name: 'C-Tile',
+                data: {
+                  type: 'primary',
+                  hero: false,
+                  overline: 'Neue Produkte',
+                  headline: {
+                    headline: 'Größe ist nur die halbe Geschichte',
+                  },
+                  text: {
+                    text: 'Erleben Sie die nächste Generation des Klangs mit unserem revolutionären Sound Equalizer! Dieses Meisterwerk der Audiotechnik kombiniert fortschrittliche Technologie mit einem atemberaubend modernen und stilvollen Design.',
+                  },
+                  image: {
+                    src: 'https://placehold.co/600x600/BDBDBD/fff',
+                  },
+                  label: {
+                    icon: 'check',
+                    text: 'Label',
+                  },
+                  link: {
+                    tag: 'a',
+                    href: 'https://www.google.com',
+                  },
+                },
+              },
+            ],
+          },
+          {
+            data: {
+              colorMode: 'light',
+              width: 6,
+            },
+            components: [
+              {
+                name: 'C-Tile',
+                data: {
+                  type: 'primary',
+                  hero: true,
+                  overline: 'Neue Produkte',
+                  headline: {
+                    headline: 'Größe ist nur die halbe Geschichte',
+                  },
+                  text: {
+                    text: 'Erleben Sie die nächste Generation des Klangs mit unserem revolutionären Sound Equalizer! Dieses Meisterwerk der Audiotechnik kombiniert fortschrittliche Technologie mit einem atemberaubend modernen und stilvollen Design.',
+                  },
+                  image: {
+                    src: 'https://placehold.co/600x600/BDBDBD/fff',
+                  },
+                  label: {
+                    icon: 'check',
+                    text: 'Label',
+                  },
+                  link: {
+                    tag: 'a',
+                    href: 'https://www.google.com',
+                  },
+                },
+              },
+            ],
+          },
+          {
+            data: {
+              colorMode: 'light',
+              width: 3,
+            },
+            components: [
+              {
+                name: 'C-Tile',
+                data: {
+                  type: 'primary',
+                  hero: false,
+                  overline: 'Neue Produkte',
+                  headline: {
+                    headline: 'Größe ist nur die halbe Geschichte',
+                  },
+                  text: {
+                    text: 'Erleben Sie die nächste Generation des Klangs mit unserem revolutionären Sound Equalizer! Dieses Meisterwerk der Audiotechnik kombiniert fortschrittliche Technologie mit einem atemberaubend modernen und stilvollen Design.',
+                  },
+                  image: {
+                    src: 'https://placehold.co/600x600/BDBDBD/fff',
+                  },
+                  label: {
+                    icon: 'check',
+                    text: 'Label',
+                  },
+                },
+              },
+            ],
+          },
+          {
+            data: {
+              colorMode: 'light',
+              width: 3,
+            },
+            components: [
+              {
+                name: 'C-Tile',
+                data: {
+                  type: 'primary',
+                  hero: false,
+                  overline: 'Neue Produkte',
+                  headline: {
+                    headline: 'Größe ist nur die halbe Geschichte',
+                  },
+                  text: {
+                    text: 'Erleben Sie die nächste Generation des Klangs mit unserem revolutionären Sound Equalizer! Dieses Meisterwerk der Audiotechnik kombiniert fortschrittliche Technologie mit einem atemberaubend modernen und stilvollen Design.',
+                  },
+                  backgroundColor: 'primary',
+                  label: {
+                    icon: 'check',
+                    text: 'Label',
+                  },
+                },
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]
 </script>

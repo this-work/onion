@@ -1,4 +1,4 @@
-import * as _nuxt_schema from '@nuxt/schema';
+import * as nuxt_schema from 'nuxt/schema';
 export * from '../dist/runtime/types/index.js';
 
 interface ModuleOptions {
@@ -8,7 +8,7 @@ interface ModuleOptions {
     };
 }
 
-declare const _default: _nuxt_schema.NuxtModule<ModuleOptions, ModuleOptions, false>;
+declare const _default: nuxt_schema.NuxtModule<ModuleOptions, ModuleOptions, false>;
 
 export { _default as default };
 export type { ModuleOptions };

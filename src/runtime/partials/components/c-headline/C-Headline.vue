@@ -1,5 +1,5 @@
 <template>
-  <div :class="partialClass">
+  <component :class="partialClass" :is="tag">
     <component
       :is="headlineTag"
       :class="headlineClass"
@@ -8,7 +8,7 @@
         <span v-html="headline" />
       </slot>
     </component>
-  </div>
+  </component>
 </template>
 
 <script lang="ts">
@@ -17,6 +17,12 @@ import type {
 } from '../../../types'
 
 export interface CHeadline extends ColormodeComposableProperties {
+  /**
+   * Optional custom tag of the text
+   * @default 'div'
+   */
+  tag?: string
+
   /**
    * Headline text
    */
@@ -46,6 +52,7 @@ import { useComponentInstance } from '../../../composables/useComponentInstance'
  * Declare all props and defaults for vue.
  */
 const properties = withDefaults(defineProps<CHeadline>(), {
+  tag: 'div',
   headlineTag: 'h2',
   headlineType: 'h2',
 })

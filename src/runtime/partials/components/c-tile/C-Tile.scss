@@ -1,4 +1,32 @@
 .c-tile {
   $module: &;
+  position: relative;
   display: block;
+  border: 2px solid var(--color-system-dark-10-alpha);
+  border-radius: var(--border-radius-s);
+  overflow: clip;
+
+  &__image {
+
+  }
+
+  &__label {
+    position: absolute;
+    top: spacing('s');
+    right: spacing('s');
+  }
+
+  &__overline {
+
+  }
+
+  &__headline {
+
+  }
+
+  &__text {
+
+  }
+
+
 }
