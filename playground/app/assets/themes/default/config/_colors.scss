@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use 'scss-framework/framework' as *;
+@use '@this/scss-framework/framework' as *;
 
 $color-base: map.merge($color-base, (
   'primary': #a51b9d

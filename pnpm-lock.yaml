@@ -17,6 +17,9 @@ importers:
       '@nuxt/scripts':
         specifier: ^0.11.10
         version: 0.11.10(@netlify/blobs@9.1.2)(@types/youtube@0.1.2)(@unhead/vue@2.0.14(vue@3.5.18(typescript@5.9.2)))(db0@0.3.2)(ioredis@5.7.0)(magicast@0.3.5)(typescript@5.9.2)(vue@3.5.18(typescript@5.9.2))
+      '@this/scss-framework':
+        specifier: git+https://github.com/this-work/scss-framework#master
+        version: https://codeload.github.com/this-work/scss-framework/tar.gz/1a639a020b49dc59e5aac1f502f5e281ec059204(sass@1.90.0)
       '@types/lodash':
         specifier: ^4.17.14
         version: 4.17.20
@@ -38,9 +41,6 @@ importers:
       sass:
         specifier: ^1.77.8
         version: 1.90.0
-      scss-framework:
-        specifier: git+https://github.com/this-work/scss-framework#master
-        version: '@this/scss-framework@https://codeload.github.com/this-work/scss-framework/tar.gz/1a639a020b49dc59e5aac1f502f5e281ec059204(sass@1.90.0)'
       swiper:
         specifier: ^11.1.15
         version: 11.2.10

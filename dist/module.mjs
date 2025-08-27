@@ -29,7 +29,7 @@ const module = defineNuxtModule({
       config.css.preprocessorOptions ||= {};
       config.css.preprocessorOptions.scss ||= {};
       config.css.preprocessorOptions.scss.additionalData ||= "";
-      config.css.preprocessorOptions.scss.additionalData += '@use "' + resolver.resolve("../node_modules/scss-framework/framework") + '" as *;';
+      config.css.preprocessorOptions.scss.additionalData += '@use "@this/scss-framework/framework" as *;';
       config.css.preprocessorOptions.scss.additionalData += '@use "' + resolver.resolve("runtime/theme/config/variables") + '" as *;';
       if (options.theme?.config) {
         config.css.preprocessorOptions.scss.additionalData += '@use "' + options.theme.config + '" as *;';

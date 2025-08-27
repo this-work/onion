@@ -43,6 +43,7 @@
     "@iconify-json/material-symbols": "^1.2.30",
     "@nuxt/icon": "^1.5.2",
     "@nuxt/scripts": "^0.11.10",
+    "@this/scss-framework": "git+https://github.com/this-work/scss-framework#master",
     "@types/lodash": "^4.17.14",
     "@types/youtube": "^0.1.2",
     "@unhead/vue": "^2.0.12",
@@ -50,7 +51,6 @@
     "focus-trap": "^7.6.2",
     "lodash": "^4.17.21",
     "sass": "^1.77.8",
-    "scss-framework": "git+https://github.com/this-work/scss-framework#master",
     "swiper": "^11.1.15"
   },
   "devDependencies": {
