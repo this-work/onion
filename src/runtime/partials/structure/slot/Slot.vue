@@ -70,12 +70,13 @@ import { useBackground } from '../../../composables/useBackground'
 import { useColorMode } from '../../../composables/useColorMode'
 import { useSpacing } from '../../../composables/useSpacing'
 import { useComponentInstance } from '../../../composables/useComponentInstance'
+import {useCssVar} from "../../../composables/useCssVar";
 
 /**
  * Declare all props and defaults for vue.
  */
 const properties = withDefaults(defineProps<SlotProperties>(), {
-  width: 16,
+  width: useCssVar('grid-columns'),
   componentSpacing: 'l',
 })
 

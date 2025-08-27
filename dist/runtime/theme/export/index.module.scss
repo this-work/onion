@@ -17,6 +17,8 @@
 
   --breakpoints: #{meta.inspect($breakpoint-config)};
 
+  --grid-columns: #{meta.inspect($grid-columns)};
+
   --grid-gaps: #{meta.inspect($grid-gaps)};
 }
 

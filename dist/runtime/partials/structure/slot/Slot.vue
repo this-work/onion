@@ -25,8 +25,9 @@ import { useBackground } from "../../../composables/useBackground";
 import { useColorMode } from "../../../composables/useColorMode";
 import { useSpacing } from "../../../composables/useSpacing";
 import { useComponentInstance } from "../../../composables/useComponentInstance";
+import { useCssVar } from "../../../composables/useCssVar";
 const properties = defineProps({
-  width: { type: Number, required: false, default: 16 },
+  width: { type: Number, required: false, default: useCssVar("grid-columns") },
   borderRadius: { type: [String, null], required: false },
   horizontalAlignment: { type: String, required: false },
   componentSpacing: { type: String, required: false, default: "l" },

@@ -58,6 +58,7 @@
       <Slot
         :width="6"
       >
+        <C-Icon name="filter-vintage-outline" size="xl" />
         <C-Label
           icon="filter-vintage-outline"
           :background="true"
@@ -67,6 +68,23 @@
           headline="Die <mark>Bedeutung</mark> von null Reibung"
           headline-type="h2"
           headline-tag="h2"
+        />
+        <C-Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. " />
+        <C-Button
+          appearance="primary"
+          text="Primary button"
+        />
+      </Slot>
+    </Module>
+    <Module
+      padding-top="l"
+      padding-bottom="l"
+    >
+      <Slot
+      >
+        <C-Image
+          src="https://placehold.co/600x600/BDBDBD/fff"
+          border-radius="m"
         />
         <C-Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. " />
         <C-Button

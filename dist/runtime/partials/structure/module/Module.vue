@@ -26,6 +26,7 @@ import { normalizeClass, computed, useAttrs } from "vue";
 import { useBackground } from "../../../composables/useBackground";
 import { useColorMode } from "../../../composables/useColorMode";
 import { useSpacing } from "../../../composables/useSpacing";
+import { useCssVar } from "../../../composables/useCssVar";
 import { useComponentInstance } from "../../../composables/useComponentInstance";
 const properties = defineProps({
   start: { type: Number, required: false, default: 1 },
@@ -67,7 +68,7 @@ const partialClass = computed(
 const partialStyle = computed(() => ({
   ...useBackground().getStyles(properties),
   "--module-column-start": properties.start,
-  "--module-column-width": properties.width ? properties.width : 16 - 2 * (properties.start - 1)
+  "--module-column-width": properties.width ? properties.width : useCssVar("grid-columns") - 2 * (properties.start - 1)
 }));
 const partialType = computed(() => {
   if (properties.type === "stacked") {
