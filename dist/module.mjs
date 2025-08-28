@@ -57,14 +57,14 @@ const module = defineNuxtModule({
       from: resolver.resolve("runtime/composables/useColorMode")
     });
     addImports({
-      name: "ComponentInstance",
-      as: "ComponentInstance",
-      from: resolver.resolve("runtime/composables/ComponentInstance")
+      name: "useComponentInstance",
+      as: "useComponentInstance",
+      from: resolver.resolve("runtime/composables/useComponentInstance")
     });
     addImports({
-      name: "useCSSVar",
-      as: "useCSSVar",
-      from: resolver.resolve("runtime/composables/useCSSVar")
+      name: "useCssVar",
+      as: "useCssVar",
+      from: resolver.resolve("runtime/composables/useCssVar")
     });
     addImports({
       name: "useModal",
