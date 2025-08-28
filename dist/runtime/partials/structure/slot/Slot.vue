@@ -27,7 +27,7 @@ import { useSpacing } from "../../../composables/useSpacing";
 import { useComponentInstance } from "../../../composables/useComponentInstance";
 import { useCssVar } from "../../../composables/useCssVar";
 const properties = defineProps({
-  width: { type: Number, required: false, default: useCssVar("grid-columns") },
+  width: { type: Number, required: false, default: parseInt(useCssVar("grid-columns")) },
   borderRadius: { type: [String, null], required: false },
   horizontalAlignment: { type: String, required: false },
   componentSpacing: { type: String, required: false, default: "l" },

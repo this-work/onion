@@ -76,7 +76,7 @@ import {useCssVar} from "../../../composables/useCssVar";
  * Declare all props and defaults for vue.
  */
 const properties = withDefaults(defineProps<SlotProperties>(), {
-  width: useCssVar('grid-columns'),
+  width: parseInt(useCssVar('grid-columns')),
   componentSpacing: 'l',
 })
 

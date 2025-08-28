@@ -68,7 +68,7 @@ const partialClass = computed(
 const partialStyle = computed(() => ({
   ...useBackground().getStyles(properties),
   "--module-column-start": properties.start,
-  "--module-column-width": properties.width ? properties.width : useCssVar("grid-columns") - 2 * (properties.start - 1)
+  "--module-column-width": properties.width ? properties.width : parseInt(useCssVar("grid-columns")) - 2 * (properties.start - 1)
 }));
 const partialType = computed(() => {
   if (properties.type === "stacked") {
