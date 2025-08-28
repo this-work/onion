@@ -3,6 +3,7 @@
     <span :class="useBem('pill')">
       <C-Icon
         tag="span"
+        v-if="icon"
         :name="icon"
         :class="useBem('icon')"
       />
