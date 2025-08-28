@@ -1,4 +1,4 @@
-import { defineNuxtModule, addComponentsDir, addImportsDir, createResolver, extendViteConfig, installModule } from '@nuxt/kit'
+import { defineNuxtModule, addComponentsDir, addImports, createResolver, extendViteConfig, installModule } from '@nuxt/kit'
 
 export interface ModuleOptions {
   theme?: {
@@ -44,7 +44,8 @@ export default defineNuxtModule<ModuleOptions>({
       config.css.preprocessorOptions.scss ||= {}
       config.css.preprocessorOptions.scss.additionalData ||= ''
       config.css.preprocessorOptions.scss.additionalData += '@use "@this/scss-framework/framework" as *;';
-      config.css.preprocessorOptions.scss.additionalData += '@use "' + resolver.resolve("runtime/theme/config/variables") + '" as *;';
+      config.css.preprocessorOptions.scss.additionalData += '@' +
+        'use "' + resolver.resolve("runtime/theme/config/variables") + '" as *;';
       if (options.theme?.config) {
         config.css.preprocessorOptions.scss.additionalData += '@use "' + options.theme.config + '" as *;'
       }
@@ -57,6 +58,49 @@ export default defineNuxtModule<ModuleOptions>({
       global: true,
     })
 
-    addImportsDir(resolver.resolve('runtime/composables'))
+    // Disabled because of https://github.com/SuperchupuDev/tinyglobby/issues/162
+    // addImportsDir(resolver.resolve('runtime/composables'))
+
+    addImports({
+      name: 'useBackground',
+      as: 'useBackground',
+      from: resolver.resolve('runtime/composables/useBackground')
+    })
+    addImports({
+      name: 'useBem',
+      as: 'useBem',
+      from: resolver.resolve('runtime/composables/useBem')
+    })
+    addImports({
+      name: 'useColorMode',
+      as: 'useColorMode',
+      from: resolver.resolve('runtime/composables/useColorMode')
+    })
+    addImports({
+      name: 'ComponentInstance',
+      as: 'ComponentInstance',
+      from: resolver.resolve('runtime/composables/ComponentInstance')
+    })
+    addImports({
+      name: 'useCSSVar',
+      as: 'useCSSVar',
+      from: resolver.resolve('runtime/composables/useCSSVar')
+    })
+    addImports({
+      name: 'useModal',
+      as: 'useModal',
+      from: resolver.resolve('runtime/composables/useModal')
+    })
+    addImports({
+      name: 'useScrollLocker',
+      as: 'useScrollLocker',
+      from: resolver.resolve('runtime/composables/useScrollLocker')
+    })
+    addImports({
+      name: 'useSpacing',
+      as: 'useSpacing',
+      from: resolver.resolve('runtime/composables/useSpacing')
+    })
+
   },
 })

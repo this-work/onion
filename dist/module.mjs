@@ -1,4 +1,4 @@
-import { defineNuxtModule, createResolver, installModule, extendViteConfig, addComponentsDir, addImportsDir } from '@nuxt/kit';
+import { defineNuxtModule, createResolver, installModule, extendViteConfig, addComponentsDir, addImports } from '@nuxt/kit';
 
 const module = defineNuxtModule({
   meta: {
@@ -41,7 +41,46 @@ const module = defineNuxtModule({
       extensions: ["vue"],
       global: true
     });
-    addImportsDir(resolver.resolve("runtime/composables"));
+    addImports({
+      name: "useBackground",
+      as: "useBackground",
+      from: resolver.resolve("runtime/composables/useBackground")
+    });
+    addImports({
+      name: "useBem",
+      as: "useBem",
+      from: resolver.resolve("runtime/composables/useBem")
+    });
+    addImports({
+      name: "useColorMode",
+      as: "useColorMode",
+      from: resolver.resolve("runtime/composables/useColorMode")
+    });
+    addImports({
+      name: "ComponentInstance",
+      as: "ComponentInstance",
+      from: resolver.resolve("runtime/composables/ComponentInstance")
+    });
+    addImports({
+      name: "useCSSVar",
+      as: "useCSSVar",
+      from: resolver.resolve("runtime/composables/useCSSVar")
+    });
+    addImports({
+      name: "useModal",
+      as: "useModal",
+      from: resolver.resolve("runtime/composables/useModal")
+    });
+    addImports({
+      name: "useScrollLocker",
+      as: "useScrollLocker",
+      from: resolver.resolve("runtime/composables/useScrollLocker")
+    });
+    addImports({
+      name: "useSpacing",
+      as: "useSpacing",
+      from: resolver.resolve("runtime/composables/useSpacing")
+    });
   }
 });
 
