@@ -25,6 +25,7 @@ import { useSpacing } from "../../../composables/useSpacing";
 import { useComponentInstance } from "../../../composables/useComponentInstance";
 const properties = defineProps({
   modules: { type: Array, required: false },
+  fullViewportHeight: { type: Boolean, required: false, default: false },
   background: { type: [String, null], required: false },
   backgroundImage: { type: [String, null], required: false },
   backgroundPosition: { type: [String, null], required: false },
@@ -43,7 +44,13 @@ const partialClass = computed(
     [
       componentName,
       useSpacing().getClasses(properties, false),
-      useBackground().getClasses(properties)
+      useBackground().getClasses(properties),
+      {
+        [`full-viewport-height`]: properties.fullViewportHeight,
+        [`offset-left-${properties.paddingLeft}`]: properties.paddingLeft,
+        [`border-radius-${properties.borderRadius}`]: properties.borderRadius,
+        [`vertical-alignment-${properties.verticalAlignment}`]: properties.verticalAlignment
+      }
     ]
   )
 );
