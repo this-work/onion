@@ -27,6 +27,13 @@ export interface SectionProperties extends BackgroundComposableProperties, Spaci
    * as Array
    */
   modules?: Module[]
+
+  /**
+   * Option to set the height of the
+   * section to the viewport height
+   * @default false
+   */
+  fullViewportHeight?: boolean
 }
 </script>
 
@@ -41,6 +48,7 @@ import { useComponentInstance } from '../../../composables/useComponentInstance'
  * Declare all props and defaults for vue.
  */
 const properties = withDefaults(defineProps<SectionProperties>(), {
+  fullViewportHeight: false,
 })
 
 /**
@@ -58,6 +66,12 @@ const partialClass = computed(() =>
     componentName,
     useSpacing().getClasses(properties, false),
     useBackground().getClasses(properties),
+      {
+        [`full-viewport-height`]: properties.fullViewportHeight,
+        [`offset-left-${properties.paddingLeft}`]: properties.paddingLeft,
+        [`border-radius-${properties.borderRadius}`]: properties.borderRadius,
+        [`vertical-alignment-${properties.verticalAlignment}`]: properties.verticalAlignment,
+      },
   ],
   ),
 )
