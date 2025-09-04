@@ -18,7 +18,7 @@
           tag="span"
           name="loading"
           :class="useBem('loader')"
-          package="mdi"
+          :package="iconPackage"
           :size="loadingSpinnerSize"
         />
         <C-Icon
@@ -26,6 +26,7 @@
           tag="span"
           :name="icon"
           :class="useBem('icon')"
+          :package="iconPackage"
           :size="iconSize"
         />
         <span
@@ -65,6 +66,7 @@ const properties = defineProps({
   icon: { type: String, required: false },
   iconSize: { type: String, required: false },
   iconPosition: { type: String, required: false, default: "left" },
+  iconPackage: { type: String, required: false },
   loading: { type: Boolean, required: false, default: false },
   disabled: { type: Boolean, required: false, default: false },
   loadingSpinnerSize: { type: String, required: false, default: "20px" },

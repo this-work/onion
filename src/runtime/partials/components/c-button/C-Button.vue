@@ -18,7 +18,7 @@
           tag="span"
           name="loading"
           :class="useBem('loader')"
-          package="mdi"
+          :package="iconPackage"
           :size="loadingSpinnerSize"
         />
         <C-Icon
@@ -26,6 +26,7 @@
           tag="span"
           :name="icon"
           :class="useBem('icon')"
+          :package="iconPackage"
           :size="iconSize"
         />
         <span
@@ -94,6 +95,11 @@ export interface CButton extends ColormodeComposableProperties {
    * @default 'left'
    */
   iconPosition?: 'left' | 'right'
+
+  /**
+   * Package of the icon
+   */
+  iconPackage?: string
 
   /**
    * Shows a loading indicator when true
