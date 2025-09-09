@@ -39,6 +39,21 @@ export interface SlotProperties extends BackgroundComposableProperties, SpacingC
   width?: ColumnWidth
 
   /**
+   * Height in rows of the slot
+   */
+  height?: number
+
+  /**
+   * Start column of the slot in the module
+   */
+  column?: number
+
+  /**
+   * Start row of the slot in the module
+   */
+  row?: number
+
+  /**
    * To set an individual border radius on this slot according
    * to the list from the border radius config.
    */
@@ -114,6 +129,9 @@ const partialStyle = computed(() => {
   return {
     ...useBackground().getStyles(properties),
     '--slot-column-width': properties.width,
+    '--slot-column-start': properties.column,
+    '--slot-row-height': properties.height,
+    '--slot-row-start': properties.row,
     '--slot-component-spacing': `var(--spacing-${properties.componentSpacing})`,
   }
 })

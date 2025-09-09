@@ -28,6 +28,9 @@ import { useComponentInstance } from "../../../composables/useComponentInstance"
 import { useCssVar } from "../../../composables/useCssVar";
 const properties = defineProps({
   width: { type: Number, required: false, default: parseInt(useCssVar("grid-columns")) },
+  height: { type: Number, required: false },
+  column: { type: Number, required: false },
+  row: { type: Number, required: false },
   borderRadius: { type: [String, null], required: false },
   horizontalAlignment: { type: String, required: false },
   componentSpacing: { type: String, required: false, default: "l" },
@@ -66,6 +69,9 @@ const partialStyle = computed(() => {
   return {
     ...useBackground().getStyles(properties),
     "--slot-column-width": properties.width,
+    "--slot-column-start": properties.column,
+    "--slot-row-height": properties.height,
+    "--slot-row-start": properties.row,
     "--slot-component-spacing": `var(--spacing-${properties.componentSpacing})`
   };
 });

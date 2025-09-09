@@ -6,6 +6,9 @@
 
   @include above('xs') {
     @include grid-column-width(var(--slot-column-width));
+    @include grid-column-start(var(--slot-column-start, unset));
+    @include grid-row-height(var(--slot-row-height, unset));
+    @include grid-row-start(var(--slot-row-start, unset));
   }
 
   > * + * {

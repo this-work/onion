@@ -94,6 +94,19 @@
       </Slot>
     </Module>
   </Section>
+  <Section :full-viewport-height="true" :full-viewport-width="true">
+    <Module :start="0" vertical-alignment="center">
+      <Slot :width="18" :row="1" :column="0">
+        <C-Image
+          src="https://placehold.co/600x600/BDBDBD/fff"
+        />
+      </Slot>
+      <Slot :width="14" :row="1" :column="2">
+        <C-Label :background="false" text="122131" />
+        <C-Headline headline="324433" headlineType="h4" />
+      </Slot>
+    </Module>
+  </Section>
 </template>
 
 <script setup lang="ts">
