@@ -11,12 +11,12 @@
     @include grid-row-start(var(--slot-row-start, unset));
   }
 
-  > * + * {
+  > * + *:not([class^="spacing-margin-top"], [class^="spacing-padding-top"]) {
     margin-top: var(--slot-component-spacing);
   }
 
   @include below('xs') {
-    & + & {
+    & + &:not([class^="spacing-margin-top"], [class^="spacing-padding-top"]) {
       margin-top: var(--slot-component-spacing);
     }
   }
