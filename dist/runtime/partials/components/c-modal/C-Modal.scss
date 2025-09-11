@@ -1,6 +1,6 @@
 .c-modal {
   $module: &;
-  z-index: 2;
+  z-index: 900;
   position: fixed;
   top: 0;
   left: 0;
@@ -62,18 +62,12 @@
   &__controls {
     z-index: 1;
     position: absolute;
-    // right: spacing("s");
     right: unitize(20px);
     top: unitize(20px);
   }
 
   &__title {
     padding: var(--spacing-m) var(--spacing-s) var(--spacing-s) var(--spacing-s);
-  }
-
-  &__content {
-    // padding: spacing("s");
-    // padding-bottom: spacing("l");
   }
 
   &__image {
@@ -84,17 +78,12 @@
     padding-bottom: spacing("l");
   }
 
-  &__text {
-    // padding-bottom: spacing("l");
-  }
-
   &--simple {
     padding: spacing("s");
   }
 
   &--simple#{&}--no-title {
     #{$module}__content {
-      // Reserve space for the title, if no title is visible
       padding-top: calc(var(--spacing-s) + var(--spacing-s) + var(--spacing-m) + unitize(22px));
     }
   }

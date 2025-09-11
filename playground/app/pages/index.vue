@@ -77,6 +77,59 @@
       </Slot>
     </Module>
     <Module
+      :start="3"
+      padding-top="l"
+      padding-bottom="l"
+      vertical-alignment="center"
+    >
+      <Slot
+        :width="6"
+      >
+        <C-Label
+          icon="filter-vintage-outline"
+          :background="true"
+          text="KeyVisual/Text Example #1"
+        />
+        <C-Headline
+          headline="Die <mark>Bedeutung</mark> von null Reibung"
+          headline-type="h4"
+          headline-tag="h2"
+        />
+        <C-Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat." />
+
+        <C-Input type="text" name="name">
+          <template #label>
+            Nachname
+          </template>
+          <template #prefix>
+            <C-Icon name="add" />
+          </template>
+          <template #suffix>
+            EUR
+          </template>
+        </C-Input>
+
+        <C-Input type="text" name="prename">
+          <template #label>
+            Nachname
+          </template>
+        </C-Input>
+
+        <C-Button
+          appearance="primary"
+          text="Primary button"
+        />
+      </Slot>
+      <Slot
+        :width="6"
+      >
+        <C-Image
+          src="https://placehold.co/600x600/BDBDBD/fff"
+          border-radius="m"
+        />
+      </Slot>
+    </Module>
+    <Module
       padding-top="l"
       padding-bottom="l"
     >

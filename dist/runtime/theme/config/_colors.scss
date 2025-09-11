@@ -3,423 +3,448 @@
 $color-mode-default: 'light';
 
 $color-base: (
-		'primary': 				#635DFF,
-		'secondary': 			#EBFF00,
-		'light': 				#FFFFFF,
-		'medium': 				#F0F0F0,
-		'dark': 				#0A0A0A,
-		'system-light': 		#FFFFFF,
-		'system-dark': 			#151515,
-		'success': 				#22C55A,
-		'warning': 				#FFA929,
-		'danger': 				#FF4229,
-		'white': 				#ffffff,
-		'black': 				#000000,
-		'transparent': 			rgba(0,0,0,0)
+  'primary': 				#635DFF,
+  'secondary': 			#EBFF00,
+  'light': 				#FFFFFF,
+  'medium': 				#F0F0F0,
+  'dark': 				#0A0A0A,
+  'system-light': 		#FFFFFF,
+  'system-dark': 			#151515,
+  'success': 				#22C55A,
+  'warning': 				#FFA929,
+  'danger': 				#FF4229,
+  'white': 				#ffffff,
+  'black': 				#000000,
+  'transparent': 			rgba(0,0,0,0)
 );
 
 $color-derivates: (
-		'primary-alternate': 	#5853E6,
-		'primary-5-alpha': 		rgb(from color('primary') r g b / .05),
-		'primary-10-alpha': 	rgb(from color('primary') r g b / .10),
-		'primary-15-alpha': 	rgb(from color('primary') r g b / .15),
-		'primary-20-alpha': 	rgb(from color('primary') r g b / .20),
-		'primary-30-alpha': 	rgb(from color('primary') r g b / .30),
-		'primary-40-alpha': 	rgb(from color('primary') r g b / .40),
-		'primary-50-alpha': 	rgb(from color('primary') r g b / .50),
-		'primary-60-alpha': 	rgb(from color('primary') r g b / .60),
-		'primary-70-alpha': 	rgb(from color('primary') r g b / .70),
-		'primary-80-alpha': 	rgb(from color('primary') r g b / .80),
-		'primary-90-alpha': 	rgb(from color('primary') r g b / .90),
+  'primary-alternate': 	#5853E6,
+  'primary-5-alpha': 		rgb(from color('primary') r g b / .05),
+  'primary-10-alpha': 	rgb(from color('primary') r g b / .10),
+  'primary-15-alpha': 	rgb(from color('primary') r g b / .15),
+  'primary-20-alpha': 	rgb(from color('primary') r g b / .20),
+  'primary-30-alpha': 	rgb(from color('primary') r g b / .30),
+  'primary-40-alpha': 	rgb(from color('primary') r g b / .40),
+  'primary-50-alpha': 	rgb(from color('primary') r g b / .50),
+  'primary-60-alpha': 	rgb(from color('primary') r g b / .60),
+  'primary-70-alpha': 	rgb(from color('primary') r g b / .70),
+  'primary-80-alpha': 	rgb(from color('primary') r g b / .80),
+  'primary-90-alpha': 	rgb(from color('primary') r g b / .90),
 
-		'secondary-alternate':  #D3E500,
-		'secondary-5-alpha': 		rgb(from color('secondary') r g b / .05),
-		'secondary-10-alpha': 	rgb(from color('secondary') r g b / .10),
-		'secondary-15-alpha': 	rgb(from color('secondary') r g b / .15),
-		'secondary-20-alpha': 	rgb(from color('secondary') r g b / .20),
-		'secondary-30-alpha': 	rgb(from color('secondary') r g b / .30),
-		'secondary-40-alpha': 	rgb(from color('secondary') r g b / .40),
-		'secondary-50-alpha': 	rgb(from color('secondary') r g b / .50),
-		'secondary-60-alpha': 	rgb(from color('secondary') r g b / .60),
-		'secondary-70-alpha': 	rgb(from color('secondary') r g b / .70),
-		'secondary-80-alpha': 	rgb(from color('secondary') r g b / .80),
-		'secondary-90-alpha': 	rgb(from color('secondary') r g b / .90),
+  'secondary-alternate':  #D3E500,
+  'secondary-5-alpha': 		rgb(from color('secondary') r g b / .05),
+  'secondary-10-alpha': 	rgb(from color('secondary') r g b / .10),
+  'secondary-15-alpha': 	rgb(from color('secondary') r g b / .15),
+  'secondary-20-alpha': 	rgb(from color('secondary') r g b / .20),
+  'secondary-30-alpha': 	rgb(from color('secondary') r g b / .30),
+  'secondary-40-alpha': 	rgb(from color('secondary') r g b / .40),
+  'secondary-50-alpha': 	rgb(from color('secondary') r g b / .50),
+  'secondary-60-alpha': 	rgb(from color('secondary') r g b / .60),
+  'secondary-70-alpha': 	rgb(from color('secondary') r g b / .70),
+  'secondary-80-alpha': 	rgb(from color('secondary') r g b / .80),
+  'secondary-90-alpha': 	rgb(from color('secondary') r g b / .90),
 
-		'light-10-alpha': 		rgb(from color('light') r g b / .10),
-		'light-20-alpha': 		rgb(from color('light') r g b / .20),
-		'light-30-alpha': 		rgb(from color('light') r g b / .30),
-		'light-40-alpha': 		rgb(from color('light') r g b / .40),
-		'light-50-alpha': 		rgb(from color('light') r g b / .50),
-		'light-60-alpha': 		rgb(from color('light') r g b / .60),
-		'light-70-alpha': 		rgb(from color('light') r g b / .70),
-		'light-80-alpha': 		rgb(from color('light') r g b / .80),
-		'light-90-alpha': 		rgb(from color('light') r g b / .90),
+  'light-10-alpha': 		rgb(from color('light') r g b / .10),
+  'light-20-alpha': 		rgb(from color('light') r g b / .20),
+  'light-30-alpha': 		rgb(from color('light') r g b / .30),
+  'light-40-alpha': 		rgb(from color('light') r g b / .40),
+  'light-50-alpha': 		rgb(from color('light') r g b / .50),
+  'light-60-alpha': 		rgb(from color('light') r g b / .60),
+  'light-70-alpha': 		rgb(from color('light') r g b / .70),
+  'light-80-alpha': 		rgb(from color('light') r g b / .80),
+  'light-90-alpha': 		rgb(from color('light') r g b / .90),
 
-		'dark-5-alpha': 		rgb(from color('dark') r g b / .05),
-		'dark-10-alpha': 		rgb(from color('dark') r g b / .10),
-		'dark-15-alpha': 		rgb(from color('dark') r g b / .15),
-		'dark-20-alpha': 		rgb(from color('dark') r g b / .20),
-		'dark-30-alpha': 		rgb(from color('dark') r g b / .30),
-		'dark-40-alpha': 		rgb(from color('dark') r g b / .40),
-		'dark-50-alpha': 		rgb(from color('dark') r g b / .50),
-		'dark-60-alpha': 		rgb(from color('dark') r g b / .60),
-		'dark-70-alpha': 		rgb(from color('dark') r g b / .70),
-		'dark-80-alpha': 		rgb(from color('dark') r g b / .80),
-		'dark-90-alpha': 		rgb(from color('dark') r g b / .90),
+  'dark-5-alpha': 		rgb(from color('dark') r g b / .05),
+  'dark-10-alpha': 		rgb(from color('dark') r g b / .10),
+  'dark-15-alpha': 		rgb(from color('dark') r g b / .15),
+  'dark-20-alpha': 		rgb(from color('dark') r g b / .20),
+  'dark-30-alpha': 		rgb(from color('dark') r g b / .30),
+  'dark-40-alpha': 		rgb(from color('dark') r g b / .40),
+  'dark-50-alpha': 		rgb(from color('dark') r g b / .50),
+  'dark-60-alpha': 		rgb(from color('dark') r g b / .60),
+  'dark-70-alpha': 		rgb(from color('dark') r g b / .70),
+  'dark-80-alpha': 		rgb(from color('dark') r g b / .80),
+  'dark-90-alpha': 		rgb(from color('dark') r g b / .90),
 
-		'system-light-alternate': 	#F4F4F4,
-		'system-light-10-alpha': 		rgb(from color('system-light') r g b / .10),
-		'system-light-20-alpha': 		rgb(from color('system-light') r g b / .20),
-		'system-light-30-alpha': 		rgb(from color('system-light') r g b / .30),
-		'system-light-40-alpha': 		rgb(from color('system-light') r g b / .40),
-		'system-light-50-alpha': 		rgb(from color('system-light') r g b / .50),
-		'system-light-60-alpha': 		rgb(from color('system-light') r g b / .60),
-		'system-light-70-alpha': 		rgb(from color('system-light') r g b / .70),
-		'system-light-80-alpha': 		rgb(from color('system-light') r g b / .80),
-		'system-light-90-alpha': 		rgb(from color('system-light') r g b / .90),
+  'system-light-alternate': 	#F4F4F4,
+  'system-light-10-alpha': 		rgb(from color('system-light') r g b / .10),
+  'system-light-20-alpha': 		rgb(from color('system-light') r g b / .20),
+  'system-light-30-alpha': 		rgb(from color('system-light') r g b / .30),
+  'system-light-40-alpha': 		rgb(from color('system-light') r g b / .40),
+  'system-light-50-alpha': 		rgb(from color('system-light') r g b / .50),
+  'system-light-60-alpha': 		rgb(from color('system-light') r g b / .60),
+  'system-light-70-alpha': 		rgb(from color('system-light') r g b / .70),
+  'system-light-80-alpha': 		rgb(from color('system-light') r g b / .80),
+  'system-light-90-alpha': 		rgb(from color('system-light') r g b / .90),
 
-		'system-dark-alternate': 		#222222,
-		'system-dark-5-alpha': 		  rgb(from color('system-dark') r g b / .05),
-		'system-dark-10-alpha': 		rgb(from color('system-dark') r g b / .10),
-		'system-dark-15-alpha': 		rgb(from color('system-dark') r g b / .15),
-		'system-dark-20-alpha': 		rgb(from color('system-dark') r g b / .20),
-		'system-dark-30-alpha': 		rgb(from color('system-dark') r g b / .30),
-		'system-dark-40-alpha': 		rgb(from color('system-dark') r g b / .40),
-		'system-dark-50-alpha': 		rgb(from color('system-dark') r g b / .50),
-		'system-dark-60-alpha': 		rgb(from color('system-dark') r g b / .60),
-		'system-dark-70-alpha': 		rgb(from color('system-dark') r g b / .70),
-		'system-dark-80-alpha': 		rgb(from color('system-dark') r g b / .80),
-		'system-dark-90-alpha': 		rgb(from color('system-dark') r g b / .90),
+  'system-dark-alternate': 		#222222,
+  'system-dark-5-alpha': 		  rgb(from color('system-dark') r g b / .05),
+  'system-dark-10-alpha': 		rgb(from color('system-dark') r g b / .10),
+  'system-dark-15-alpha': 		rgb(from color('system-dark') r g b / .15),
+  'system-dark-20-alpha': 		rgb(from color('system-dark') r g b / .20),
+  'system-dark-30-alpha': 		rgb(from color('system-dark') r g b / .30),
+  'system-dark-40-alpha': 		rgb(from color('system-dark') r g b / .40),
+  'system-dark-50-alpha': 		rgb(from color('system-dark') r g b / .50),
+  'system-dark-60-alpha': 		rgb(from color('system-dark') r g b / .60),
+  'system-dark-70-alpha': 		rgb(from color('system-dark') r g b / .70),
+  'system-dark-80-alpha': 		rgb(from color('system-dark') r g b / .80),
+  'system-dark-90-alpha': 		rgb(from color('system-dark') r g b / .90),
 
-		'system-independent-light':		(linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%), rgba(255, 255, 255, 0.50))
+  'system-independent-light':		(linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%), rgba(255, 255, 255, 0.50))
 );
 
 $color-palettes: (
-		'headline': (
-				light: (
-						color: 'dark',
-				),
-				dark: (
-						color: 'light',
-				)
-		),
-		'copytext': (
-				light: (
-						color: 'dark-70-alpha',
-				),
-				dark: (
-						color: 'light-70-alpha',
-				)
-		),
-		'link': (
-				light: (
-						color: 'primary',
-				),
-				dark: (
-						color: 'primary',
-				)
-		),
-		'label': (
-				light: (
-						color: 'dark-70-alpha',
-						background: 'dark-10-alpha'
-				),
-				dark: (
-						color: 'light-70-alpha',
-						background: 'light-10-alpha'
-				)
-		),
-		'background': (
-				light: (
-						background: 'light',
-				),
-				medium: (
-						background: 'medium',
-				),
-				dark: (
-						background: 'dark',
-				)
-		),
-		'selectiontext': (
-				light: (
-						color: 'dark',
-						background-color: 'secondary'
-				)
-		),
-		'mark': (
-				light: (
-						color: 'primary',
-						background: transparent
-				),
-				dark: (
-						color: 'secondary',
-						background: transparent
-				)
-		),
-		'button-primary-solid': (
-				light: (
-						color: (
-								'default': 'white',
-								':hover': 'white',
-								':active': 'white',
-								':disabled': 'white',
-						),
-						background-color: (
-								'default': 'primary',
-								':hover': 'primary-alternate',
-								':active': 'primary-alternate',
-								':disabled': 'primary-30-alpha',
-						),
-				)
-		),
-		'button-primary-soft': (
-				light: (
-						color: (
-								'default': 'primary',
-								':hover': 'primary',
-								':active': 'primary',
-								':disabled': 'primary-50-alpha',
-						),
-						background-color: (
-								'default': 'primary-15-alpha',
-								':hover': 'primary-30-alpha',
-								':active': 'primary-30-alpha',
-								':disabled': 'primary-5-alpha',
-						),
-				)
-		),
-		'button-primary-outline': (
-				light: (
-						color: (
-								'default': 'primary',
-								':hover': 'primary',
-								':active': 'primary',
-								':disabled': 'primary-50-alpha',
-						),
-						border-color: (
-								'default': 'primary',
-								':hover': 'primary',
-								':active': 'primary',
-								':disabled': 'primary-50-alpha',
-						),
-						background-color: (
-								'default': 'transparent',
-								':hover': 'primary-5-alpha',
-								':active': 'primary-5-alpha',
-								':disabled': 'transparent',
-						),
-				)
-		),
-		'button-primary-plain': (
-				light: (
-						color: (
-								'default': 'primary',
-								':hover': 'primary',
-								':active': 'primary',
-								':disabled': 'primary-50-alpha',
-						),
-						background-color: (
-								'default': 'transparent',
-								':hover': 'primary-5-alpha',
-								':active': 'primary-5-alpha',
-								':disabled': 'transparent',
-						),
-				)
-		),
-		'button-secondary-solid': (
-				light: (
-						color: (
-								'default': 'dark',
-								':hover': 'dark',
-								':active': 'dark',
-								':disabled': 'system-dark-50-alpha',
-						),
-						background-color: (
-								'default': 'secondary',
-								':hover': 'secondary-alternate',
-								':active': 'secondary-alternate',
-								':disabled': 'secondary-30-alpha',
-						),
-				)
-		),
-		'button-secondary-soft': (
-				light: (
-						color: (
-								'default': 'dark',
-								':hover': 'dark',
-								':active': 'dark',
-								':disabled': 'dark-50-alpha',
-						),
-						background-color: (
-								'default': 'secondary-15-alpha',
-								':hover': 'secondary-30-alpha',
-								':active': 'secondary-30-alpha',
-								':disabled': 'secondary-5-alpha',
-						),
-				)
-		),
-		'button-secondary-outline': (
-				light: (
-						color: (
-								'default': 'dark',
-								':hover': 'dark',
-								':active': 'dark',
-								':disabled': 'dark-50-alpha',
-						),
-						border-color: (
-								'default': 'secondary',
-								':hover': 'secondary',
-								':active': 'secondary',
-								':disabled': 'secondary-50-alpha',
-						),
-						background-color: (
-								'default': 'transparent',
-								':hover': 'secondary-5-alpha',
-								':active': 'secondary-5-alpha',
-								':disabled': 'transparent',
-						),
-				)
-		),
-		'button-secondary-plain': (
-				light: (
-						color: (
-								'default': 'dark',
-								':hover': 'dark',
-								':active': 'dark',
-								':disabled': 'dark-50-alpha',
-						),
-						background-color: (
-								'default': 'transparent',
-								':hover': 'secondary-5-alpha',
-								':active': 'secondary-5-alpha',
-								':disabled': 'transparent',
-						),
-				)
-		),
-		'button-system-solid': (
-				light: (
-						color: (
-								'default': 'white',
-								':hover': 'white',
-								':active': 'white',
-								':disabled': 'white',
-						),
-						background-color: (
-								'default': 'system-dark',
-								':hover': 'system-dark-alternate',
-								':active': 'system-dark-alternate',
-								':disabled': 'system-dark-30-alpha',
-						),
-				)
-		),
-		'button-system-soft': (
-				light: (
-						color: (
-								'default': 'system-dark',
-								':hover': 'system-dark',
-								':active': 'system-dark',
-								':disabled': 'system-dark-50-alpha',
-						),
-						background-color: (
-								'default': 'system-dark-10-alpha',
-								':hover': 'system-dark-15-alpha',
-								':active': 'system-dark-15-alpha',
-								':disabled': 'system-dark-5-alpha',
-						),
-				)
-		),
-		'button-system-outline': (
-				light: (
-						color: (
-								'default': 'system-dark',
-								':hover': 'system-dark',
-								':active': 'system-dark',
-								':disabled': 'system-dark-50-alpha',
-						),
-						border-color: (
-								'default': 'system-dark',
-								':hover': 'system-dark',
-								':active': 'system-dark',
-								':disabled': 'system-dark-50-alpha',
-						),
-						background-color: (
-								'default': 'transparent',
-								':hover': 'system-dark-5-alpha',
-								':active': 'system-dark-5-alpha',
-								':disabled': 'transparent',
-						),
-				)
-		),
-		'button-system-plain': (
-				light: (
-						color: (
-								'default': 'system-dark',
-								':hover': 'system-dark',
-								':active': 'system-dark',
-								':disabled': 'system-dark-50-alpha',
-						),
-						background-color: (
-								'default': 'transparent',
-								':hover': 'system-dark-5-alpha',
-								':active': 'system-dark-5-alpha',
-								':disabled': 'transparent',
-						),
-				)
-		),
-		'accordion': (
-				light: (
-						color: 'dark'
-				),
-				dark: (
-						color: 'light'
-				)
-		),
-		'tab-item': (
-				light: (
-						color: (
-								'default': 'dark',
-								':hover': 'primary',
-								':focus': 'primary',
-								':active': 'primary'
-						)
-				),
-				dark: (
-						color: (
-								'default': 'dark',
-								':hover': 'primary',
-								':focus': 'primary',
-								':active': 'primary'
-						)
-				)
-		),
-		'tab-item-active': (
-				light: (
-						color: (
-								'default': 'primary'
-						)
-				),
-				dark: (
-						color: (
-								'default': 'primary'
-						)
-				)
-		),
-    	'modal': (
-        light: (
-            color: 'dark-70-alpha',
-            background-color: 'light',
-        ),
-				dark: (
-						color: 'light-70-alpha',
-						background-color: 'dark',
-				)
+  'headline': (
+    light: (
+      color: 'dark',
     ),
-		'divider': (
-				light: (
-						background: 'system-dark-30-alpha',
-				),
-				dark: (
-						background: 'system-light-30-alpha',
-				)
-		),
+    dark: (
+      color: 'light',
+    )
+  ),
+  'copytext': (
+    light: (
+      color: 'dark-70-alpha',
+    ),
+    dark: (
+      color: 'light-70-alpha',
+    )
+  ),
+  'link': (
+    light: (
+      color: 'primary',
+    ),
+    dark: (
+      color: 'primary',
+    )
+  ),
+  'label': (
+    light: (
+      color: 'dark-70-alpha',
+      background: 'dark-10-alpha'
+    ),
+    dark: (
+      color: 'light-70-alpha',
+      background: 'light-10-alpha'
+    )
+  ),
+  'background': (
+    light: (
+      background: 'light',
+    ),
+    medium: (
+      background: 'medium',
+    ),
+    dark: (
+      background: 'dark',
+    )
+  ),
+  'selectiontext': (
+    light: (
+      color: 'dark',
+      background-color: 'secondary'
+    )
+  ),
+  'mark': (
+    light: (
+      color: 'primary',
+      background: transparent
+    ),
+    dark: (
+      color: 'secondary',
+      background: transparent
+    )
+  ),
+  'button-primary-solid': (
+    light: (
+      color: (
+        'default': 'white',
+        ':hover': 'white',
+        ':active': 'white',
+        ':disabled': 'white',
+      ),
+      background-color: (
+        'default': 'primary',
+        ':hover': 'primary-alternate',
+        ':active': 'primary-alternate',
+        ':disabled': 'primary-30-alpha',
+      ),
+    )
+  ),
+  'button-primary-soft': (
+    light: (
+      color: (
+        'default': 'primary',
+        ':hover': 'primary',
+        ':active': 'primary',
+        ':disabled': 'primary-50-alpha',
+      ),
+      background-color: (
+        'default': 'primary-15-alpha',
+        ':hover': 'primary-30-alpha',
+        ':active': 'primary-30-alpha',
+        ':disabled': 'primary-5-alpha',
+      ),
+    )
+  ),
+  'button-primary-outline': (
+    light: (
+      color: (
+        'default': 'primary',
+        ':hover': 'primary',
+        ':active': 'primary',
+        ':disabled': 'primary-50-alpha',
+      ),
+      border-color: (
+        'default': 'primary',
+        ':hover': 'primary',
+        ':active': 'primary',
+        ':disabled': 'primary-50-alpha',
+      ),
+      background-color: (
+        'default': 'transparent',
+        ':hover': 'primary-5-alpha',
+        ':active': 'primary-5-alpha',
+        ':disabled': 'transparent',
+      ),
+    )
+  ),
+  'button-primary-plain': (
+    light: (
+      color: (
+        'default': 'primary',
+        ':hover': 'primary',
+        ':active': 'primary',
+        ':disabled': 'primary-50-alpha',
+      ),
+      background-color: (
+        'default': 'transparent',
+        ':hover': 'primary-5-alpha',
+        ':active': 'primary-5-alpha',
+        ':disabled': 'transparent',
+      ),
+    )
+  ),
+  'button-secondary-solid': (
+    light: (
+      color: (
+        'default': 'dark',
+        ':hover': 'dark',
+        ':active': 'dark',
+        ':disabled': 'system-dark-50-alpha',
+      ),
+      background-color: (
+        'default': 'secondary',
+        ':hover': 'secondary-alternate',
+        ':active': 'secondary-alternate',
+        ':disabled': 'secondary-30-alpha',
+      ),
+    )
+  ),
+  'button-secondary-soft': (
+    light: (
+      color: (
+        'default': 'dark',
+        ':hover': 'dark',
+        ':active': 'dark',
+        ':disabled': 'dark-50-alpha',
+      ),
+      background-color: (
+        'default': 'secondary-15-alpha',
+        ':hover': 'secondary-30-alpha',
+        ':active': 'secondary-30-alpha',
+        ':disabled': 'secondary-5-alpha',
+      ),
+    )
+  ),
+  'button-secondary-outline': (
+    light: (
+      color: (
+        'default': 'dark',
+        ':hover': 'dark',
+        ':active': 'dark',
+        ':disabled': 'dark-50-alpha',
+      ),
+      border-color: (
+        'default': 'secondary',
+        ':hover': 'secondary',
+        ':active': 'secondary',
+        ':disabled': 'secondary-50-alpha',
+      ),
+      background-color: (
+        'default': 'transparent',
+        ':hover': 'secondary-5-alpha',
+        ':active': 'secondary-5-alpha',
+        ':disabled': 'transparent',
+      ),
+    )
+  ),
+  'button-secondary-plain': (
+    light: (
+      color: (
+        'default': 'dark',
+        ':hover': 'dark',
+        ':active': 'dark',
+        ':disabled': 'dark-50-alpha',
+      ),
+      background-color: (
+        'default': 'transparent',
+        ':hover': 'secondary-5-alpha',
+        ':active': 'secondary-5-alpha',
+        ':disabled': 'transparent',
+      ),
+    )
+  ),
+  'button-system-solid': (
+    light: (
+      color: (
+        'default': 'white',
+        ':hover': 'white',
+        ':active': 'white',
+        ':disabled': 'white',
+      ),
+      background-color: (
+        'default': 'system-dark',
+        ':hover': 'system-dark-alternate',
+        ':active': 'system-dark-alternate',
+        ':disabled': 'system-dark-30-alpha',
+      ),
+    )
+  ),
+  'button-system-soft': (
+    light: (
+      color: (
+        'default': 'system-dark',
+        ':hover': 'system-dark',
+        ':active': 'system-dark',
+        ':disabled': 'system-dark-50-alpha',
+      ),
+      background-color: (
+        'default': 'system-dark-10-alpha',
+        ':hover': 'system-dark-15-alpha',
+        ':active': 'system-dark-15-alpha',
+        ':disabled': 'system-dark-5-alpha',
+      ),
+    )
+  ),
+  'button-system-outline': (
+    light: (
+      color: (
+        'default': 'system-dark',
+        ':hover': 'system-dark',
+        ':active': 'system-dark',
+        ':disabled': 'system-dark-50-alpha',
+      ),
+      border-color: (
+        'default': 'system-dark',
+        ':hover': 'system-dark',
+        ':active': 'system-dark',
+        ':disabled': 'system-dark-50-alpha',
+      ),
+      background-color: (
+        'default': 'transparent',
+        ':hover': 'system-dark-5-alpha',
+        ':active': 'system-dark-5-alpha',
+        ':disabled': 'transparent',
+      ),
+    )
+  ),
+  'button-system-plain': (
+    light: (
+      color: (
+        'default': 'system-dark',
+        ':hover': 'system-dark',
+        ':active': 'system-dark',
+        ':disabled': 'system-dark-50-alpha',
+      ),
+      background-color: (
+        'default': 'transparent',
+        ':hover': 'system-dark-5-alpha',
+        ':active': 'system-dark-5-alpha',
+        ':disabled': 'transparent',
+      ),
+    )
+  ),
+  'input': (
+    light: (
+      color: (
+        'default': 'dark',
+        ':disabled': 'dark-30-alpha',
+      ),
+      border-color: (
+        'default': 'dark-50-alpha',
+        ':hover': 'primary',
+        ':active': 'primary',
+        ':focus-visible': 'primary',
+        ':disabled': 'dark-30-alpha',
+      ),
+      background-color: (
+        'default': 'dark-5-alpha',
+        ':hover': 'primary-5-alpha',
+        ':active': 'primary-5-alpha',
+        ':focus-visible': 'primary-5-alpha',
+        ':disabled': 'white',
+      ),
+      outline-color: (
+        ':focus-visible': 'primary',
+      ),
+    )
+  ),
+  'accordion': (
+    light: (
+      color: 'dark'
+    ),
+    dark: (
+      color: 'light'
+    )
+  ),
+  'tab-item': (
+    light: (
+      color: (
+        'default': 'dark',
+        ':hover': 'primary',
+        ':focus': 'primary',
+        ':active': 'primary'
+      )
+    ),
+    dark: (
+      color: (
+        'default': 'dark',
+        ':hover': 'primary',
+        ':focus': 'primary',
+        ':active': 'primary'
+      )
+    )
+  ),
+  'tab-item-active': (
+    light: (
+      color: (
+        'default': 'primary'
+      )
+    ),
+    dark: (
+      color: (
+        'default': 'primary'
+      )
+    )
+  ),
+  'modal': (
+    light: (
+      color: 'dark-70-alpha',
+      background-color: 'light',
+    ),
+    dark: (
+      color: 'light-70-alpha',
+      background-color: 'dark',
+    )
+  ),
+  'divider': (
+    light: (
+      background: 'system-dark-30-alpha',
+    ),
+    dark: (
+      background: 'system-light-30-alpha',
+    )
+  ),
 );

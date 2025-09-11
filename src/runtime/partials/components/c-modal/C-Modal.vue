@@ -38,6 +38,7 @@
               headline-type="h6"
               headline-tag="h3"
             />
+
             <article
               v-if="hasContent"
               :id="contentID"
