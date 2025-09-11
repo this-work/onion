@@ -45,6 +45,7 @@
 
 <script setup>
 import { normalizeClass, computed, useAttrs, ref, useSlots } from "vue";
+import { useBem } from "../../../composables/useBem";
 import { useColorMode } from "../../../composables/useColorMode";
 import { useComponentInstance } from "../../../composables/useComponentInstance";
 defineOptions({
