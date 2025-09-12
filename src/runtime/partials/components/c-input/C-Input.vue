@@ -53,6 +53,11 @@ export interface CInput extends ColormodeComposableProperties {
   /**
    * Name of the input
    */
+  class?: string
+
+  /**
+   * Name of the input
+   */
   name?: string
 
   /**
@@ -106,6 +111,7 @@ const { componentName } = useComponentInstance()
 const partialClass = computed(() =>
   normalizeClass([
       componentName,
+      properties.class || '',
       useColorMode().getClasses(properties),
     ],
   ),

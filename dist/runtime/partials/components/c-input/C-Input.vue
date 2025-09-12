@@ -53,6 +53,7 @@ defineOptions({
 });
 const properties = defineProps({
   label: { type: String, required: false },
+  class: { type: String, required: false },
   name: { type: String, required: false },
   instruction: { type: String, required: false },
   prefix: { type: String, required: false },
@@ -64,6 +65,7 @@ const partialClass = computed(
   () => normalizeClass(
     [
       componentName,
+      properties.class || "",
       useColorMode().getClasses(properties)
     ]
   )
