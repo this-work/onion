@@ -14,8 +14,10 @@
           v-bind="$attrs"
           :class="useBem('form-element')"
           :id="name"
+          :name="name"
           :inputmode="inputmode"
           :aria-label=label
+          :value="value"
           @keydown="validateInput"
         />
       </slot>
