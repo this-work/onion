@@ -51,6 +51,7 @@
 
 <script setup>
 import { normalizeClass, computed, useSlots } from "vue";
+import { NuxtLink } from "#components";
 import { useBem } from "../../../composables/useBem";
 import { useColorMode } from "../../../composables/useColorMode";
 import { useComponentInstance } from "../../../composables/useComponentInstance";
@@ -75,7 +76,12 @@ const properties = defineProps({
   additionalButtons: { type: Array, required: false },
   colorMode: { type: String, required: false }
 });
-const computedTag = computed(() => properties.href ? "a" : properties.tag);
+const computedTag = computed(() => {
+  if (properties.tag.toLowerCase() === "nuxtlink" || properties.tag.toLowerCase() === "nuxt-link") {
+    return NuxtLink;
+  }
+  return properties.href ? "a" : properties.tag;
+});
 const computedTarget = computed(() => properties.target && computedTag.value === "a" ? properties.target : void 0);
 const hasText = computed(() => !!properties.text || !!useSlots().default);
 const { componentName } = useComponentInstance();

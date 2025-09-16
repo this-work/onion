@@ -30,7 +30,7 @@ $body-background-palette: 'background' !default;
 body {
     position: relative;
     overflow-x: hidden;
-    hyphens: auto;
+    hyphens: none;
     @include font-style($body-font);
     @include color-palette($body-color-palette);
     @include color-palette($body-background-palette);
