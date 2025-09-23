@@ -1,0 +1,82 @@
+$c-textarea-placeholder-opacity: .5 !default;
+
+.c-textarea {
+  $module: &;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  position: relative;
+  width: 100%;
+
+  &__label {
+    display: block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 100%;
+    user-select: none;
+    margin-bottom: spacing('xxxs');
+    @include font-style("form-label");
+    span {
+      font: inherit;
+    }
+  }
+
+  &__form-element {
+    display: block;
+    width: 100%;
+    order: 20;
+    margin: 0;
+    padding: spacing('xxs') spacing('xs');
+    border-width: 1px;
+    border-style: solid;
+    border-radius: border-radius('xs');
+    outline-offset: unitize(3px);
+    outline: transparent solid unitize(1px);
+    background: transparent;
+    font: inherit;
+    cursor: text;
+    transition: transition(all);
+    @include color-palette("textarea");
+    @include font-style("form-text");
+
+    /// Workaround for the undeletable background-color
+    /// of the chrome password manager
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:active,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:first-line {
+      -webkit-box-shadow: 0 0 0 1000px transparent inset!important;
+      -webkit-background-clip: text!important;
+      font: inherit!important;
+    }
+
+    &::placeholder{
+      opacity: $c-textarea-placeholder-opacity;
+      color: inherit;
+    }
+    &::-webkit-input-placeholder{
+      opacity: $c-textarea-placeholder-opacity;
+      color: inherit;
+    }
+
+    &[disabled] {
+      cursor: default;
+      & + #{$module}__label-text {
+        cursor: default;
+      }
+    }
+
+  }
+
+  &__instruction {
+    display: block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 100%;
+    @include font-style("form-label");
+    span {
+      font: inherit;
+    }
+  }
+}

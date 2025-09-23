@@ -4,82 +4,6 @@
       :start="3"
       padding-top="l"
       padding-bottom="l"
-    >
-      <Slot
-        :width="4"
-      >
-        <C-Image
-          src="https://placehold.co/600x600/BDBDBD/fff"
-          border-radius="m"
-        />
-        <C-Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. " />
-        <C-Button
-          appearance="primary"
-          text="Primary button"
-        />
-      </Slot>
-      <Slot
-        :width="4"
-      >
-        <C-Image
-          src="https://placehold.co/600x600/BDBDBD/fff"
-          border-radius="m"
-        />
-        <C-Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. " />
-        <C-Button
-          appearance="secondary"
-          text="Secondary button"
-        />
-      </Slot>
-      <Slot
-        :width="4"
-      >
-        <C-Image
-          src="https://placehold.co/600x600/BDBDBD/fff"
-          border-radius="m"
-        />
-        <C-Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. " />
-      </Slot>
-    </Module>
-    <Module
-      :start="3"
-      padding-top="l"
-      padding-bottom="l"
-      vertical-alignment="center"
-    >
-      <Slot
-        :width="6"
-      >
-        <C-Image
-          src="https://placehold.co/600x600/BDBDBD/fff"
-          border-radius="m"
-        />
-      </Slot>
-      <Slot
-        :width="6"
-      >
-        <C-Icon name="filter-vintage-outline" size="xl" />
-        <C-Label
-          icon="filter-vintage-outline"
-          :background="true"
-          text="KeyVisual/Text Example #1"
-        />
-        <C-Headline
-          headline="Die <mark>Bedeutung</mark> von null Reibung"
-          headline-type="h2"
-          headline-tag="h2"
-        />
-        <C-Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. " />
-        <C-Button
-          appearance="primary"
-          text="Primary button"
-        />
-      </Slot>
-    </Module>
-    <Module
-      :start="3"
-      padding-top="l"
-      padding-bottom="l"
       vertical-alignment="center"
     >
       <Slot
@@ -97,27 +21,49 @@
         />
         <C-Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat." />
 
-        <C-Input type="text" name="name">
+        <C-Input
+          type="text"
+          name="prename"
+        >
           <template #label>
-            Nachname
-          </template>
-          <template #prefix>
-            <C-Icon name="add" />
-          </template>
-          <template #suffix>
-            EUR
+            Name
           </template>
         </C-Input>
 
-        <C-Input type="text" name="prename">
+        <C-Input
+          type="number"
+          name="phone"
+        >
           <template #label>
-            Nachname
+            Phone number
+          </template>
+          <template #prefix>
+            +49
           </template>
         </C-Input>
+
+        <C-Switch
+          label="I agree to the terms and conditions"
+          name="terms"
+        />
+
+        <C-Select
+          label="When we should call back?"
+          placeholder="Choose a time slot"
+          :options="[
+            { label: '18:00 Uhr', value: '18:00' },
+            { label: '19:30 Uhr', value: '19:30' },
+            { label: '21:15 Uhr', value: '21:15' },
+          ]"
+        />
+
+        <C-Textarea
+          label="Your Message"
+        />
 
         <C-Button
           appearance="primary"
-          text="Primary button"
+          text="Request callback"
         />
       </Slot>
       <Slot
@@ -127,36 +73,6 @@
           src="https://placehold.co/600x600/BDBDBD/fff"
           border-radius="m"
         />
-      </Slot>
-    </Module>
-    <Module
-      padding-top="l"
-      padding-bottom="l"
-    >
-      <Slot
-      >
-        <C-Image
-          src="https://placehold.co/600x600/BDBDBD/fff"
-          border-radius="m"
-        />
-        <C-Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. " />
-        <C-Button
-          appearance="primary"
-          text="Primary button"
-        />
-      </Slot>
-    </Module>
-  </Section>
-  <Section :full-viewport-height="true" :full-viewport-width="true">
-    <Module :start="0" vertical-alignment="center">
-      <Slot :width="18" :row="1" :column="0">
-        <C-Image
-          src="https://placehold.co/600x600/BDBDBD/fff"
-        />
-      </Slot>
-      <Slot :width="14" :row="1" :column="2">
-        <C-Label :background="false" text="122131" />
-        <C-Headline headline="324433" headlineType="h4" />
       </Slot>
     </Module>
   </Section>

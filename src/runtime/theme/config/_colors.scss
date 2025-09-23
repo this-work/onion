@@ -370,25 +370,119 @@ $color-palettes: (
     light: (
       color: (
         'default': 'dark',
-        ':disabled': 'dark-30-alpha',
+        ':disabled': 'dark-50-alpha',
+        ':disabled ~ *': 'dark-30-alpha',
+      ),
+      border-color: (
+        'default': 'dark-50-alpha',
+        ':hover': 'primary',
+        ':hover ~ *': 'primary',
+        ':active': 'primary',
+        ':active ~ *': 'primary',
+        ':focus-visible': 'primary',
+        ':focus-visible ~ *': 'primary',
+        ':disabled':  'dark-30-alpha',
+        ':disabled ~ *':  'dark-30-alpha',
+      ),
+      background-color: (
+        'default': 'dark-5-alpha',
+        ':hover': 'primary-5-alpha',
+        ':hover ~ *': 'primary-5-alpha',
+        ':active': 'primary-5-alpha',
+        ':active ~ *': 'primary-5-alpha',
+        ':focus-visible': 'primary-5-alpha',
+        ':focus-visible ~ *': 'primary-5-alpha',
+        ':disabled':  transparent,
+        ':disabled ~ *':  transparent,
+      ),
+    )
+  ),
+  'textarea': (
+    light: (
+      color: (
+        'default': 'dark',
+        ':disabled': 'dark-50-alpha',
       ),
       border-color: (
         'default': 'dark-50-alpha',
         ':hover': 'primary',
         ':active': 'primary',
         ':focus-visible': 'primary',
-        ':disabled': 'dark-30-alpha',
+        ':disabled':  'dark-30-alpha',
       ),
       background-color: (
         'default': 'dark-5-alpha',
         ':hover': 'primary-5-alpha',
         ':active': 'primary-5-alpha',
         ':focus-visible': 'primary-5-alpha',
+        ':disabled':  transparent,
+      ),
+      outline-color: (
+        'default': transparent,
+        ':focus-visible': 'primary',
+      ),
+    )
+  ),
+  'switch': (
+    light: (
+      color: (
+        ' + *': 'dark',
+        ':checked + *': 'white'
+      ),
+      border-color: (
+        ' + *': transparent,
+        ' + *:hover': 'primary',
+        ':focus-visible + *': 'primary'
+      ),
+      background-color: (
+        ' + *': 'system-dark-5-alpha',
+        ' + *:hover': 'primary-5-alpha',
+        ':focus-visible + *': 'primary-5-alpha',
+        ':checked + *': 'primary',
+        ' + *:after': 'white',
+      ),
+      outline-color: (
+        ' + *': transparent,
+        ':focus-visible + *': 'primary'
+      ),
+    )
+  ),
+  'select': (
+    light: (
+      color: (
+        'default': 'dark',
+        ':disabled': 'dark-30-alpha',
+      ),
+      border-color: (
+        'default': 'dark-50-alpha',
+        ':hover': 'primary',
+        ':active': 'primary',
+        ':focus': 'primary',
+        ':disabled': 'dark-30-alpha',
+      ),
+      background-color: (
+        'default': transparent,
+        ':hover': 'primary-5-alpha',
+        ':active': 'primary-5-alpha',
+        ':focus': 'primary-5-alpha',
         ':disabled': 'white',
       ),
       outline-color: (
-        ':focus-visible': 'primary',
+        ':focus': 'primary',
       ),
+    )
+  ),
+  'select-wrapper': (
+    light: (
+      color: 'dark',
+      border-color: 'dark-50-alpha',
+      background-color: 'white',
+    )
+  ),
+  'select-interaction': (
+    light: (
+      color: 'primary',
+      background: 'system-dark-5-alpha',
     )
   ),
   'accordion': (

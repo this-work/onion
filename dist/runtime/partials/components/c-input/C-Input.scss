@@ -29,6 +29,13 @@ $c-input-placeholder-opacity: .5 !default;
     flex-shrink: 0;
     flex-grow: 0;
     width: 100%;
+    outline-offset: unitize(3px);
+    outline: transparent solid unitize(1px);
+    border-radius: border-radius('xs');
+    transition: transition(outline-color);
+    &:has(#{$module}__form-element:focus-visible) {
+      outline-color: color("primary");
+    }
   }
 
   &__prefix,
@@ -38,8 +45,16 @@ $c-input-placeholder-opacity: .5 !default;
     flex-shrink: 0;
     flex-grow: 0;
     order: 10;
-    margin: 0 spacing('xxxs') 0 0;
+    margin: 0;
     user-select: none;
+    padding-left: spacing('xs');
+    border-width: 1px;
+    border-style: solid;
+    border-top-left-radius: border-radius('xs');
+    border-bottom-left-radius: border-radius('xs');
+    border-right-width: 0;
+    transition: transition(all);
+    @include color-palette("input");
     @include font-style("form-text");
     span {
       font: inherit;
@@ -48,12 +63,15 @@ $c-input-placeholder-opacity: .5 !default;
 
   &__suffix {
     order: 30;
-    margin: 0 0 0 spacing('xxxs');
+    padding-left: 0;
+    padding-right: spacing('xs');
+    border-radius: 0 border-radius('xs') border-radius('xs') 0;
+    border-left-width: 0;
+    border-right-width: 1px;
   }
 
   &__form-element {
-    position: relative;
-    z-index: 1;
+    display: block;
     width: 100%;
     order: 20;
     margin: 0;
@@ -61,10 +79,6 @@ $c-input-placeholder-opacity: .5 !default;
     border-width: 1px;
     border-style: solid;
     border-radius: border-radius('xs');
-    outline-style: solid;
-    outline-width: unitize(1px);
-    outline-offset: unitize(3px);
-    outline-color: transparent;
     background: transparent;
     font: inherit;
     cursor: text;
@@ -113,6 +127,22 @@ $c-input-placeholder-opacity: .5 !default;
         -webkit-appearance: none;
         margin: 0;
       }
+    }
+  }
+
+  &--prefix {
+    #{$module}__form-element {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: 0;
+    }
+  }
+
+  &--suffix {
+    #{$module}__form-element {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: 0;
     }
   }
 

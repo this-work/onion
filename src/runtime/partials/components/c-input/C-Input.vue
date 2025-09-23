@@ -115,17 +115,21 @@ const partialClass = computed(() =>
       componentName,
       properties.class || '',
       useColorMode().getClasses(properties),
+      {
+        [useBem(undefined, `prefix`)]: properties.prefix || hasSlotContent('prefix'),
+        [useBem(undefined, `suffix`)]: properties.suffix || hasSlotContent('suffix'),
+      },
     ],
   ),
 )
 
 /**
- * Check if the input is required from the givven attributes
+ * Check if the input is required from the given attributes
  */
 const value = ref('');
 
 /**
- * Check if the input is required from the givven attributes
+ * Check if the input is required from the given attributes
  */
 const isRequired = computed(() => {
   const attrs = useAttrs()

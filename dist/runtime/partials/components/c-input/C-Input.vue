@@ -68,7 +68,11 @@ const partialClass = computed(
     [
       componentName,
       properties.class || "",
-      useColorMode().getClasses(properties)
+      useColorMode().getClasses(properties),
+      {
+        [useBem(void 0, `prefix`)]: properties.prefix || hasSlotContent("prefix"),
+        [useBem(void 0, `suffix`)]: properties.suffix || hasSlotContent("suffix")
+      }
     ]
   )
 );
