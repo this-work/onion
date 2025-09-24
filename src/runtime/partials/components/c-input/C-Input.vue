@@ -53,6 +53,11 @@ export interface CInput extends ColormodeComposableProperties {
   label?: string
 
   /**
+   * Default value of the input
+   */
+  value?: string
+
+  /**
    * Name of the input
    */
   class?: string
@@ -131,7 +136,7 @@ const partialClass = computed(() =>
 /**
  * Check if the input is required from the given attributes
  */
-const value = ref('');
+const value = ref(properties.value || '');
 
 /**
  * Watch for changes in the selected option

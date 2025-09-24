@@ -5,6 +5,10 @@ export interface CInput extends ColormodeComposableProperties {
      */
     label?: string;
     /**
+     * Default value of the input
+     */
+    value?: string;
+    /**
      * Name of the input
      */
     class?: string;

@@ -5,6 +5,10 @@ export interface CTextarea extends ColormodeComposableProperties {
      */
     label?: string;
     /**
+     * Default value of the textarea
+     */
+    value?: string;
+    /**
      * Name of the textarea
      */
     class?: string;

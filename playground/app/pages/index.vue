@@ -31,6 +31,13 @@
         </C-Input>
 
         <C-Input
+          type="text"
+          name="lastname"
+          label="Lastname"
+          value="Mustermann"
+         />
+
+        <C-Input
           type="number"
           name="phone"
         >

@@ -56,6 +56,7 @@ defineOptions({
 const emit = defineEmits(["change"]);
 const properties = defineProps({
   label: { type: String, required: false },
+  value: { type: String, required: false },
   class: { type: String, required: false },
   name: { type: String, required: false },
   instruction: { type: String, required: false },
@@ -77,7 +78,7 @@ const partialClass = computed(
     ]
   )
 );
-const value = ref("");
+const value = ref(properties.value || "");
 watch(value, async (newValue) => {
   emit("change", newValue);
 });
