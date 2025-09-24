@@ -15,6 +15,14 @@ export interface CLabel extends ColormodeComposableProperties {
      */
     icon?: string;
     /**
+     * Size of the icon
+     */
+    iconSize?: string;
+    /**
+     * Package of the icon
+     */
+    iconPackage?: string;
+    /**
      * Decides whether the label has a background with inner spacing
      */
     background?: boolean;

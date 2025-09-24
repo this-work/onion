@@ -6,6 +6,8 @@
         v-if="icon"
         :name="icon"
         :class="useBem('icon')"
+        :package="iconPackage"
+        :size="iconSize"
       />
       <span
         v-if="text"
@@ -29,6 +31,8 @@ const properties = defineProps({
   tag: { type: String, required: false, default: "div" },
   text: { type: String, required: false },
   icon: { type: String, required: false },
+  iconSize: { type: String, required: false },
+  iconPackage: { type: String, required: false },
   background: { type: Boolean, required: false, default: true },
   size: { type: String, required: false, default: "m" },
   colorMode: { type: String, required: false }

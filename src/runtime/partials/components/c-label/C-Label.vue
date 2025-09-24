@@ -6,6 +6,8 @@
         v-if="icon"
         :name="icon"
         :class="useBem('icon')"
+        :package="iconPackage"
+        :size="iconSize"
       />
       <span
         v-if="text"
@@ -38,6 +40,16 @@ export interface CLabel extends ColormodeComposableProperties {
    * Any icon from the Material Design icons set can be used.
    */
   icon?: string
+
+  /**
+   * Size of the icon
+   */
+  iconSize?: string
+
+  /**
+   * Package of the icon
+   */
+  iconPackage?: string
 
   /**
    * Decides whether the label has a background with inner spacing
