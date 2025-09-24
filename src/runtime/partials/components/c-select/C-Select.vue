@@ -135,7 +135,7 @@ export interface CSelect extends ColormodeComposableProperties {
 </script>
 
 <script setup lang="ts">
-import { normalizeClass, computed, ref, useSlots } from 'vue'
+import { normalizeClass, computed, ref, useSlots, watch } from 'vue'
 import Multiselect from 'vue-multiselect'
 
 import { useBem } from "../../../composables/useBem";
@@ -149,6 +149,11 @@ import { useComponentInstance } from '../../../composables/useComponentInstance'
 defineOptions({
   inheritAttrs: false
 })
+
+/**
+ * Define emits for the component. Disables inheriting
+ */
+const emit = defineEmits<{(e: 'change', value: string|undefined|null): void}>()
 
 /**
  * Declare all props and defaults for vue.
@@ -182,6 +187,13 @@ const partialClass = computed(() =>
  * Reactive value for the selected value
  */
 const selectedOption = ref<CSelectOption|null>(properties.value);
+
+/**
+ * Watch for changes in the selected option
+ */
+watch(selectedOption, async (newValue) => {
+  emit('change', newValue?.value)
+})
 
 /**
  * Check if the slot has content

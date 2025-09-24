@@ -47,7 +47,11 @@ export interface CSelect extends ColormodeComposableProperties {
      */
     instruction?: string;
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CSelect, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CSelect> & Readonly<{}>, {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CSelect, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
+    change: (value: string | null | undefined) => any;
+}, string, import("vue").PublicProps, Readonly<CSelect> & Readonly<{
+    onChange?: ((value: string | null | undefined) => any) | undefined;
+}>, {
     value: CSelectOption | null;
     placeholder: string;
     preselectFirst: boolean;

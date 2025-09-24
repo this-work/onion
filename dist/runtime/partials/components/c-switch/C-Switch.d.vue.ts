@@ -21,7 +21,11 @@ export interface CSwitch extends ColormodeComposableProperties {
      */
     instruction?: string;
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CSwitch, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CSwitch> & Readonly<{}>, {}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CSwitch, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
+    change: (value: boolean | null | undefined) => any;
+}, string, import("vue").PublicProps, Readonly<CSwitch> & Readonly<{
+    onChange?: ((value: boolean | null | undefined) => any) | undefined;
+}>, {}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 } & {
     label?: (props: {}) => any;

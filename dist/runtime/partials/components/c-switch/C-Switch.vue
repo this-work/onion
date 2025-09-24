@@ -47,13 +47,14 @@
 </script>
 
 <script setup>
-import { normalizeClass, computed, useAttrs, ref, useSlots } from "vue";
+import { normalizeClass, computed, useAttrs, ref, useSlots, watch } from "vue";
 import { useBem } from "../../../composables/useBem";
 import { useColorMode } from "../../../composables/useColorMode";
 import { useComponentInstance } from "../../../composables/useComponentInstance";
 defineOptions({
   inheritAttrs: false
 });
+const emit = defineEmits(["change"]);
 const properties = defineProps({
   label: { type: String, required: false },
   checked: { type: Boolean, required: false },
@@ -73,6 +74,9 @@ const partialClass = computed(
   )
 );
 const value = ref(properties.checked);
+watch(value, async (newValue) => {
+  emit("change", newValue);
+});
 const isRequired = computed(() => {
   const attrs = useAttrs();
   if (attrs.hasOwnProperty("required")) {

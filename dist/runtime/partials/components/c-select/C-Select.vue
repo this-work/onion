@@ -71,7 +71,7 @@
 </script>
 
 <script setup>
-import { normalizeClass, computed, ref, useSlots } from "vue";
+import { normalizeClass, computed, ref, useSlots, watch } from "vue";
 import Multiselect from "vue-multiselect";
 import { useBem } from "../../../composables/useBem";
 import { useColorMode } from "../../../composables/useColorMode";
@@ -79,6 +79,7 @@ import { useComponentInstance } from "../../../composables/useComponentInstance"
 defineOptions({
   inheritAttrs: false
 });
+const emit = defineEmits(["change"]);
 const properties = defineProps({
   options: { type: Array, required: true },
   label: { type: String, required: false },
@@ -101,6 +102,9 @@ const partialClass = computed(
   )
 );
 const selectedOption = ref(properties.value);
+watch(selectedOption, async (newValue) => {
+  emit("change", newValue?.value);
+});
 const hasSlotContent = (slotName) => {
   if (!slotName) {
     return !!useSlots().default;

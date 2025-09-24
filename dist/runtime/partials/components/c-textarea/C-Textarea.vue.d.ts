@@ -17,7 +17,11 @@ export interface CTextarea extends ColormodeComposableProperties {
      */
     instruction?: string;
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CTextarea, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CTextarea> & Readonly<{}>, {}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CTextarea, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
+    change: (value: string | null | undefined) => any;
+}, string, import("vue").PublicProps, Readonly<CTextarea> & Readonly<{
+    onChange?: ((value: string | null | undefined) => any) | undefined;
+}>, {}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 } & {
     label?: (props: {}) => any;

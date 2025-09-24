@@ -55,7 +55,7 @@ export interface CTextarea extends ColormodeComposableProperties {
 </script>
 
 <script setup lang="ts">
-import { normalizeClass, computed, useAttrs, ref, useSlots } from 'vue'
+import { normalizeClass, computed, useAttrs, ref, useSlots, watch } from 'vue'
 
 import { useBem } from "../../../composables/useBem";
 import { useColorMode } from '../../../composables/useColorMode'
@@ -68,6 +68,11 @@ import { useComponentInstance } from '../../../composables/useComponentInstance'
 defineOptions({
   inheritAttrs: false
 })
+
+/**
+ * Define emits for the component. Disables inheriting
+ */
+const emit = defineEmits<{(e: 'change', value: string|undefined|null): void}>()
 
 /**
  * Declare all props and defaults for vue.
@@ -97,6 +102,13 @@ const partialClass = computed(() =>
  * Check if the textarea is required from the given attributes
  */
 const value = ref('');
+
+/**
+ * Watch for changes in the selected option
+ */
+watch(value, async (newValue) => {
+  emit('change', newValue)
+})
 
 /**
  * Check if the input is required from the given attributes
