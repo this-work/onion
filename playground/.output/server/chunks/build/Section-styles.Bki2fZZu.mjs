@@ -1,0 +1,6 @@
+const Section_scss_vue_type_style_index_0_src_true_lang = ".section{background-repeat:no-repeat;background-size:cover;display:grid;grid-auto-flow:row;grid-template-columns:0 repeat(16,minmax(1px,1fr)) 0;place-content:stretch;place-items:stretch;position:relative;width:100%;grid-column-gap:12px}@media (min-width:1024px){.section{grid-column-gap:16px}}@media (min-width:1440px){.section{grid-column-gap:20px}}@media (min-width:1920px){.section{grid-column-gap:30px}}";
+
+const SectionStyles_Bki2fZZu = [Section_scss_vue_type_style_index_0_src_true_lang];
+
+export { SectionStyles_Bki2fZZu as default };
+//# sourceMappingURL=Section-styles.Bki2fZZu.mjs.map

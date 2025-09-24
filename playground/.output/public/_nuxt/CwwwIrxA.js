@@ -1,0 +1,1 @@
+import{e as t,c as a,l as s,o}from"#entry";const n={class:"c-image-tabs-item",role:"tabpanel"},m=t({__name:"C-Image-Tabs.item",props:{image:{}},setup(_){return(e,c)=>(o(),a("div",n,[s(e.$slots,"default")]))}}),l=Object.assign(m,{__name:"CImageTabsItem"});export{l as default};

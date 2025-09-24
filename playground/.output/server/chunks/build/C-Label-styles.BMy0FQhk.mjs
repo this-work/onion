@@ -1,0 +1,6 @@
+const CLabel_scss_vue_type_style_index_0_src_true_lang = ".c-label{display:block}.c-label__pill{align-items:center;background:var(--color-mode-property-label-background);border-radius:var(--border-radius-xl);color:var(--color-mode-property-label-color);display:inline-flex;font:var(--font-style-label);padding:var(--spacing-xxxs) var(--spacing-xs)}.c-label__text{display:block;font:inherit;font-size:inherit;letter-spacing:inherit}.c-label__icon+.c-label__text{margin-left:var(--spacing-xxs)}.c-label--transparent .c-label__pill{background:none;border-radius:0;padding:0}.c-label--size-s .c-label__pill{font-size:var(--font-size-14)}.c-label--size-l .c-label__pill{font-size:var(--font-size-19)}";
+
+const CLabelStyles_BMy0FQhk = [CLabel_scss_vue_type_style_index_0_src_true_lang];
+
+export { CLabelStyles_BMy0FQhk as default };
+//# sourceMappingURL=C-Label-styles.BMy0FQhk.mjs.map

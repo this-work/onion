@@ -1,0 +1,1 @@
+import{u as o}from"./seTeM-B7.js";import{N as n}from"#entry";function $(r=n()){const{componentName:t}=o(r);return t}function f(r,t,u=$(n())){return t?r?`${u}__${r}--${t}`:`${u}--${t}`:`${u}__${r}`}export{f as u};

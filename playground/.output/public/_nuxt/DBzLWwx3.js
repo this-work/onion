@@ -1,0 +1,1 @@
+import{e as t,c as s,l as o,o as a}from"#entry";const n={class:"c-text-tabs-item",role:"tabpanel"},_=t({__name:"C-Text-Tabs.item",props:{title:{}},setup(c){return(e,r)=>(a(),s("div",n,[o(e.$slots,"default")]))}}),m=Object.assign(_,{__name:"CTextTabsItem"});export{m as default};

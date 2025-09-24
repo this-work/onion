@@ -1,0 +1,6 @@
+const CText_scss_vue_type_style_index_0_src_true_lang = ".c-text{color:var(--color-mode-property-copytext-color)}.c-text,.c-text>*,.c-text>*+*{display:block}.c-text>*+*{margin-top:var(--slot-component-spacing)}.c-text p+dl,.c-text p+ol,.c-text p+p,.c-text p+ul{margin-top:var(--spacing-s)}.c-text dl li+li,.c-text ol li+li,.c-text ul li+li{margin-top:var(--spacing-xs)}.c-text a{color:var(--color-mode-property-link-color);text-decoration:none;transition:all .3s cubic-bezier(.77,0,.18,1) 0s}";
+
+const CTextStyles_B9YaufFQ = [CText_scss_vue_type_style_index_0_src_true_lang];
+
+export { CTextStyles_B9YaufFQ as default };
+//# sourceMappingURL=C-Text-styles.B9YaufFQ.mjs.map

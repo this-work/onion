@@ -1,0 +1,6 @@
+const Slot_scss_vue_type_style_index_0_src_true_lang = ".slot{background-repeat:no-repeat;background-size:cover;grid-column-end:span 16;position:relative}@media (min-width:768px){.slot{grid-column-end:span var(--slot-column-width);grid-column-start:calc(var(--slot-column-start, unset) + 1);grid-row-end:span var(--slot-row-height,unset);grid-row-start:var(--slot-row-start,unset)}}.slot>*+:not([class^=spacing-margin-top],[class^=spacing-padding-top]){margin-top:var(--slot-component-spacing)}@media (max-width:767px){.slot+.slot:not([class^=spacing-margin-top],[class^=spacing-padding-top]){margin-top:var(--slot-component-spacing)}}";
+
+const SlotStyles_CbXhOqoI = [Slot_scss_vue_type_style_index_0_src_true_lang];
+
+export { SlotStyles_CbXhOqoI as default };
+//# sourceMappingURL=Slot-styles.CbXhOqoI.mjs.map
