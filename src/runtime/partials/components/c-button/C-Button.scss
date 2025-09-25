@@ -3,6 +3,7 @@ $c-button--icon-transform: scale(1.5)!default;
 
 .c-button {
   $module: &;
+  position: relative;
   display: inline-flex;
   align-content: center;
   border-radius: border-radius('s');
@@ -25,7 +26,7 @@ $c-button--icon-transform: scale(1.5)!default;
 
   &:focus-visible {
     outline-color: color("primary");
-    outline-offset: unitize(3px);
+    z-index: 1;
   }
 
   $variants: ("primary", "secondary", "system");
