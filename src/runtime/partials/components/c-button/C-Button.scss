@@ -11,7 +11,10 @@ $c-button--icon-transform: scale(1.5)!default;
   border: solid 1px transparent;
   background-color: transparent;
   color: inherit;
+  outline-style: solid;
+  outline-width: unitize(1px);
   outline-color: transparent;
+  outline-offset: unitize(3px);
   vertical-align: bottom;
   justify-content: center;
   align-items: center;
@@ -21,13 +24,8 @@ $c-button--icon-transform: scale(1.5)!default;
   padding: 0;
 
   &:focus-visible {
-    outline-style: solid;
-    outline-width: unitize(1px);
     outline-color: color("primary");
     outline-offset: unitize(3px);
-    position: relative;
-    z-index: 1;
-    transition: transition(outline-color);
   }
 
   $variants: ("primary", "secondary", "system");
