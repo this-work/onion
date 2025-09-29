@@ -16,7 +16,7 @@
         <C-Icon
           v-if="loading"
           tag="span"
-          name="loading"
+          :name="loadingIcon"
           :class="useBem('loader')"
           :package="iconPackage"
           :size="loadingSpinnerSize"
@@ -108,6 +108,12 @@ export interface CButton extends ColormodeComposableProperties {
   loading?: boolean
 
   /**
+   * Shows a loading indicator when true
+   * @default false
+   */
+  loadingIcon?: string
+
+  /**
    * Whether the button is disabled
    * @default false
    */
@@ -162,6 +168,7 @@ const properties = withDefaults(defineProps<CButton>(), {
   iconPosition: 'left',
   loading: false,
   disabled: false,
+  loadingIcon: 'progress_activity',
   loadingSpinnerSize: '20px',
 })
 

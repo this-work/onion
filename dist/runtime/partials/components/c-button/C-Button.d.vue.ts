@@ -47,6 +47,11 @@ export interface CButton extends ColormodeComposableProperties {
      */
     loading?: boolean;
     /**
+     * Shows a loading indicator when true
+     * @default false
+     */
+    loadingIcon?: string;
+    /**
      * Whether the button is disabled
      * @default false
      */
@@ -76,6 +81,7 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CButton, {
     appearance: "primary" | "secondary" | "system";
     rounded: boolean;
     iconPosition: "left" | "right";
+    loadingIcon: string;
     loadingSpinnerSize: string;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;

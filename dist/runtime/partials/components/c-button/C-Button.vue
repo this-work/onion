@@ -16,7 +16,7 @@
         <C-Icon
           v-if="loading"
           tag="span"
-          name="loading"
+          :name="loadingIcon"
           :class="useBem('loader')"
           :package="iconPackage"
           :size="loadingSpinnerSize"
@@ -69,6 +69,7 @@ const properties = defineProps({
   iconPosition: { type: String, required: false, default: "left" },
   iconPackage: { type: String, required: false },
   loading: { type: Boolean, required: false, default: false },
+  loadingIcon: { type: String, required: false, default: "progress_activity" },
   disabled: { type: Boolean, required: false, default: false },
   loadingSpinnerSize: { type: String, required: false, default: "20px" },
   href: { type: String, required: false },
