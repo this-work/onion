@@ -76,8 +76,8 @@ export interface CButton extends ColormodeComposableProperties {
 declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CButton, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CButton> & Readonly<{}>, {
     background: "solid" | "soft" | "outline" | "plain";
     tag: string;
-    disabled: boolean;
     loading: boolean;
+    disabled: boolean;
     appearance: "primary" | "secondary" | "system";
     rounded: boolean;
     iconPosition: "left" | "right";

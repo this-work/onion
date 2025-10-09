@@ -36,10 +36,10 @@ export interface CAbSlider extends ColormodeComposableProperties {
 }
 declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CAbSlider, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CAbSlider> & Readonly<{}>, {
     tag: string;
+    disabled: boolean;
     bounds: number;
     initialPosition: number;
     keyboardIncrement: number;
-    disabled: boolean;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     before?: (props: {}) => any;
 } & {

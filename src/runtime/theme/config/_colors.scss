@@ -395,6 +395,18 @@ $color-palettes: (
         ':disabled':  transparent,
         ':disabled ~ *':  transparent,
       ),
+      caret-color: 'dark',
+      -webkit-text-fill-color: (
+        ':-webkit-autofill': 'dark',
+        ':-webkit-autofill::selection': 'dark',
+      ),
+      -webkit-box-shadow: (
+        ':-webkit-autofill': 0 0 0 1000px color('dark-5-alpha') inset,
+        ':-webkit-autofill:hover': 0 0 0 1000px color('dark-5-alpha') inset,
+        ':-webkit-autofill:active': 0 0 0 1000px color('dark-5-alpha') inset,
+        ':-webkit-autofill:focus': 0 0 0 1000px color('dark-5-alpha') inset,
+        ':-webkit-autofill:first-line': 0 0 0 1000px color('dark-5-alpha') inset,
+      )
     )
   ),
   'textarea': (

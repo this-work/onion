@@ -78,13 +78,12 @@ $c-input-placeholder-opacity: .5 !default;
     padding: spacing('xxs') spacing('xs');
     border-width: 1px;
     border-style: solid;
+    outline: none;
     border-radius: border-radius('xs');
     background: transparent;
     font: inherit;
     cursor: text;
-    transition: transition(all);
-    @include color-palette("input");
-    @include font-style("form-text");
+    transition: transition(all), box-shadow 0s ease-in-out;
 
     /// Workaround for the undeletable background-color
     /// of the chrome password manager
@@ -93,10 +92,13 @@ $c-input-placeholder-opacity: .5 !default;
     &:-webkit-autofill:active,
     &:-webkit-autofill:focus,
     &:-webkit-autofill:first-line {
-      -webkit-box-shadow: 0 0 0 1000px transparent inset!important;
-      -webkit-background-clip: text!important;
+      -webkit-box-shadow: 0 0 0 1000px transparent inset;
+      -webkit-background-clip: text;
       font: inherit!important;
     }
+
+    @include color-palette("input");
+    @include font-style("form-text");
 
     &::placeholder{
       opacity: $c-input-placeholder-opacity;
