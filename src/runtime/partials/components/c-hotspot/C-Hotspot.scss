@@ -94,7 +94,7 @@
     outline-style: solid;
     outline-width: unitize(1px);
     outline-color: color("primary");
-    outline-offset: unitize(3px);
+    outline-offset: $focus-outline-spacing;
     position: relative;
     z-index: 1;
   }

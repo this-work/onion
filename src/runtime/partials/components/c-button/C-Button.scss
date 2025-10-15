@@ -15,7 +15,7 @@ $c-button--icon-transform: scale(1.5)!default;
   outline-style: solid;
   outline-width: unitize(1px);
   outline-color: transparent;
-  outline-offset: unitize(3px);
+  outline-offset: $focus-outline-spacing;
   vertical-align: bottom;
   justify-content: center;
   align-items: center;

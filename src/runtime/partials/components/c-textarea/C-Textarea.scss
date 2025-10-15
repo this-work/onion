@@ -30,7 +30,7 @@ $c-textarea-placeholder-opacity: .5 !default;
     border-width: 1px;
     border-style: solid;
     border-radius: border-radius('xs');
-    outline-offset: unitize(3px);
+    outline-offset: $focus-outline-spacing;
     outline: transparent solid unitize(1px);
     background: transparent;
     font: inherit;
