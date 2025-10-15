@@ -1,5 +1,7 @@
 $c-textarea-placeholder-opacity: .5 !default;
 
+$focus-outline-spacing: unitize(3px)!default;
+
 .c-textarea {
   $module: &;
   display: flex;

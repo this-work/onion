@@ -1,6 +1,8 @@
 @use "sass:map";
 @use "sass:string";
 
+$focus-outline-spacing: unitize(3px)!default;
+
 .c-hotspot {
   $module: &;
   position: relative;

@@ -1,6 +1,8 @@
 $c-button-min-size: spacing("l")!default;
 $c-button--icon-transform: scale(1.5)!default;
 
+$focus-outline-spacing: unitize(3px)!default;
+
 .c-button {
   $module: &;
   position: relative;
