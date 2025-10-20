@@ -34,12 +34,12 @@ export interface CAbSlider extends ColormodeComposableProperties {
      */
     disabled?: boolean;
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CAbSlider, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CAbSlider> & Readonly<{}>, {
+declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CAbSlider, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CAbSlider> & Readonly<{}>, {
     tag: string;
+    disabled: boolean;
     bounds: number;
     initialPosition: number;
     keyboardIncrement: number;
-    disabled: boolean;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     before?: (props: {}) => any;
 } & {
@@ -47,6 +47,7 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CAbSlider,
 } & {
     handle?: (props: {}) => any;
 }>;
+declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

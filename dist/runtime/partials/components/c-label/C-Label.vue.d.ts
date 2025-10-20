@@ -31,9 +31,10 @@ export interface CLabel extends ColormodeComposableProperties {
      */
     size?: 's' | 'm' | 'l';
 }
-declare const _default: import("vue").DefineComponent<CLabel, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CLabel> & Readonly<{}>, {
+declare const __VLS_export: import("vue").DefineComponent<CLabel, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CLabel> & Readonly<{}>, {
     size: "s" | "m" | "l";
     background: boolean;
     tag: string;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
+declare const _default: typeof __VLS_export;
 export default _default;

@@ -23,7 +23,8 @@ export interface CTextTabs extends ColormodeComposableProperties {
      */
     defaultTab?: number;
 }
-declare const _default: import("vue").DefineComponent<CTextTabs, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CTextTabs> & Readonly<{}>, {
+declare const __VLS_export: import("vue").DefineComponent<CTextTabs, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CTextTabs> & Readonly<{}>, {
     defaultTab: number;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
+declare const _default: typeof __VLS_export;
 export default _default;

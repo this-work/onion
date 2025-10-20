@@ -76,7 +76,7 @@ export interface CImage extends ColormodeComposableProperties {
      */
     aspectRatios?: AspectRatios;
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CImage, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CImage> & Readonly<{}>, {
+declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CImage, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CImage> & Readonly<{}>, {
     tag: string;
     position: string;
     lazy: boolean;
@@ -85,6 +85,7 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CImage, {}
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 }>;
+declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

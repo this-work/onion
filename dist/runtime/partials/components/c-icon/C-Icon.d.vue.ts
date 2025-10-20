@@ -29,7 +29,7 @@ export interface CIcon extends ColormodeComposableProperties {
      */
     mode?: 'svg' | 'css';
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CIcon, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CIcon> & Readonly<{}>, {
+declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CIcon, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CIcon> & Readonly<{}>, {
     size: string;
     mode: "svg" | "css";
     tag: string;
@@ -37,6 +37,7 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CIcon, {},
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 }>;
+declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

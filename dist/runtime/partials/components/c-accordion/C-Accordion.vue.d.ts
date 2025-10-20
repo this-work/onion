@@ -18,11 +18,12 @@ export interface CAccordion extends ColormodeComposableProperties {
      */
     initiallyOpened?: boolean;
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CAccordion, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CAccordion> & Readonly<{}>, {
+declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CAccordion, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CAccordion> & Readonly<{}>, {
     initiallyOpened: boolean;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 }>;
+declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

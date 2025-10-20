@@ -1,64 +1,22 @@
 <template>
   <Teleport :to="rootElement">
-    <Transition
-      name="transition-c-modal"
-      @enter="onTransitionEnter"
-      @leave="onTransitionAfterLeave"
-    >
-      <aside
-        v-if="isOpen"
-        :class="partialClass"
+    <Transition name="transition-c-modal" @enter="onTransitionEnter" @leave="onTransitionAfterLeave">
+      <aside v-if="isOpen" :class="partialClass"
         :style="{ background: level === 0 ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.25)' }"
-        @click="handleBackdropClick"
-      >
-        <div
-          :class="useBem('container')"
-          :style="isSimpleLayer ? { width: `${width}px` } : {}"
-        >
-          <div
-            ref="modalRef"
-            role="dialog"
-            aria-modal="true"
-            :aria-describedby="contentID"
-            :class="useBem('box')"
-            @keydown.esc="handleEscape"
-          >
+        @click="handleBackdropClick">
+        <div :class="useBem('container')" :style="isSimpleLayer ? { width: `${width}px` } : {}">
+          <div ref="modalRef" role="dialog" aria-modal="true" :aria-describedby="contentID" :class="useBem('box')"
+            @keydown.esc="handleEscape">
             <div :class="useBem('controls')">
-              <C-Button
-                icon="close-rounded"
-                aria-label="Close modal"
-                background="soft"
-                @click="handleClose"
-              />
+              <C-Button icon="close-rounded" aria-label="Close modal" background="soft" @click="handleClose" />
             </div>
-            <C-Headline
-              v-if="title && isSimpleLayer"
-              :headline="title"
-              :class="useBem('title')"
-              headline-type="h6"
-              headline-tag="h3"
-            />
+            <C-Headline v-if="title && isSimpleLayer" :headline="title" :class="useBem('title')" headline-type="h6"
+              headline-tag="h3" />
 
-            <article
-              v-if="hasContent"
-              :id="contentID"
-              :class="useBem('content')"
-            >
-              <C-Image
-                v-if="image"
-                v-bind="image"
-                :class="useBem('image')"
-              />
-              <C-Headline
-                v-if="headline"
-                v-bind="headline"
-                :class="useBem('headline')"
-              />
-              <C-Text
-                v-if="text"
-                v-bind="text"
-                :class="useBem('text')"
-              />
+            <article v-if="hasContent" :id="contentID" :class="useBem('content')">
+              <C-Image v-if="image" v-bind="image" :class="useBem('image')" />
+              <C-Headline v-if="headline" v-bind="headline" :class="useBem('headline')" />
+              <C-Text v-if="text" v-bind="text" :class="useBem('text')" />
               <slot>
                 <div v-html="content" />
               </slot>
@@ -75,8 +33,8 @@
 </script>
 
 <script setup>
-import { normalizeClass, computed, onBeforeUnmount, useId, watch, ref, useSlots } from "vue";
 import { createFocusTrap } from "focus-trap";
+import { computed, normalizeClass, onBeforeUnmount, ref, useId, useSlots, watch } from "vue";
 import { useBem } from "../../../composables/useBem";
 import { useColorMode } from "../../../composables/useColorMode";
 import { useComponentInstance } from "../../../composables/useComponentInstance";

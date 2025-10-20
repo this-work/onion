@@ -1,4 +1,8 @@
-import type { ColormodeComposableProperties, CImage, CHeadline, CText } from '../../../types/index.js';
+import type { CHeadline, CImage, ColormodeComposableProperties, CText } from '../../../types/index.js';
+export interface CModalElement {
+    open: () => void;
+    close: () => void;
+}
 export interface CModal extends ColormodeComposableProperties {
     /**
      * Root element to render the modal in
@@ -42,15 +46,15 @@ export interface CModal extends ColormodeComposableProperties {
      */
     width?: number;
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CModal, {
+declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CModal, {
     open: () => void;
     close: () => void;
 }, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-    close: (...args: any[]) => void;
     "update:show": (...args: any[]) => void;
+    close: (...args: any[]) => void;
 }, string, import("vue").PublicProps, Readonly<CModal> & Readonly<{
-    onClose?: ((...args: any[]) => any) | undefined;
     "onUpdate:show"?: ((...args: any[]) => any) | undefined;
+    onClose?: ((...args: any[]) => any) | undefined;
 }>, {
     width: number;
     rootElement: string;
@@ -59,6 +63,7 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CModal, {
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 }>;
+declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
