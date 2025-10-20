@@ -1,16 +1,14 @@
 .c-modal {
   $module: &;
-  z-index: 900;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
   height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: spacing("m");
+  padding: spacing("l") spacing("s");
   overflow-y: auto;
 
   &--fullwidth {
@@ -53,10 +51,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
     max-width: unitize(750px);
     border-radius: border-radius('s');
-    overflow: hidden;
+    overflow: visible;
     pointer-events: auto;
     @include color-palette("modal");
   }

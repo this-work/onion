@@ -1,9 +1,10 @@
 <template>
   <Teleport :to="rootElement">
     <Transition name="transition-c-modal" @enter="onTransitionEnter" @leave="onTransitionAfterLeave">
-      <aside v-if="isOpen" :class="partialClass"
-        :style="{ background: level === 0 ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.25)' }"
-        @click="handleBackdropClick">
+      <aside v-if="isOpen" :class="partialClass" :style="{
+        background: level === 0 ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.25)',
+        zIndex: 900 + (level * 10)
+      }" @click="handleBackdropClick">
         <div :class="useBem('container')" :style="isSimpleLayer ? { width: `${width}px` } : {}">
           <div ref="modalRef" role="dialog" aria-modal="true" :aria-describedby="contentID" :class="useBem('box')"
             @keydown.esc="handleEscape">

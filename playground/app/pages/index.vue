@@ -50,7 +50,7 @@
           <C-Button appearance="secondary" text="Secondary Loading" :loading="true" />
           <C-Button appearance="system" text="System Loading" :loading="true" />
           <C-Button appearance="primary" text="Toggle Loading" :loading="isLoading" @click="toggleLoading" />
-          <C-Button appearance="primary" icon="renew" icon-package="carbon" :loading="true" :rounded="true" />
+          <C-Button appearance="primary" icon="renew" :loading="true" :rounded="true" />
           <C-Button appearance="secondary" background="outline" text="Outline Loading" :loading="true" />
         </div>
       </Slot>
@@ -62,8 +62,34 @@
 
   <C-Modal ref="smallModal">
     <div style="padding: var(--spacing-m); max-width: 500px;">
-      <C-Headline headline="Small Modal" headline-type="h5" style="margin-bottom: var(--spacing-m);" />
-      <C-Text text="This is a small modal with minimal content. It should be centered vertically and horizontally." />
+      <C-Headline headline="Small Modal with Select" headline-type="h5" style="margin-bottom: var(--spacing-m);" />
+      <C-Text text="This modal contains a select with many items to test z-index layering."
+        style="margin-bottom: var(--spacing-m);" />
+
+      <C-Select label="Choose a country" placeholder="Select a country" :options="[
+        { label: 'Afghanistan', value: 'AF' },
+        { label: 'Albania', value: 'AL' },
+        { label: 'Algeria', value: 'DZ' },
+        { label: 'Andorra', value: 'AD' },
+        { label: 'Angola', value: 'AO' },
+        { label: 'Argentina', value: 'AR' },
+        { label: 'Armenia', value: 'AM' },
+        { label: 'Australia', value: 'AU' },
+        { label: 'Austria', value: 'AT' },
+        { label: 'Azerbaijan', value: 'AZ' },
+        { label: 'Bahamas', value: 'BS' },
+        { label: 'Bahrain', value: 'BH' },
+        { label: 'Bangladesh', value: 'BD' },
+        { label: 'Barbados', value: 'BB' },
+        { label: 'Belarus', value: 'BY' },
+        { label: 'Belgium', value: 'BE' },
+        { label: 'Belize', value: 'BZ' },
+        { label: 'Benin', value: 'BJ' },
+        { label: 'Bhutan', value: 'BT' },
+        { label: 'Bolivia', value: 'BO' },
+      ]" style="margin-bottom: var(--spacing-m);" />
+
+      <C-Text text="Additional content below the select to test if the dropdown overlays correctly." />
     </div>
   </C-Modal>
 

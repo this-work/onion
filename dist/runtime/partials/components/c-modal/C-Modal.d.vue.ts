@@ -50,11 +50,11 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CModal
     open: () => void;
     close: () => void;
 }, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-    "update:show": (...args: any[]) => void;
     close: (...args: any[]) => void;
+    "update:show": (...args: any[]) => void;
 }, string, import("vue").PublicProps, Readonly<CModal> & Readonly<{
-    "onUpdate:show"?: ((...args: any[]) => any) | undefined;
     onClose?: ((...args: any[]) => any) | undefined;
+    "onUpdate:show"?: ((...args: any[]) => any) | undefined;
 }>, {
     width: number;
     rootElement: string;
