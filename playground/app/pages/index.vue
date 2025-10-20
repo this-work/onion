@@ -1,46 +1,21 @@
 <template>
   <Section>
-    <Module
-      :start="3"
-      padding-top="l"
-      padding-bottom="l"
-      vertical-alignment="center"
-    >
-      <Slot
-        :width="6"
-      >
-        <C-Label
-          icon="filter-vintage-outline"
-          :background="true"
-          text="KeyVisual/Text Example #1"
-        />
-        <C-Headline
-          headline="Die <mark>Bedeutung</mark> von null Reibung"
-          headline-type="h4"
-          headline-tag="h2"
-        />
-        <C-Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat." />
+    <Module :start="3" padding-top="l" padding-bottom="l" vertical-alignment="center">
+      <Slot :width="6">
+        <C-Label icon="filter-vintage-outline" :background="true" text="KeyVisual/Text Example #1" />
+        <C-Headline headline="Die <mark>Bedeutung</mark> von null Reibung" headline-type="h4" headline-tag="h2" />
+        <C-Text
+          text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat." />
 
-        <C-Input
-          type="text"
-          name="prename"
-        >
+        <C-Input type="text" name="prename">
           <template #label>
             Name
           </template>
         </C-Input>
 
-        <C-Input
-          type="text"
-          name="lastname"
-          label="Lastname"
-          value="Mustermann"
-         />
+        <C-Input type="text" name="lastname" label="Lastname" value="Mustermann" />
 
-        <C-Input
-          type="number"
-          name="phone"
-        >
+        <C-Input type="number" name="phone">
           <template #label>
             Phone number
           </template>
@@ -49,41 +24,72 @@
           </template>
         </C-Input>
 
-        <C-Switch
-          label="I agree to the terms and conditions"
-          name="terms"
-        />
+        <C-Switch label="I agree to the terms and conditions" name="terms" />
 
-        <C-Select
-          label="When we should call back?"
-          placeholder="Choose a time slot"
-          :options="[
-            { label: '18:00 Uhr', value: '18:00' },
-            { label: '19:30 Uhr', value: '19:30' },
-            { label: '21:15 Uhr', value: '21:15' },
-          ]"
-        />
+        <C-Select label="When we should call back?" placeholder="Choose a time slot" :options="[
+          { label: '18:00 Uhr', value: '18:00' },
+          { label: '19:30 Uhr', value: '19:30' },
+          { label: '21:15 Uhr', value: '21:15' },
+        ]" />
 
-        <C-Textarea
-          label="Your Message"
-        />
+        <C-Textarea label="Your Message" />
 
-        <C-Button
-          appearance="primary"
-          text="Request callback"
-        />
+        <C-Button appearance="primary" text="Request callback" />
+
+        <div style="margin-top: var(--spacing-l); display: flex; gap: var(--spacing-s);">
+          <C-Button appearance="secondary" text="Small Modal" @click="smallModal?.open()" />
+          <C-Button appearance="secondary" text="Large Modal" @click="largeModal?.open()" />
+        </div>
+
+        <C-Headline headline="Loading Spinner Test" headline-type="h5" headline-tag="h3"
+          style="margin-top: var(--spacing-xl);" />
+        <C-Text text="Testing the loading spinner in different button states:" />
+
+        <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-s); margin-top: var(--spacing-m);">
+          <C-Button appearance="primary" text="Primary Loading" :loading="true" />
+          <C-Button appearance="secondary" text="Secondary Loading" :loading="true" />
+          <C-Button appearance="system" text="System Loading" :loading="true" />
+          <C-Button appearance="primary" text="Toggle Loading" :loading="isLoading" @click="toggleLoading" />
+          <C-Button appearance="primary" icon="renew" icon-package="carbon" :loading="true" :rounded="true" />
+          <C-Button appearance="secondary" background="outline" text="Outline Loading" :loading="true" />
+        </div>
       </Slot>
-      <Slot
-        :width="6"
-      >
-        <C-Image
-          src="https://placehold.co/600x600/BDBDBD/fff"
-          border-radius="m"
-        />
+      <Slot :width="6">
+        <C-Image src="https://placehold.co/600x600/BDBDBD/fff" border-radius="m" />
       </Slot>
     </Module>
   </Section>
+
+  <C-Modal ref="smallModal">
+    <div style="padding: var(--spacing-m); max-width: 500px;">
+      <C-Headline headline="Small Modal" headline-type="h5" style="margin-bottom: var(--spacing-m);" />
+      <C-Text text="This is a small modal with minimal content. It should be centered vertically and horizontally." />
+    </div>
+  </C-Modal>
+
+  <C-Modal ref="largeModal" :fullwidth="true">
+    <div style="padding: var(--spacing-m);">
+      <C-Headline headline="Large Modal with Overflow" headline-type="h5" style="margin-bottom: var(--spacing-m);" />
+      <C-Text
+        text="This modal has a lot of content that will overflow. You should be able to scroll with equal spacing at the top and bottom."
+        style="margin-bottom: var(--spacing-m);" />
+
+      <div v-for="i in 20" :key="i" style="margin-bottom: var(--spacing-s);">
+        <C-Text
+          :text="`Section ${i}: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.`" />
+      </div>
+    </div>
+  </C-Modal>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
+const smallModal = ref<any>(null)
+const largeModal = ref<any>(null)
+const isLoading = ref(false)
+
+const toggleLoading = () => {
+  isLoading.value = !isLoading.value
+}
 </script>

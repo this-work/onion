@@ -1,47 +1,17 @@
 <template>
-  <C-Wrapper
-    :condition="!!additionalButtons?.length"
-    tag="div"
-  >
-    <component
-      v-bind="$attrs"
-      :is="computedTag"
-      v-if="text || icon"
-      :href
-      :target="computedTarget"
-      :class="partialClass"
-      :disabled
-    >
+  <C-Wrapper :condition="!!additionalButtons?.length" tag="div">
+    <component v-bind="$attrs" :is="computedTag" v-if="text || icon" :href :target="computedTarget"
+      :class="partialClass" :disabled>
       <span :class="useBem('content')">
-        <C-Icon
-          v-if="loading"
-          tag="span"
-          :name="loadingIcon"
-          :class="useBem('loader')"
-          :package="iconPackage"
-          :size="loadingSpinnerSize"
-        />
-        <C-Icon
-          v-if="icon"
-          tag="span"
-          :name="icon"
-          :class="useBem('icon')"
-          :package="iconPackage"
-          :size="iconSize"
-        />
-        <span
-          v-if="hasText"
-          :class="useBem('text')"
-        >
+        <C-Icon v-if="loading" tag="span" :name="loadingIcon" :class="useBem('loader')" :package="iconPackage"
+          :size="loadingSpinnerSize" />
+        <C-Icon v-if="icon" tag="span" :name="icon" :class="useBem('icon')" :package="iconPackage" :size="iconSize" />
+        <span v-if="hasText" :class="useBem('text')">
           <slot>{{ text }}</slot>
         </span>
       </span>
     </component>
-    <C-Button
-      v-for="(button, index) in additionalButtons"
-      :key="index"
-      v-bind="button"
-    />
+    <C-Button v-for="(button, index) in additionalButtons" :key="index" v-bind="button" />
   </C-Wrapper>
 </template>
 
@@ -142,8 +112,8 @@ export interface CButton extends ColormodeComposableProperties {
 </script>
 
 <script setup lang="ts">
-import { normalizeClass, computed, useSlots } from 'vue'
 import { NuxtLink } from '#components'
+import { computed, normalizeClass, useSlots } from 'vue'
 
 import { useBem } from '../../../composables/useBem'
 import { useColorMode } from '../../../composables/useColorMode'
@@ -168,7 +138,7 @@ const properties = withDefaults(defineProps<CButton>(), {
   iconPosition: 'left',
   loading: false,
   disabled: false,
-  loadingIcon: 'progress_activity',
+  loadingIcon: 'progress-activity',
   loadingSpinnerSize: '20px',
 })
 

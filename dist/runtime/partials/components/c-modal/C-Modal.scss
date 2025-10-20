@@ -6,9 +6,11 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: spacing("m");
   overflow-y: auto;
 
   &--fullwidth {
@@ -21,11 +23,11 @@
 
   &--fullscreen {
     #{$module}__box {
-      height: 100vh;
-      height: 100dvh;
+      height: 100%;
       max-height: none;
+
       @include above("s") {
-        width: 100vw;
+        width: 100%;
         max-width: none;
         border-radius: 0;
       }
@@ -39,23 +41,21 @@
   }
 
   &__container {
-    height: 90vh;
-    margin: 0 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    flex-shrink: 0;
     pointer-events: none;
   }
 
   &__box {
-    // border-radius: unitize(10px); // TODO: change to variable
-    // background: white;
-    // width: 90%;
-    // min-height: unitize(50px);
-    // max-width: unitize(750px); // TODO: tweak value
-    // max-height: 90%; // TODO: tweak value
-    // overflow-y: auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: unitize(750px);
     border-radius: border-radius('s');
-    // width: 90%;
-    // margin: 5% 10%;
     overflow: hidden;
     pointer-events: auto;
     @include color-palette("modal");
@@ -92,9 +92,11 @@
 }
 
 .transition-c-modal {
+
   &-enter-active,
   &-leave-active {
     transition: transition(opacity, 230ms);
+
     .c-modal__box {
       transition: transition(transform, 230ms);
     }
@@ -103,8 +105,10 @@
   &-enter-from,
   &-leave-to {
     opacity: 0;
+
     .c-modal__box {
       transform: translateY(20px);
+
       @include above("s") {
         transform: scale(0.8);
       }
@@ -114,8 +118,10 @@
   &-enter-to,
   &-leave-from {
     opacity: 1;
+
     .c-modal__box {
       transform: translateY(0);
+
       @include above("s") {
         transform: scale(1);
       }
