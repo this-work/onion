@@ -48,18 +48,23 @@ export interface CButton extends ColormodeComposableProperties {
     loading?: boolean;
     /**
      * Shows a loading indicator when true
-     * @default false
+     * @default 'progress-activity'
      */
     loadingIcon?: string;
+    /**
+     * Package for the loading icon
+     * @default 'material-symbols'
+     */
+    loadingIconPackage?: string;
     /**
      * Whether the button is disabled
      * @default false
      */
     disabled?: boolean;
     /**
-     * Size of the loading indicator
+     * Size of the loading icon
      */
-    loadingSpinnerSize?: string;
+    loadingIconSize?: string;
     /**
      * URL that the button links to when clicked
      */
@@ -82,7 +87,8 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CButto
     rounded: boolean;
     iconPosition: "left" | "right";
     loadingIcon: string;
-    loadingSpinnerSize: string;
+    loadingIconPackage: string;
+    loadingIconSize: string;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 }>;

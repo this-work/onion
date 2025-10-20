@@ -1,4 +1,4 @@
-import { defineNuxtModule, addComponentsDir, addImports, createResolver, extendViteConfig, installModule } from '@nuxt/kit'
+import { addComponentsDir, addImports, createResolver, defineNuxtModule, extendViteConfig, installModule } from '@nuxt/kit'
 
 export interface ModuleOptions {
   theme?: {

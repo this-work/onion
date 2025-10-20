@@ -3,8 +3,8 @@
     <component v-bind="$attrs" :is="computedTag" v-if="text || icon" :href :target="computedTarget"
       :class="partialClass" :disabled>
       <span :class="useBem('content')">
-        <C-Icon v-if="loading" tag="span" :name="loadingIcon" :class="useBem('loader')" :package="iconPackage"
-          :size="loadingSpinnerSize" />
+        <C-Icon v-if="loading" tag="span" :name="loadingIcon" :class="useBem('loader')" :package="loadingIconPackage"
+          :size="loadingIconSize" />
         <C-Icon v-if="icon" tag="span" :name="icon" :class="useBem('icon')" :package="iconPackage" :size="iconSize" />
         <span v-if="hasText" :class="useBem('text')">
           <slot>{{ text }}</slot>
@@ -40,8 +40,9 @@ const properties = defineProps({
   iconPackage: { type: String, required: false },
   loading: { type: Boolean, required: false, default: false },
   loadingIcon: { type: String, required: false, default: "progress-activity" },
+  loadingIconPackage: { type: String, required: false, default: "material-symbols" },
   disabled: { type: Boolean, required: false, default: false },
-  loadingSpinnerSize: { type: String, required: false, default: "20px" },
+  loadingIconSize: { type: String, required: false, default: "20px" },
   href: { type: String, required: false },
   target: { type: String, required: false },
   additionalButtons: { type: Array, required: false },

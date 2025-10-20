@@ -3,8 +3,8 @@
     <component v-bind="$attrs" :is="computedTag" v-if="text || icon" :href :target="computedTarget"
       :class="partialClass" :disabled>
       <span :class="useBem('content')">
-        <C-Icon v-if="loading" tag="span" :name="loadingIcon" :class="useBem('loader')" :package="iconPackage"
-          :size="loadingSpinnerSize" />
+        <C-Icon v-if="loading" tag="span" :name="loadingIcon" :class="useBem('loader')" :package="loadingIconPackage"
+          :size="loadingIconSize" />
         <C-Icon v-if="icon" tag="span" :name="icon" :class="useBem('icon')" :package="iconPackage" :size="iconSize" />
         <span v-if="hasText" :class="useBem('text')">
           <slot>{{ text }}</slot>
@@ -79,9 +79,15 @@ export interface CButton extends ColormodeComposableProperties {
 
   /**
    * Shows a loading indicator when true
-   * @default false
+   * @default 'progress-activity'
    */
   loadingIcon?: string
+
+  /**
+   * Package for the loading icon
+   * @default 'material-symbols'
+   */
+  loadingIconPackage?: string
 
   /**
    * Whether the button is disabled
@@ -90,9 +96,9 @@ export interface CButton extends ColormodeComposableProperties {
   disabled?: boolean
 
   /**
-   * Size of the loading indicator
+   * Size of the loading icon
    */
-  loadingSpinnerSize?: string
+  loadingIconSize?: string
 
   /**
    * URL that the button links to when clicked
@@ -139,7 +145,8 @@ const properties = withDefaults(defineProps<CButton>(), {
   loading: false,
   disabled: false,
   loadingIcon: 'progress-activity',
-  loadingSpinnerSize: '20px',
+  loadingIconPackage: 'material-symbols',
+  loadingIconSize: '20px',
 })
 
 const computedTag = computed(() => {
