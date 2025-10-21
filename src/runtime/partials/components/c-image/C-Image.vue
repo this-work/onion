@@ -1,32 +1,17 @@
 <template>
-  <component
-    :is="tag"
-    :class="partialClass"
-  >
-    <picture :class="useBem('wrapper')">
+  <component :is="tag" :class="partialClass">
+    <div v-if="useNuxtPicture" :class="useBem('wrapper')">
+      <NuxtPicture :src="src" :format="format" :sizes="sizes" :quality="quality" :width="width" :height="height"
+        :placeholder="placeholder" :loading="loadingMethod" :img-attrs="mergedImgAttrs" />
+    </div>
+    <picture v-else :class="useBem('wrapper')">
       <slot>
-        <source
-          v-for="(source, index) in formattedSrcAlternates"
-          v-bind="source"
-          :key="index"
-        >
-        <img
-          :src="src"
-          :loading="loadingMethod"
-          :class="imageClasses"
-          :style="imageStyles as any"
-          :alt="alt"
-          :title="title"
-          role="img"
-          draggable="false"
-        >
+        <source v-for="(source, index) in formattedSrcAlternates" v-bind="source" :key="index" />
+        <img :src="src" :loading="loadingMethod" :class="imageClasses" :style="imageStyles as any" :alt="alt"
+          :title="title" role="img" draggable="false" />
       </slot>
     </picture>
-    <c-text
-      v-if="description"
-      :tag="captionTag"
-      :class="useBem('caption')"
-    >
+    <c-text v-if="description" :tag="captionTag" :class="useBem('caption')">
       <p v-html="description" />
     </c-text>
   </component>
@@ -34,12 +19,12 @@
 
 <script lang="ts">
 import type {
-  ColormodeComposableProperties,
-  CSSObject,
-  CSSClassObject,
-  Breakpoint,
-  BorderRadius,
   AspectRatios,
+  BorderRadius,
+  Breakpoint,
+  ColormodeComposableProperties,
+  CSSClassObject,
+  CSSObject,
 } from '../../../types'
 
 export interface CImageSourceAlternates {
@@ -129,11 +114,54 @@ export interface CImage extends ColormodeComposableProperties {
    * the image for the respective breakpoint.
    */
   aspectRatios?: AspectRatios
+
+  /**
+   * Enable Nuxt Picture optimization features
+   * @default false
+   */
+  useNuxtPicture?: boolean
+
+  /**
+   * Image formats to generate (for Nuxt Picture)
+   * @default 'webp'
+   */
+  format?: string
+
+  /**
+   * Image sizes for responsive images (for Nuxt Picture)
+   */
+  sizes?: string
+
+  /**
+   * Image quality (for Nuxt Picture)
+   * @default 80
+   */
+  quality?: number
+
+  /**
+   * Image width (for Nuxt Picture)
+   */
+  width?: number
+
+  /**
+   * Image height (for Nuxt Picture)
+   */
+  height?: number
+
+  /**
+   * Placeholder image while loading (for Nuxt Picture)
+   */
+  placeholder?: string | boolean
+
+  /**
+   * Additional attributes to pass to the img element (for Nuxt Picture)
+   */
+  imgAttrs?: Record<string, any>
 }
 </script>
 
 <script setup lang="ts">
-import { normalizeClass, computed } from 'vue'
+import { computed, normalizeClass } from 'vue'
 
 import { useBem } from '../../../composables/useBem'
 import { useColorMode } from '../../../composables/useColorMode'
@@ -149,6 +177,9 @@ const properties = withDefaults(defineProps<CImage>(), {
   fit: 'cover',
   position: 'center center',
   autosize: false,
+  useNuxtPicture: false,
+  format: 'webp',
+  quality: 80,
 })
 
 /**
@@ -251,6 +282,24 @@ function buildSourceSet(sourceSet: Record<string, string>) {
 const loadingMethod = computed(() => (properties.lazy ? 'lazy' : 'eager'))
 
 const captionTag = computed(() => (properties.tag === 'figure' ? 'figcaption' : 'span'))
+
+/**
+ * Merged image attributes for Nuxt Picture component
+ * Combines existing styling and custom imgAttrs
+ */
+const mergedImgAttrs = computed(() => {
+  const baseAttrs = {
+    alt: properties.alt,
+    title: properties.title,
+    class: imageClasses.value,
+    style: imageStyles.value,
+    role: 'img',
+    draggable: false,
+  }
+
+  // Merge with custom imgAttrs if provided
+  return properties.imgAttrs ? { ...baseAttrs, ...properties.imgAttrs } : baseAttrs
+})
 </script>
 
 <style lang="scss" src="./C-Image.scss" />

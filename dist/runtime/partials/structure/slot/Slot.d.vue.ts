@@ -41,13 +41,12 @@ export interface SlotProperties extends BackgroundComposableProperties, SpacingC
      */
     components?: Component[];
 }
-declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<SlotProperties, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<SlotProperties> & Readonly<{}>, {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<SlotProperties, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<SlotProperties> & Readonly<{}>, {
     width: ColumnWidth;
     componentSpacing: Spacing;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 }>;
-declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

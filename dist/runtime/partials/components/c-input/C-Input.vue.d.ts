@@ -29,7 +29,7 @@ export interface CInput extends ColormodeComposableProperties {
      */
     suffix?: string;
 }
-declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CInput, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CInput, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
     change: (value: string | null | undefined) => any;
 }, string, import("vue").PublicProps, Readonly<CInput> & Readonly<{
     onChange?: ((value: string | null | undefined) => any) | undefined;
@@ -46,7 +46,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CInput
 } & {
     instruction?: (props: {}) => any;
 }>;
-declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

@@ -50,12 +50,24 @@
           <C-Button appearance="secondary" text="Secondary Loading" :loading="true" />
           <C-Button appearance="system" text="System Loading" :loading="true" />
           <C-Button appearance="primary" text="Toggle Loading" :loading="isLoading" @click="toggleLoading" />
-          <C-Button appearance="primary" icon="renew" :loading="true" :rounded="true" />
           <C-Button appearance="secondary" background="outline" text="Outline Loading" :loading="true" />
         </div>
       </Slot>
       <Slot :width="6">
-        <C-Image src="https://placehold.co/600x600/BDBDBD/fff" border-radius="m" />
+        <C-Headline headline="Image Examples" headline-type="h5" headline-tag="h3"
+          style="margin-bottom: var(--spacing-m);" />
+
+        <!-- Original C-Image -->
+        <C-Text text="Original C-Image implementation:" style="margin-bottom: var(--spacing-s);" />
+        <C-Image src="/test-image.png" border-radius="m" alt="Original image implementation"
+          description="Traditional picture element with manual source sets" style="margin-bottom: var(--spacing-l);" />
+
+        <!-- Nuxt Picture Integration -->
+        <C-Text text="Nuxt Picture integration (optimized):" style="margin-bottom: var(--spacing-s);" />
+        <C-Image :use-nuxt-picture="true" src="/test-image.png" format="webp,avif" :quality="90"
+          sizes="sm:100vw md:50vw lg:600px" border-radius="m" alt="Nuxt Picture optimized image"
+          description="Optimized with Nuxt Picture - WebP/AVIF formats"
+          :img-attrs="{ 'data-testid': 'nuxt-picture-example' }" />
       </Slot>
     </Module>
   </Section>

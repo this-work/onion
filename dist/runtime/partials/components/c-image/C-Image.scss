@@ -20,6 +20,17 @@
     max-height: inherit;
     pointer-events: none;
     user-select: none;
+
+    // Support for NuxtPicture component
+    picture,
+    img {
+      width: inherit;
+      height: inherit;
+      min-width: inherit;
+      max-width: inherit;
+      min-height: inherit;
+      max-height: inherit;
+    }
   }
 
   &__image {
@@ -34,7 +45,8 @@
   &__caption {
     margin-top: spacing("xxs");
     @include font-style("copytext--small");
-    > * {
+
+    >* {
       font: inherit;
     }
   }
@@ -44,16 +56,13 @@
   }
 
   @each $breakpoint,
-    $size
-      in map.merge(
-        (
-          "default": 0px,
-        ),
-        $breakpoint-config
-      )
-  {
+  $size in map.merge(("default": 0px,
+    ),
+    $breakpoint-config ) {
     &--has-aspect-ratio-#{string.unquote($breakpoint)} {
-      #{$module}__image {
+
+      #{$module}__image,
+      #{$module}__wrapper img {
         @include above($breakpoint) {
           aspect-ratio: var(--aspect-ratio-#{string.unquote($breakpoint)});
         }

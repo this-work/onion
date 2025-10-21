@@ -46,15 +46,15 @@ export interface CModal extends ColormodeComposableProperties {
      */
     width?: number;
 }
-declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CModal, {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CModal, {
     open: () => void;
     close: () => void;
 }, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-    "update:show": (...args: any[]) => void;
     close: (...args: any[]) => void;
+    "update:show": (...args: any[]) => void;
 }, string, import("vue").PublicProps, Readonly<CModal> & Readonly<{
-    "onUpdate:show"?: ((...args: any[]) => any) | undefined;
     onClose?: ((...args: any[]) => any) | undefined;
+    "onUpdate:show"?: ((...args: any[]) => any) | undefined;
 }>, {
     width: number;
     rootElement: string;
@@ -63,7 +63,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CModal
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 }>;
-declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

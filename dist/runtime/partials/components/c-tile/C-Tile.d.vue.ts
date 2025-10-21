@@ -13,7 +13,7 @@ export interface CTile extends ColormodeComposableProperties {
     label?: CLabel;
     link?: object;
 }
-declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CTile, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CTile> & Readonly<{}>, {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CTile, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CTile> & Readonly<{}>, {
     type: string;
     hero: boolean;
     backgroundColor: string;
@@ -28,7 +28,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CTile,
 } & {
     text?: (props: {}) => any;
 }>;
-declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

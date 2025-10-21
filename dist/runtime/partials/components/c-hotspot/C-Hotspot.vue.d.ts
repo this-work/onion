@@ -36,6 +36,5 @@ export interface CHotspot extends ColormodeComposableProperties {
      */
     hotspots: CHotspotDot[];
 }
-declare const __VLS_export: import("vue").DefineComponent<CHotspot, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CHotspot> & Readonly<{}>, {}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
-declare const _default: typeof __VLS_export;
+declare const _default: import("vue").DefineComponent<CHotspot, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CHotspot> & Readonly<{}>, {}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
 export default _default;

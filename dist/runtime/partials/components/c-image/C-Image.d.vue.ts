@@ -1,4 +1,4 @@
-import type { ColormodeComposableProperties, Breakpoint, BorderRadius, AspectRatios } from '../../../types/index.js';
+import type { AspectRatios, BorderRadius, Breakpoint, ColormodeComposableProperties } from '../../../types/index.js';
 export interface CImageSourceAlternates {
     /**
      * Breakpoint name where the source set is valid e.g. xs or xl
@@ -75,17 +75,54 @@ export interface CImage extends ColormodeComposableProperties {
      * the image for the respective breakpoint.
      */
     aspectRatios?: AspectRatios;
+    /**
+     * Enable Nuxt Picture optimization features
+     * @default false
+     */
+    useNuxtPicture?: boolean;
+    /**
+     * Image formats to generate (for Nuxt Picture)
+     * @default 'webp'
+     */
+    format?: string;
+    /**
+     * Image sizes for responsive images (for Nuxt Picture)
+     */
+    sizes?: string;
+    /**
+     * Image quality (for Nuxt Picture)
+     * @default 80
+     */
+    quality?: number;
+    /**
+     * Image width (for Nuxt Picture)
+     */
+    width?: number;
+    /**
+     * Image height (for Nuxt Picture)
+     */
+    height?: number;
+    /**
+     * Placeholder image while loading (for Nuxt Picture)
+     */
+    placeholder?: string | boolean;
+    /**
+     * Additional attributes to pass to the img element (for Nuxt Picture)
+     */
+    imgAttrs?: Record<string, any>;
 }
-declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CImage, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CImage> & Readonly<{}>, {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CImage, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CImage> & Readonly<{}>, {
     tag: string;
     position: string;
     lazy: boolean;
     fit: string;
     autosize: boolean;
+    useNuxtPicture: boolean;
+    format: string;
+    quality: number;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 }>;
-declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

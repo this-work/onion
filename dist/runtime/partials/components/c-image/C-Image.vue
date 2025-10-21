@@ -1,32 +1,17 @@
 <template>
-  <component
-    :is="tag"
-    :class="partialClass"
-  >
-    <picture :class="useBem('wrapper')">
+  <component :is="tag" :class="partialClass">
+    <div v-if="useNuxtPicture" :class="useBem('wrapper')">
+      <NuxtPicture :src="src" :format="format" :sizes="sizes" :quality="quality" :width="width" :height="height"
+        :placeholder="placeholder" :loading="loadingMethod" :img-attrs="mergedImgAttrs" />
+    </div>
+    <picture v-else :class="useBem('wrapper')">
       <slot>
-        <source
-          v-for="(source, index) in formattedSrcAlternates"
-          v-bind="source"
-          :key="index"
-        >
-        <img
-          :src="src"
-          :loading="loadingMethod"
-          :class="imageClasses"
-          :style="imageStyles"
-          :alt="alt"
-          :title="title"
-          role="img"
-          draggable="false"
-        >
+        <source v-for="(source, index) in formattedSrcAlternates" v-bind="source" :key="index" />
+        <img :src="src" :loading="loadingMethod" :class="imageClasses" :style="imageStyles" :alt="alt"
+          :title="title" role="img" draggable="false" />
       </slot>
     </picture>
-    <c-text
-      v-if="description"
-      :tag="captionTag"
-      :class="useBem('caption')"
-    >
+    <c-text v-if="description" :tag="captionTag" :class="useBem('caption')">
       <p v-html="description" />
     </c-text>
   </component>
@@ -37,7 +22,7 @@
 </script>
 
 <script setup>
-import { normalizeClass, computed } from "vue";
+import { computed, normalizeClass } from "vue";
 import { useBem } from "../../../composables/useBem";
 import { useColorMode } from "../../../composables/useColorMode";
 import { useComponentInstance } from "../../../composables/useComponentInstance";
@@ -55,6 +40,14 @@ const properties = defineProps({
   borderRadius: { type: [String, null], required: false },
   description: { type: String, required: false },
   aspectRatios: { type: null, required: false },
+  useNuxtPicture: { type: Boolean, required: false, default: false },
+  format: { type: String, required: false, default: "webp" },
+  sizes: { type: String, required: false },
+  quality: { type: Number, required: false, default: 80 },
+  width: { type: Number, required: false },
+  height: { type: Number, required: false },
+  placeholder: { type: [String, Boolean], required: false },
+  imgAttrs: { type: Object, required: false },
   colorMode: { type: String, required: false }
 });
 const { componentName } = useComponentInstance();
@@ -123,6 +116,17 @@ function buildSourceSet(sourceSet) {
 }
 const loadingMethod = computed(() => properties.lazy ? "lazy" : "eager");
 const captionTag = computed(() => properties.tag === "figure" ? "figcaption" : "span");
+const mergedImgAttrs = computed(() => {
+  const baseAttrs = {
+    alt: properties.alt,
+    title: properties.title,
+    class: imageClasses.value,
+    style: imageStyles.value,
+    role: "img",
+    draggable: false
+  };
+  return properties.imgAttrs ? { ...baseAttrs, ...properties.imgAttrs } : baseAttrs;
+});
 </script>
 
 <style lang="scss" src="./C-Image.scss">

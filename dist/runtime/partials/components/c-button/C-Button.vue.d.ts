@@ -78,7 +78,7 @@ export interface CButton extends ColormodeComposableProperties {
      */
     additionalButtons?: Omit<CButton, 'additionalButtons'>[];
 }
-declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CButton, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CButton> & Readonly<{}>, {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CButton, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CButton> & Readonly<{}>, {
     background: "solid" | "soft" | "outline" | "plain";
     tag: string;
     disabled: boolean;
@@ -92,7 +92,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CButto
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 }>;
-declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

@@ -47,7 +47,7 @@ export interface CSelect extends ColormodeComposableProperties {
      */
     instruction?: string;
 }
-declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CSelect, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CSelect, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
     change: (value: string | null | undefined) => any;
 }, string, import("vue").PublicProps, Readonly<CSelect> & Readonly<{
     onChange?: ((value: string | null | undefined) => any) | undefined;
@@ -68,7 +68,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<CSelec
 } & {
     instruction?: (props: {}) => any;
 }>;
-declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
