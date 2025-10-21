@@ -52,6 +52,37 @@
           <C-Button appearance="primary" text="Toggle Loading" :loading="isLoading" @click="toggleLoading" />
           <C-Button appearance="secondary" background="outline" text="Outline Loading" :loading="true" />
         </div>
+
+        <C-Headline headline="Prop Reactivity Test (C-Input)" headline-type="h5" headline-tag="h3"
+          style="margin-top: var(--spacing-xl);" />
+        <C-Text text="Testing C-Input value prop reactivity - the input should update when prop changes:" />
+
+        <C-Input type="number" name="test-input" label="Controlled Input (external value)" :value="inputValue"
+          @change="(val) => inputValue = val" style="margin-top: var(--spacing-m);" />
+
+        <div style="display: flex; gap: var(--spacing-s); margin-top: var(--spacing-s);">
+          <C-Button appearance="secondary" text="Set to 10" @click="inputValue = '10'" />
+          <C-Button appearance="secondary" text="Set to 25" @click="inputValue = '25'" />
+          <C-Button appearance="secondary" text="Set to 100" @click="inputValue = '100'" />
+          <C-Button appearance="secondary" text="Increment" @click="inputValue = String(Number(inputValue || 0) + 1)" />
+        </div>
+
+        <C-Text :text="`Current value: ${inputValue || '(empty)'}`" style="margin-top: var(--spacing-s);" />
+
+        <C-Headline headline="Prop Reactivity Test (C-Switch)" headline-type="h5" headline-tag="h3"
+          style="margin-top: var(--spacing-l);" />
+        <C-Text text="Testing C-Switch checked prop reactivity - the switch should update when prop changes:" />
+
+        <C-Switch label="Controlled Switch (external state)" name="test-switch" :checked="switchValue"
+          @change="(val) => switchValue = val" style="margin-top: var(--spacing-m);" />
+
+        <div style="display: flex; gap: var(--spacing-s); margin-top: var(--spacing-s);">
+          <C-Button appearance="secondary" text="Set to ON" @click="switchValue = true" />
+          <C-Button appearance="secondary" text="Set to OFF" @click="switchValue = false" />
+          <C-Button appearance="secondary" text="Toggle" @click="switchValue = !switchValue" />
+        </div>
+
+        <C-Text :text="`Current state: ${switchValue ? 'ON' : 'OFF'}`" style="margin-top: var(--spacing-s);" />
       </Slot>
       <Slot :width="6">
         <C-Headline headline="Image Examples" headline-type="h5" headline-tag="h3"
@@ -126,6 +157,10 @@ import { ref } from 'vue';
 const smallModal = ref<any>(null)
 const largeModal = ref<any>(null)
 const isLoading = ref(false)
+
+// Prop reactivity tests
+const inputValue = ref('0')
+const switchValue = ref(false)
 
 const toggleLoading = () => {
   isLoading.value = !isLoading.value

@@ -9,29 +9,20 @@
       </span>
 
       <slot name="input">
-        <input
-          v-model="value"
-          v-bind="$attrs"
-          :class="useBem('form-element')"
-          :id="name"
-          :name="name"
-          :aria-label=name
-          :aria-checked="value"
-          type="checkbox"
-          tabindex="0"
-        />
+        <input v-model="value" v-bind="$attrs" :class="useBem('form-element')" :id="name" :name="name" :aria-label=name
+          :aria-checked="value" type="checkbox" tabindex="0" />
       </slot>
 
       <label role="checkbox" :for="name" :class="useBem('field')">
         <div :class="useBem('field-area')">
-                <slot name="icon-true">
-                  <c-icon name="check" />
-                </slot>
+          <slot name="icon-true">
+            <c-icon name="check" />
+          </slot>
         </div>
         <div :class="useBem('field-area')">
-                <slot name="icon-false">
-                  <c-icon name="close" />
-                </slot>
+          <slot name="icon-false">
+            <c-icon name="close" />
+          </slot>
         </div>
       </label>
 
@@ -47,7 +38,7 @@
 <script lang="ts">
 import type {
   ColormodeComposableProperties,
-} from '../../../types'
+} from '../../../types';
 
 export interface CSwitch extends ColormodeComposableProperties {
   /**
@@ -78,11 +69,11 @@ export interface CSwitch extends ColormodeComposableProperties {
 </script>
 
 <script setup lang="ts">
-import { normalizeClass, computed, useAttrs, ref, useSlots, watch } from 'vue'
+import { computed, normalizeClass, ref, useAttrs, useSlots, watch } from 'vue';
 
 import { useBem } from "../../../composables/useBem";
-import { useColorMode } from '../../../composables/useColorMode'
-import { useComponentInstance } from '../../../composables/useComponentInstance'
+import { useColorMode } from '../../../composables/useColorMode';
+import { useComponentInstance } from '../../../composables/useComponentInstance';
 
 /**
  * Define options for the component. Disables inheriting
@@ -95,7 +86,7 @@ defineOptions({
 /**
  * Define emits for the component. Disables inheriting
  */
-const emit = defineEmits<{(e: 'change', value: boolean|undefined|null): void}>()
+const emit = defineEmits<{ (e: 'change', value: boolean | undefined | null): void }>()
 
 /**
  * Declare all props and defaults for vue.
@@ -115,10 +106,10 @@ const { componentName } = useComponentInstance()
  */
 const partialClass = computed(() =>
   normalizeClass([
-      componentName,
-      properties.class || '',
-      useColorMode().getClasses(properties),
-    ],
+    componentName,
+    properties.class || '',
+    useColorMode().getClasses(properties),
+  ],
   ),
 )
 
@@ -126,6 +117,13 @@ const partialClass = computed(() =>
  * Check if the input is required from the given attributes
  */
 const value = ref(properties.checked);
+
+/**
+ * Watch for prop changes to update internal value
+ */
+watch(() => properties.checked, (newValue) => {
+  value.value = newValue;
+});
 
 /**
  * Watch for changes in the selected option

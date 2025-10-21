@@ -1,6 +1,6 @@
 {
   "name": "@this/onion",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "author": "THIS GmbH",
   "repository": "https://github.com/this-work/onion/src/master/README.md",
   "description": "Component framework for Nuxt 4+",
