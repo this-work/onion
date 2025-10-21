@@ -3,38 +3,29 @@
 
     <slot>
 
-    <span :class="useBem('label')" v-if="label || hasSlotContent('label')">
-      <slot name="label"><span v-html="label" /><span v-if="isRequired" aria-label="required">*</span></slot>
-    </span>
+      <span :class="useBem('label')" v-if="label || hasSlotContent('label')">
+        <slot name="label"><span v-html="label" /><span v-if="isRequired" aria-label="required">*</span></slot>
+      </span>
 
       <span :class="useBem('field')">
-      <slot name="input">
-        <input
-          v-model="value"
-          v-bind="$attrs"
-          :class="useBem('form-element')"
-          :id="name"
-          :name="name"
-          :inputmode="inputmode"
-          :aria-label=label
-          :value="value"
-          @keydown="validateInput"
-        />
-      </slot>
+        <slot name="input">
+          <input v-model="value" v-bind="$attrs" :class="useBem('form-element')" :id="name" :name="name"
+            :inputmode="inputmode" :aria-label=label :value="value" @keydown="validateInput" />
+        </slot>
 
-      <span :class="useBem('prefix')" v-if="prefix || hasSlotContent('prefix')">
-      <slot name="prefix"><span v-html="prefix" /></slot>
-    </span>
+        <span :class="useBem('prefix')" v-if="prefix || hasSlotContent('prefix')">
+          <slot name="prefix"><span v-html="prefix" /></slot>
+        </span>
 
-      <span :class="useBem('suffix')" v-if="suffix || hasSlotContent('suffix')">
-      <slot name="suffix"><span v-html="suffix" /></slot>
-    </span>
+        <span :class="useBem('suffix')" v-if="suffix || hasSlotContent('suffix')">
+          <slot name="suffix"><span v-html="suffix" /></slot>
+        </span>
 
-    </span>
+      </span>
 
       <span :class="useBem('instruction')" v-if="instruction || hasSlotContent('instruction')">
-      <slot name="instruction"><small v-html="instruction" /></slot>
-    </span>
+        <slot name="instruction"><small v-html="instruction" /></slot>
+      </span>
 
     </slot>
 
@@ -46,7 +37,7 @@
 </script>
 
 <script setup>
-import { normalizeClass, computed, useAttrs, ref, useSlots, watch } from "vue";
+import { computed, normalizeClass, ref, useAttrs, useSlots, watch } from "vue";
 import { useBem } from "../../../composables/useBem";
 import { useColorMode } from "../../../composables/useColorMode";
 import { useComponentInstance } from "../../../composables/useComponentInstance";
@@ -79,6 +70,9 @@ const partialClass = computed(
   )
 );
 const value = ref(properties.value || "");
+watch(() => properties.value, (newValue) => {
+  value.value = newValue ?? "";
+});
 watch(value, async (newValue) => {
   emit("change", newValue);
 });

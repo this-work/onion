@@ -3,38 +3,29 @@
 
     <slot>
 
-    <span :class="useBem('label')" v-if="label || hasSlotContent('label')">
-      <slot name="label"><span v-html="label" /><span v-if="isRequired" aria-label="required">*</span></slot>
-    </span>
+      <span :class="useBem('label')" v-if="label || hasSlotContent('label')">
+        <slot name="label"><span v-html="label" /><span v-if="isRequired" aria-label="required">*</span></slot>
+      </span>
 
       <span :class="useBem('field')">
-      <slot name="input">
-        <input
-          v-model="value"
-          v-bind="$attrs"
-          :class="useBem('form-element')"
-          :id="name"
-          :name="name"
-          :inputmode="inputmode"
-          :aria-label=label
-          :value="value"
-          @keydown="validateInput"
-        />
-      </slot>
+        <slot name="input">
+          <input v-model="value" v-bind="$attrs" :class="useBem('form-element')" :id="name" :name="name"
+            :inputmode="inputmode" :aria-label=label :value="value" @keydown="validateInput" />
+        </slot>
 
-      <span :class="useBem('prefix')" v-if="prefix || hasSlotContent('prefix')">
-      <slot name="prefix"><span v-html="prefix" /></slot>
-    </span>
+        <span :class="useBem('prefix')" v-if="prefix || hasSlotContent('prefix')">
+          <slot name="prefix"><span v-html="prefix" /></slot>
+        </span>
 
-      <span :class="useBem('suffix')" v-if="suffix || hasSlotContent('suffix')">
-      <slot name="suffix"><span v-html="suffix" /></slot>
-    </span>
+        <span :class="useBem('suffix')" v-if="suffix || hasSlotContent('suffix')">
+          <slot name="suffix"><span v-html="suffix" /></slot>
+        </span>
 
-    </span>
+      </span>
 
       <span :class="useBem('instruction')" v-if="instruction || hasSlotContent('instruction')">
-      <slot name="instruction"><small v-html="instruction" /></slot>
-    </span>
+        <slot name="instruction"><small v-html="instruction" /></slot>
+      </span>
 
     </slot>
 
@@ -44,7 +35,7 @@
 <script lang="ts">
 import type {
   ColormodeComposableProperties,
-} from '../../../types'
+} from '../../../types';
 
 export interface CInput extends ColormodeComposableProperties {
   /**
@@ -85,11 +76,11 @@ export interface CInput extends ColormodeComposableProperties {
 </script>
 
 <script setup lang="ts">
-import { normalizeClass, computed, useAttrs, ref, useSlots, watch } from 'vue'
+import { computed, normalizeClass, ref, useAttrs, useSlots, watch } from 'vue';
 
 import { useBem } from "../../../composables/useBem";
-import { useColorMode } from '../../../composables/useColorMode'
-import { useComponentInstance } from '../../../composables/useComponentInstance'
+import { useColorMode } from '../../../composables/useColorMode';
+import { useComponentInstance } from '../../../composables/useComponentInstance';
 
 /**
  * Define options for the component. Disables inheriting
@@ -102,7 +93,7 @@ defineOptions({
 /**
  * Define emits for the component. Disables inheriting
  */
-const emit = defineEmits<{(e: 'change', value: string|undefined|null): void}>()
+const emit = defineEmits<{ (e: 'change', value: string | undefined | null): void }>()
 
 /**
  * Declare all props and defaults for vue.
@@ -122,14 +113,14 @@ const { componentName } = useComponentInstance()
  */
 const partialClass = computed(() =>
   normalizeClass([
-      componentName,
-      properties.class || '',
-      useColorMode().getClasses(properties),
-      {
-        [useBem(undefined, `prefix`)]: properties.prefix || hasSlotContent('prefix'),
-        [useBem(undefined, `suffix`)]: properties.suffix || hasSlotContent('suffix'),
-      },
-    ],
+    componentName,
+    properties.class || '',
+    useColorMode().getClasses(properties),
+    {
+      [useBem(undefined, `prefix`)]: properties.prefix || hasSlotContent('prefix'),
+      [useBem(undefined, `suffix`)]: properties.suffix || hasSlotContent('suffix'),
+    },
+  ],
   ),
 )
 
@@ -137,6 +128,13 @@ const partialClass = computed(() =>
  * Check if the input is required from the given attributes
  */
 const value = ref(properties.value || '');
+
+/**
+ * Watch for prop changes to update internal value
+ */
+watch(() => properties.value, (newValue) => {
+  value.value = newValue ?? '';
+});
 
 /**
  * Watch for changes in the selected option
