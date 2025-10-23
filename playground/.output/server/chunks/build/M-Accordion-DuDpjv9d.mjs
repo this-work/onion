@@ -20,6 +20,7 @@ import 'node:crypto';
 import 'node:url';
 import '@iconify/utils';
 import 'consola';
+import 'ipx';
 import 'vue-router';
 import './composables-BNjskvIb.mjs';
 import '../routes/renderer.mjs';

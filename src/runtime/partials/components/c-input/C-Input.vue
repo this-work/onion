@@ -170,7 +170,7 @@ const hasSlotContent = (slotName: string) => {
 const inputmode = computed(() => {
   const attrs = useAttrs()
   if (attrs.hasOwnProperty('inputmode')) {
-    return attrs.type === 'number' ? 'decimal' : attrs.inputmode
+    return attrs.type === 'number' ? 'decimal' : attrs.inputmode as 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search' | undefined
   }
   return undefined
 });

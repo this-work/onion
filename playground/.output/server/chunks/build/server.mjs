@@ -12,6 +12,7 @@ import 'node:crypto';
 import 'node:url';
 import '@iconify/utils';
 import 'consola';
+import 'ipx';
 
 if (!globalThis.$fetch) {
   globalThis.$fetch = $fetch$1.create({
@@ -389,7 +390,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-kbG5AYRZ.mjs')
+    component: () => import('./index-D8AGKumB.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -729,32 +730,32 @@ const revive_payload_server_iYKbRb_SAjDSLa4xRWetLjoZmSyyBBy1c7pnAFg2pwI = /* @__
     }
   }
 });
-const LazyCABSlider = defineAsyncComponent(() => import('./C-AB-Slider-0qht4TdC.mjs').then((r) => r["default"] || r.default || r));
+const LazyCABSlider = defineAsyncComponent(() => import('./C-AB-Slider-Bhe8MB34.mjs').then((r) => r["default"] || r.default || r));
 const LazyCAccordion = defineAsyncComponent(() => import('./C-Accordion-iar7rS_Z.mjs').then((r) => r["default"] || r.default || r));
-const LazyCButton = defineAsyncComponent(() => import('./C-Button-ZPZkdLor.mjs').then((r) => r["default"] || r.default || r));
+const LazyCButton = defineAsyncComponent(() => import('./C-Button-BYIrkxZH.mjs').then((r) => r["default"] || r.default || r));
 const LazyCDivider = defineAsyncComponent(() => import('./C-Divider-CvUe8MlV.mjs').then((r) => r["default"] || r.default || r));
 const LazyCHeadline = defineAsyncComponent(() => import('./C-Headline-CV9hrUCv.mjs').then((r) => r["default"] || r.default || r));
-const LazyCHotspot = defineAsyncComponent(() => import('./C-Hotspot-DZCtCfVF.mjs').then((r) => r["default"] || r.default || r));
+const LazyCHotspot = defineAsyncComponent(() => import('./C-Hotspot-eY7hfcZv.mjs').then((r) => r["default"] || r.default || r));
 const LazyCIcon = defineAsyncComponent(() => import('./C-Icon-DtEmzy2w.mjs').then((r) => r["default"] || r.default || r));
 const LazyCImageTabsItem = defineAsyncComponent(() => import('./C-Image-Tabs.item-BD6liHD5.mjs').then((r) => r["default"] || r.default || r));
-const LazyCImageTabs = defineAsyncComponent(() => import('./C-Image-Tabs-DnTjtdLn.mjs').then((r) => r["default"] || r.default || r));
-const LazyCImage = defineAsyncComponent(() => import('./C-Image-Duq0THOF.mjs').then((r) => r["default"] || r.default || r));
-const LazyCInput = defineAsyncComponent(() => import('./C-Input-hPF-rZsa.mjs').then((r) => r["default"] || r.default || r));
+const LazyCImageTabs = defineAsyncComponent(() => import('./C-Image-Tabs-wlvVHYVL.mjs').then((r) => r["default"] || r.default || r));
+const LazyCImage = defineAsyncComponent(() => import('./C-Image-BlpE6N20.mjs').then((r) => r["default"] || r.default || r));
+const LazyCInput = defineAsyncComponent(() => import('./C-Input-DeVkNulK.mjs').then((r) => r["default"] || r.default || r));
 const LazyCLabel = defineAsyncComponent(() => import('./C-Label-DSdCryq6.mjs').then((r) => r["default"] || r.default || r));
-const LazyCModal = defineAsyncComponent(() => import('./C-Modal-BK3t3pW6.mjs').then((r) => r["default"] || r.default || r));
-const LazyCSelect = defineAsyncComponent(() => import('./C-Select-DhlWaa0Q.mjs').then((r) => r["default"] || r.default || r));
-const LazyCSlider = defineAsyncComponent(() => import('./C-Slider-CMSAsf-J.mjs').then((r) => r["default"] || r.default || r));
-const LazyCSwitch = defineAsyncComponent(() => import('./C-Switch-DRZYaZ_F.mjs').then((r) => r["default"] || r.default || r));
+const LazyCModal = defineAsyncComponent(() => import('./C-Modal-zkNIJSFy.mjs').then((r) => r["default"] || r.default || r));
+const LazyCSelect = defineAsyncComponent(() => import('./C-Select-81uEQS5e.mjs').then((r) => r["default"] || r.default || r));
+const LazyCSlider = defineAsyncComponent(() => import('./C-Slider-3y18GX-l.mjs').then((r) => r["default"] || r.default || r));
+const LazyCSwitch = defineAsyncComponent(() => import('./C-Switch-CNCiChAK.mjs').then((r) => r["default"] || r.default || r));
 const LazyCTextTabsItem = defineAsyncComponent(() => import('./C-Text-Tabs.item-4fyiqzy1.mjs').then((r) => r["default"] || r.default || r));
 const LazyCTextTabs = defineAsyncComponent(() => import('./C-Text-Tabs-CAYic0Oy.mjs').then((r) => r["default"] || r.default || r));
 const LazyCText = defineAsyncComponent(() => import('./C-Text-BR7y9aN_.mjs').then((r) => r["default"] || r.default || r));
 const LazyCTextarea = defineAsyncComponent(() => import('./C-Textarea-B-7jv4WG.mjs').then((r) => r["default"] || r.default || r));
-const LazyCTile = defineAsyncComponent(() => import('./C-Tile-BUvA5scR.mjs').then((r) => r["default"] || r.default || r));
-const LazyCVideo = defineAsyncComponent(() => import('./C-Video-C6sGvqYR.mjs').then((r) => r["default"] || r.default || r));
+const LazyCTile = defineAsyncComponent(() => import('./C-Tile-CgqBglrG.mjs').then((r) => r["default"] || r.default || r));
+const LazyCVideo = defineAsyncComponent(() => import('./C-Video-B9OtDSl9.mjs').then((r) => r["default"] || r.default || r));
 const LazyCWrapper = defineAsyncComponent(() => import('./C-Wrapper-DaL46UAI.mjs').then((r) => r["default"] || r.default || r));
 const LazyMAccordion = defineAsyncComponent(() => import('./M-Accordion-DuDpjv9d.mjs').then((r) => r["default"] || r.default || r));
-const LazyMImageTabs = defineAsyncComponent(() => import('./M-Image-Tabs-DUVwaR9d.mjs').then((r) => r["default"] || r.default || r));
-const LazyMSlider = defineAsyncComponent(() => import('./M-Slider-UfSeqfQZ.mjs').then((r) => r["default"] || r.default || r));
+const LazyMImageTabs = defineAsyncComponent(() => import('./M-Image-Tabs-LXTk8JTK.mjs').then((r) => r["default"] || r.default || r));
+const LazyMSlider = defineAsyncComponent(() => import('./M-Slider-1HfKUNOu.mjs').then((r) => r["default"] || r.default || r));
 const LazyMTextTabs = defineAsyncComponent(() => import('./M-Text-Tabs-C0usW1E6.mjs').then((r) => r["default"] || r.default || r));
 const LazyModule = defineAsyncComponent(() => import('./Module-C_cUIPpr.mjs').then((r) => r["default"] || r.default || r));
 const LazySection = defineAsyncComponent(() => import('./Section-Pcv06J42.mjs').then((r) => r["default"] || r.default || r));

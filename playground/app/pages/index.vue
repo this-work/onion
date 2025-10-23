@@ -83,6 +83,39 @@
         </div>
 
         <C-Text :text="`Current state: ${switchValue ? 'ON' : 'OFF'}`" style="margin-top: var(--spacing-s);" />
+
+        <C-Headline headline="Navigation Direction Test (C-Select)" headline-type="h5" headline-tag="h3"
+          style="margin-top: var(--spacing-l);" />
+        <C-Text text="Testing C-Select with different navigation directions:" />
+
+        <C-Select label="Vertical (default - up/down only)" placeholder="Choose a time slot" :options="[
+          { label: '08:00 Uhr', value: '08:00' },
+          { label: '10:30 Uhr', value: '10:30' },
+          { label: '12:00 Uhr', value: '12:00' },
+          { label: '14:30 Uhr', value: '14:30' },
+          { label: '16:00 Uhr', value: '16:00' },
+        ]" style="margin-top: var(--spacing-m);" />
+
+        <C-Select label="Horizontal (left/right only)" placeholder="Choose a time slot"
+          navigation-direction="horizontal" :options="[
+            { label: '08:00 Uhr', value: '08:00' },
+            { label: '10:30 Uhr', value: '10:30' },
+            { label: '12:00 Uhr', value: '12:00' },
+            { label: '14:30 Uhr', value: '14:30' },
+            { label: '16:00 Uhr', value: '16:00' },
+          ]" style="margin-top: var(--spacing-m);" />
+
+        <C-Select label="Both (all arrow keys)" placeholder="Choose a time slot" navigation-direction="both" :options="[
+          { label: '08:00 Uhr', value: '08:00' },
+          { label: '10:30 Uhr', value: '10:30' },
+          { label: '12:00 Uhr', value: '12:00' },
+          { label: '14:30 Uhr', value: '14:30' },
+          { label: '16:00 Uhr', value: '16:00' },
+        ]" style="margin-top: var(--spacing-m);" />
+
+        <C-Text
+          text="Focus each select and test: vertical (↑↓), horizontal (←→), or both (↑↓←→) depending on the setting."
+          style="margin-top: var(--spacing-s); font-style: italic; padding-bottom: 300px;" />
       </Slot>
       <Slot :width="6">
         <C-Headline headline="Image Examples" headline-type="h5" headline-tag="h3"

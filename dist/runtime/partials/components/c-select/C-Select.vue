@@ -1,5 +1,5 @@
 <template>
-  <div :class="partialClass">
+  <div :class="partialClass" ref="selectWrapper">
 
     <span :class="useBem('label')" v-if="label || hasSlotContent('label')">
       <slot name="label"><span v-html="label" /></slot>
@@ -7,54 +7,32 @@
 
     <span :class="useBem('field')">
 
-      <multiselect
-        :class="useBem('dropdown')"
-        v-model="selectedOption"
-        :options="options"
-        :searchable="false"
-        :multiple="false"
-        :show-labels="false"
-        :allowEmpty="false"
-        :placeholder="placeholder"
-        :preselectFirst="preselectFirst"
-        label="label"
-        track-by="label"
-        openDirection="bottom"
-      >
+      <multiselect :class="useBem('dropdown')" v-model="selectedOption" :options="options" :searchable="false"
+        :multiple="false" :show-labels="false" :allowEmpty="false" :placeholder="placeholder"
+        :preselectFirst="preselectFirst" label="label" track-by="label" openDirection="bottom">
 
         <template v-slot:caret="scopedSlot">
-            <span :class="useBem('caret')">
-              <C-Icon
-                tag="span"
-                name="keyboard-arrow-down"
-                :class="useBem('icon')"
-              />
-            </span>
+          <span :class="useBem('caret')">
+            <C-Icon tag="span" name="keyboard-arrow-down" :class="useBem('icon')" />
+          </span>
         </template>
 
         <template v-slot:noResult>
-            <slot name="noResult">&nbsp;</slot>
+          <slot name="noResult">&nbsp;</slot>
         </template>
 
         <template v-slot:noOptions>
-            <slot name="noOptions">&nbsp;</slot>
+          <slot name="noOptions">&nbsp;</slot>
         </template>
 
         <template v-slot:maxElements>
-            <slot name="maxElements">&nbsp;</slot>
+          <slot name="maxElements">&nbsp;</slot>
         </template>
       </multiselect>
       <slot name="input">
         <ClientOnly>
-          <input
-            type="hidden"
-            v-bind="$attrs"
-            :class="useBem('form-element')"
-            :id="name"
-            :name="name"
-            :aria-label=label
-            :value="selectedValue"
-          />
+          <input type="hidden" v-bind="$attrs" :class="useBem('form-element')" :id="name" :name="name" :aria-label=label
+            :value="selectedValue" />
         </ClientOnly>
       </slot>
     </span>
@@ -71,7 +49,7 @@
 </script>
 
 <script setup>
-import { normalizeClass, computed, ref, useSlots, watch } from "vue";
+import { computed, normalizeClass, onMounted, onUnmounted, ref, useSlots, watch } from "vue";
 import Multiselect from "vue-multiselect";
 import { useBem } from "../../../composables/useBem";
 import { useColorMode } from "../../../composables/useColorMode";
@@ -89,6 +67,7 @@ const properties = defineProps({
   placeholder: { type: String, required: false, default: "" },
   preselectFirst: { type: Boolean, required: false, default: false },
   instruction: { type: String, required: false },
+  navigationDirection: { type: String, required: false, default: "vertical" },
   colorMode: { type: String, required: false }
 });
 const { componentName } = useComponentInstance();
@@ -116,6 +95,45 @@ const selectedValue = computed(() => {
     return null;
   }
   return selectedOption.value.value;
+});
+const selectWrapper = ref(null);
+const handleKeydown = (event) => {
+  if (!event.isTrusted) {
+    return;
+  }
+  const isHorizontalKey = event.key === "ArrowLeft" || event.key === "ArrowRight";
+  const isVerticalKey = event.key === "ArrowUp" || event.key === "ArrowDown";
+  if (properties.navigationDirection === "horizontal" && isVerticalKey) {
+    event.preventDefault();
+    event.stopPropagation();
+    return;
+  }
+  const shouldHandle = properties.navigationDirection === "horizontal" && isHorizontalKey || properties.navigationDirection === "both" && isHorizontalKey;
+  if (!shouldHandle) return;
+  const syntheticKey = event.key === "ArrowRight" ? "ArrowDown" : "ArrowUp";
+  const syntheticEvent = new KeyboardEvent("keydown", {
+    key: syntheticKey,
+    code: syntheticKey === "ArrowDown" ? "ArrowDown" : "ArrowUp",
+    keyCode: syntheticKey === "ArrowDown" ? 40 : 38,
+    which: syntheticKey === "ArrowDown" ? 40 : 38,
+    bubbles: true,
+    cancelable: true
+  });
+  event.target?.dispatchEvent(syntheticEvent);
+  event.preventDefault();
+  event.stopPropagation();
+};
+onMounted(() => {
+  const multiselectEl = selectWrapper.value?.querySelector(".multiselect");
+  if (multiselectEl && properties.navigationDirection !== "vertical") {
+    multiselectEl.addEventListener("keydown", handleKeydown, true);
+  }
+});
+onUnmounted(() => {
+  const multiselectEl = selectWrapper.value?.querySelector(".multiselect");
+  if (multiselectEl && properties.navigationDirection !== "vertical") {
+    multiselectEl.removeEventListener("keydown", handleKeydown, true);
+  }
 });
 </script>
 

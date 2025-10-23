@@ -46,6 +46,13 @@ export interface CSelect extends ColormodeComposableProperties {
      * Instruction text for the input
      */
     instruction?: string;
+    /**
+     * Navigation direction for keyboard arrow keys
+     * - 'vertical': up/down arrows
+     * - 'horizontal': left/right arrows
+     * - 'both': both vertical and horizontal arrows
+     */
+    navigationDirection?: 'vertical' | 'horizontal' | 'both';
 }
 declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CSelect, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
     change: (value: string | null | undefined) => any;
@@ -55,6 +62,7 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<CSelect, {
     value: CSelectOption | null;
     placeholder: string;
     preselectFirst: boolean;
+    navigationDirection: "vertical" | "horizontal" | "both";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     label?: (props: {}) => any;
 } & {

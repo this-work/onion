@@ -16,9 +16,7 @@
 </template>
 
 <script lang="ts">
-import type {
-  ColormodeComposableProperties,
-} from '../../../types'
+import type { ColormodeComposableProperties } from '../../../types'
 
 export interface CButton extends ColormodeComposableProperties {
   /**

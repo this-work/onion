@@ -59,15 +59,19 @@
 .flex-align {
     &-left {
         justify-content: flex-start;
+
         @include rtl() {
             justify-content: flex-end;
         }
     }
+
     &-center {
         justify-content: center;
     }
+
     &-right {
         justify-content: right;
+
         @include rtl() {
             justify-content: left;
         }
@@ -77,15 +81,19 @@
 .text-align {
     &-left {
         text-align: left;
+
         @include rtl() {
             text-align: right;
         }
     }
+
     &-center {
         text-align: center;
     }
+
     &-right {
         text-align: right;
+
         @include rtl() {
             text-align: left;
         }
@@ -96,9 +104,11 @@
     &-top {
         vertical-align: top;
     }
+
     &-middle {
         vertical-align: middle;
     }
+
     &-bottom {
         vertical-align: bottom;
     }
@@ -111,12 +121,15 @@
     &-top {
         align-items: start;
     }
+
     &-center {
         align-items: center;
     }
+
     &-bottom {
         align-items: end;
     }
+
     &-stretch {
         align-items: stretch;
     }
@@ -160,7 +173,7 @@
 /// Global convenience classes for the HTML tag to prevent scrolling
 ///
 .full-viewport-height {
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
 ///
