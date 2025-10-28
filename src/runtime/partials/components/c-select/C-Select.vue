@@ -220,10 +220,9 @@ const handleKeydown = (event: KeyboardEvent) => {
   const isHorizontalKey = event.key === 'ArrowLeft' || event.key === 'ArrowRight';
   const isVerticalKey = event.key === 'ArrowUp' || event.key === 'ArrowDown';
 
-  // If horizontal mode and user presses up/down, block it
+  // In horizontal mode, NEVER block up/down - they're used for answer navigation
+  // Only handle left/right for option navigation
   if (properties.navigationDirection === 'horizontal' && isVerticalKey) {
-    event.preventDefault();
-    event.stopPropagation();
     return;
   }
 

@@ -104,8 +104,6 @@ const handleKeydown = (event) => {
   const isHorizontalKey = event.key === "ArrowLeft" || event.key === "ArrowRight";
   const isVerticalKey = event.key === "ArrowUp" || event.key === "ArrowDown";
   if (properties.navigationDirection === "horizontal" && isVerticalKey) {
-    event.preventDefault();
-    event.stopPropagation();
     return;
   }
   const shouldHandle = properties.navigationDirection === "horizontal" && isHorizontalKey || properties.navigationDirection === "both" && isHorizontalKey;
