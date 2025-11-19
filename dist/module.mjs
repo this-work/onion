@@ -9,7 +9,9 @@ const module = defineNuxtModule({
   async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
     await installModule("@nuxt/icon", {});
-    await installModule("@nuxt/scripts", {});
+    await installModule("@nuxt/scripts", {
+      provider: "server"
+    });
     await installModule("@vueuse/nuxt", {});
     nuxt.options.vue.compilerOptions ||= {};
     nuxt.options.vue.compilerOptions.isCustomElement = (tag) => ["swiper-slide", "swiper-container"].includes(tag);
