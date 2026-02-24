@@ -23,6 +23,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
     await installModule('@nuxt/scripts', {})
     await installModule('@vueuse/nuxt', {})
+    await installModule('@nuxt/image', {})
 
     nuxt.options.vue.compilerOptions ||= {}
     nuxt.options.vue.compilerOptions.isCustomElement = tag => ['swiper-slide', 'swiper-container'].includes(tag)
