@@ -1,6 +1,6 @@
 {
   "name": "@this/onion",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "author": "THIS GmbH",
   "repository": "https://github.com/this-work/onion/src/master/README.md",
   "description": "Component framework for Nuxt 4+",
@@ -40,32 +40,32 @@
     "lint:fix": "eslint --fix src/."
   },
   "dependencies": {
-    "@iconify-json/material-symbols": "^1.2.38",
+    "@iconify-json/material-symbols": "^1.2.57",
     "@nuxt/icon": "^1.15.0",
     "@nuxt/image": "1.11.0",
     "@nuxt/scripts": "^0.11.13",
     "@this/scss-framework": "github:this-work/scss-framework#master",
-    "@types/lodash": "^4.17.20",
+    "@types/lodash": "^4.17.24",
     "@types/youtube": "^0.1.2",
-    "@unhead/vue": "^2.0.17",
+    "@unhead/vue": "^2.1.6",
     "@vueuse/nuxt": "^12.8.2",
-    "focus-trap": "^7.6.5",
-    "lodash": "^4.17.21",
-    "sass": "^1.93.1",
+    "focus-trap": "^7.8.0",
+    "lodash": "^4.17.23",
+    "sass": "^1.97.3",
     "swiper": "^11.2.10",
-    "vue-multiselect": "^3.3.1",
-    "vue-tsc": "^3.0.8"
+    "vue-multiselect": "^3.4.0",
+    "vue-tsc": "^3.2.5"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.9.0",
-    "@nuxt/eslint-config": "^1.9.0",
-    "@nuxt/kit": "^4.1.2",
+    "@nuxt/eslint": "^1.15.2",
+    "@nuxt/eslint-config": "^1.15.2",
+    "@nuxt/kit": "^4.3.1",
     "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/schema": "^4.1.2",
-    "eslint": "^9.36.0",
-    "nuxt": "^4.1.2",
-    "vue": "^3.5.21",
-    "vue-router": "^4.5.1"
+    "@nuxt/schema": "^4.3.1",
+    "eslint": "^9.39.3",
+    "nuxt": "^4.3.1",
+    "vue": "^3.5.29",
+    "vue-router": "^4.6.4"
   },
   "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad"
 }
